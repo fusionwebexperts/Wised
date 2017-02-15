@@ -1,0 +1,149 @@
+.multisteprange{
+  display: inline-block;
+  width: 100%;
+  float: left;
+  padding-left: 20px;
+}
+
+@mixin rangeThumb {
+  width: 22px;
+  height: 22px;
+  margin: -5px 0  0;
+  border-radius: 50%;
+  background: #fff;
+  cursor: pointer;
+  border: 5px solid #37adbf;
+}
+
+@mixin rangeTrack {
+  width: 100%;
+  height: 10px;
+  cursor: pointer;
+  background: #fff;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+}
+
+.range {
+  position: relative;
+  width: 550px;
+  height: 5px;
+  float: left;
+}
+
+.range input {
+  width: 100%;
+  position: absolute;
+  top: 28px;
+  height: 0;
+  -webkit-appearance: none;
+
+  // Thumb
+  &::-webkit-slider-thumb {
+    -webkit-appearance: none; // needed again for Chrome & Safari
+    @include rangeThumb;
+  }
+
+  &::-moz-range-thumb {
+    @include rangeThumb;
+  }
+
+  &::-ms-thumb {
+    @include rangeThumb;
+  }
+
+  // Track
+  &::-webkit-slider-runnable-track {
+    @include rangeTrack;
+  }
+
+  &::-moz-range-track {
+    @include rangeTrack;
+  }
+
+  &::-ms-track {
+    @include rangeTrack;
+  }
+
+  &:focus { // override outline/background on focus
+    background: none;
+    outline: none;
+  }
+
+  &::-ms-track { // A little somethin' somethin' for IE
+    width: 100%;
+    cursor: pointer;
+    background: transparent;
+    border-color: transparent;
+    color: transparent;
+  }
+}
+
+// Labels below slider
+.range-labels {
+  margin: 18px -41px 0;
+  padding: 0;
+  list-style: none;
+  float: left;
+  width: 100%;
+  
+  li {
+    position: relative;
+    float: left;
+    width: 90.25px;
+    text-align: center;
+    color: #b2b2b2;
+    font-size: 14px;
+    cursor: pointer;
+    
+    &::before {
+      position: absolute;
+      top: 42px;
+      right: 0;
+      left: 0;
+      content: "";
+      margin: 0 auto;
+      width: 15px;
+      height: 15px;
+      background: #fff;
+      border-radius: 50%;
+      border: 1px solid #ccc;
+      z-index: 1000;
+    }
+    &::after {
+      position: absolute;
+      top: 46px;
+      right: 0;
+      left: 0;
+      content: "";
+      margin: 0 auto;
+      width: 18px;
+      height: 8px;
+      background: #fff;
+      z-index: 1001;
+    }
+    &:last-child::after{
+      width: 10px;
+      left:-5px;
+    }
+    &:first-child::after{
+      width: 10px;
+      left: 5px;
+    }
+  }
+  
+  .active {
+    color: #37adbf;
+  }
+  
+  .selected::before {
+    background: #37adbf;
+  }
+  .selected::after {
+    display: none;
+  }
+  
+  .active.selected::before {
+    display: none;
+  }
+}

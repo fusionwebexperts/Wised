@@ -1,0 +1,337 @@
+header,
+section {
+    display: block;
+}
+h1,
+h2 {
+    text-align: center;
+    font-weight: normal;
+}
+.connected,
+.sortable,
+.exclude,
+.handles {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.sortable.grid {
+    overflow: hidden;
+}
+.handles span {
+    cursor: move;
+}
+li.disabled {
+    opacity: 0.5;
+}
+li.highlight {
+    background: #FEE25F;
+}
+.fa-square {
+    padding-left: 1%;
+}
+i.fa.fa-th {
+    color: #757575;
+}
+span.chevronbottom {
+    color: #757575;
+    padding-left: 1%;
+}
+li.parent.disabled {
+    color: #ef7c00;
+    font-weight: 700;
+    padding-left: 1%;
+}
+li.second {
+    color: #009ee2 !important;
+    font-weight: 700 !important;
+    padding-left: 5%;
+}
+li.child {
+    padding-left: 7.1%;
+    background-color: #fff;
+}
+.always.child {
+    background-color: #fff;
+    color: #000;
+}
+ol {
+    padding-left: 0 !important;
+}
+li.disabled {
+    opacity: 1;
+}
+#connected {
+    width: 440px;
+    overflow: hidden;
+    margin: auto;
+}
+.connected {
+    float: left;
+    width: 200px;
+}
+.connected.no2 {
+    float: right;
+}
+li.sortable-placeholder {
+    border: 0px dashed #CCC;
+    background: none;
+}
+.placeholder {
+    outline: 1px dashed #CCC;
+    height: 42px !important;
+}
+.mjs-nestedSortable-error {
+    background: #fbe3e4;
+    border-color: transparent;
+}
+
+#tree {
+    width: 550px;
+    margin: 0;
+}
+
+.action-btn{
+    float: right;
+    cursor: pointer;
+}
+h1 {
+    font-size: 2em;
+    margin-bottom: 0;
+}
+h2 {
+    font-size: 1.2em;
+    font-weight: 400;
+    font-style: italic;
+    margin-top: .2em;
+    margin-bottom: 1.5em;
+}
+h3 {
+    font-size: 1em;
+    margin: 1em 0 .3em;
+}
+
+p,
+ol,
+ul,
+pre,
+form {
+    margin-top: 0;
+    margin-bottom: 0em;
+}
+dl {
+    margin: 0;
+}
+dd {
+    margin: 0;
+    padding: 0 0 0 1.5em;
+}
+code {
+    background: #e5e5e5;
+}
+input {
+    vertical-align: text-bottom;
+}
+.notice {
+    color: #c33;
+}
+
+
+ol {
+    max-width: 100%;
+    padding-left: 25px;
+}
+li.mjs-nestedSortable-collapsed.mjs-nestedSortable-hovering div {
+    border-color: #999;
+}
+
+.disclose,
+.disclose {
+    cursor: pointer;
+    width: 20px;
+    display: none;
+}
+.sortable li.mjs-nestedSortable-collapsed>ol {
+    display: none;
+}
+.sortable li.mjs-nestedSortable-branch>div>.disclose {
+    display: inline-block;
+    margin-top: 3px;
+    margin-right: 5px;
+}
+.sortable span.ui-icon {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+}
+
+.menuDiv {
+    background: #f7f7f7;
+}
+.itemTitle {
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+.delete, .duplicate, .edit {
+    float: right;
+    cursor: pointer;
+}
+.criterion-list{
+  margin: 15px 0 20px 0;
+}
+.criterion-list, .criterion-list ol{
+  padding-left: 0;
+}
+.criterion-list li:first-child {
+  border-top: 1px solid #eee;
+}
+.criterion-list li{
+  list-style: none;
+  border-bottom: 1px solid #eee;
+}
+.criterion-list li div{
+  padding: 8px 0;
+  display: inline-table;
+  width: 100%;
+  padding-right: 10px;
+}
+.criterion-list li div .delete,
+.criterion-list li div .duplicate,
+.criterion-list li div .edit,
+.criterion-list li div .users{
+  float: right;
+  color: #6f6e6e;
+  font-size: 16px;
+  padding: 0 3px;
+}
+.criterion-list li div .users{
+  float: left;
+  margin-left: 8px;
+}
+.criterion-list li div span{
+  float: left;
+}
+.criterion-list.is-sortable li div:before{
+  position: absolute;
+  content: '';
+  margin-left: -20px;
+  margin-top: 7px;
+  width: 8px;
+  height: 8px;
+  background-image: url(../images/dragListicon.png);
+}
+
+/* SORTABLE LEVELS  */
+/* LEVEL 1 */
+.criterion-list.is-sortable > li > div{
+  padding-left: 40px;
+}
+.criterion-list > li > div > .itemTitle, 
+.criterion-list > li > ol > li > div .itemTitle{
+  padding-left: 20px;
+}
+.criterion-list > li > div > .itemTitle:before, 
+.criterion-list > li > ol > li > div > .itemTitle:before{
+  position: absolute;
+  content: '';
+  width: 12px;
+  height: 12px;
+  margin-left: -18px;
+  background: #ef7c00;
+  margin-top: 5px;
+  border-radius: 2px;
+}
+
+/* LEVEL 2 */
+.criterion-list.is-sortable > li > ol > li > div > .itemTitle:before{
+  background: #009ee2;
+}
+.criterion-list > li > ol > li > div{
+  margin-left: 80px !important;
+  width: calc(100% - 80px);
+}
+.criterion-list > li > ol > li.placeholder{
+  /*margin-left: 8% !important;*/
+}
+
+/* LEVEL 3 */
+.criterion-list > li > ol > li > ol > li.placeholder{
+  /*margin-left: 12% !important;*/
+}
+.criterion-list > li > ol > li > ol li div {
+  /*margin-left: 12% !important;*/
+  /*width: calc(100% - 12%); */
+}
+.criterion-list > li > ol > li > ol li div:before{
+  margin-left: -20px;
+}
+.criterion-list > li > ol > li > ol > li div{
+  border-left: 1px solid #eee;
+  padding-left: 30px;
+}
+.criterion-list > li, .criterion-list > li > ol > li{
+  background: #f9f9f9;
+}
+.criterion-list > li > ol > li li{
+  background: #fff;
+}
+
+.criterion-list{
+    @for $i from 1 through 10 {
+        $sel: if($i == 1, "ol", selector-nest($sel, "li")) !global;
+        $margin-left: 30px * $i;
+        
+        #{$sel} div{
+            margin-left: $margin-left;
+            width: calc(100% - #{$margin-left});
+        }
+        #{$sel}.placeholder{
+            margin-left: 30px * $i;
+        }
+    }
+}
+    
+/* END SORTABLE LEVELS  */
+
+.criterion-list ol li:last-child{
+  border-bottom: none;
+}
+.criterion-list li ol li ul div:nth-child(1) {
+  background-color: #fff;
+  color: black !important;
+  font-weight: lighter;
+}
+.criterion-list li ol ol li div {
+  color: black !important;
+  font-weight: lighter;
+}
+.criterion-list li ol ol ol li div {
+  color: black !important;
+  font-weight: lighter;
+}
+
+.criterion-list li ol li div {
+  color: #009ee2 !important;
+}
+.criterion-list li div {
+  color: #ef7c00;
+  font-weight: 400;
+}
+
+.define-scales li ol li ol li:hover{
+  background: #009ee2;
+  box-shadow: 0 1px 4px 0 rgba(0,0,0,.1);
+  transition: border .2s linear,color .2s linear,width .2s linear,background-color .2s linear;
+  -webkit-font-smoothing: subpixel-antialiased;
+}
+.define-scales li ol li ol li:hover div span,
+.define-scales li ol li ol li:hover div span a{
+  color: #fff;
+}
+.define-scales li ol li ol li a{
+  color: black;
+}

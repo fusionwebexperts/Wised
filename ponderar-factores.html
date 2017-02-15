@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+
+<html class="no-js css-menubar" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui" name="viewport">
+    <meta content="bootstrap admin template" name="description">
+    <meta content="" name="author">
+
+    <title>WiseD On</title>
+    <link href="assets/images/apple-touch-icon.png" rel="apple-touch-icon">
+    <link href="assets/images/favicon.ico" rel="shortcut icon">
+    <!-- Stylesheets -->
+    <link href="global/css/bootstrap.min.css" rel="stylesheet">
+    <link href="global/css/bootstrap-extend.min.css" rel="stylesheet">
+    <link href="assets/css/site.min.css" rel="stylesheet">
+    <!-- Plugins -->
+    <link href="global/vendor/animsition/animsition.css" rel="stylesheet">
+    <link href="global/vendor/asscrollable/asScrollable.css" rel="stylesheet">
+    <link href="global/vendor/switchery/switchery.css" rel="stylesheet">
+    <link href="global/vendor/intro-js/introjs.css" rel="stylesheet">
+    <link href="global/vendor/slidepanel/slidePanel.css" rel="stylesheet">
+    <link href="global/vendor/flag-icon-css/flag-icon.css" rel="stylesheet">
+    <link href="global/vendor/waves/waves.css" rel="stylesheet">
+    <link href="global/vendor/jvectormap/jquery-jvectormap.css" rel="stylesheet">
+    <link href="assets/examples/css/dashboard/v1.css" rel="stylesheet">
+    <!-- Fonts -->
+    <link href="global/fonts/material-design/material-design.min.css" rel="stylesheet">
+    <link href="global/fonts/brand-icons/brand-icons.min.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Roboto:300,400,500,300italic' rel='stylesheet'>
+    <!-- Css webexperts -->
+    <link href='assets/css/style_general.css' rel='stylesheet'>
+    <link href="assets/css/style_wisedon.css" rel="stylesheet">
+    <link href="assets/css/factores.css" rel="stylesheet">
+    <link href="assets/css/sortable.css" rel="stylesheet">
+    <link href="assets/css/font-awesome.min.css" rel="stylesheet">
+    <link href="assets/css/materialdesignicons.min.css" rel="stylesheet">
+    <link href="assets/css/materialdesignicons.css" rel="stylesheet">
+    <script src="global/vendor/modernizr/modernizr.js"></script>
+    <script src="global/vendor/breakpoints/breakpoints.js"></script>
+    <script>
+        Breakpoints();
+    </script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <link href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css" rel="stylesheet">
+    <script src="//code.jquery.com/ui/1.10.4/jquery-ui.min.js"></script>
+    <!--[if lt IE 9]>
+    <script src="global/vendor/html5shiv/html5shiv.min.js"></script>
+    <![endif]-->
+    <!--[if lt IE 10]>
+    <script src="global/vendor/media-match/media.match.min.js"></script>
+    <script src="global/vendor/respond/respond.min.js"></script>
+    <![endif]-->
+    <!-- Scripts -->
+</head>
+
+<body class="dashboard" style="background-color:#fff;">
+    <!--[if lt IE 8]>
+        <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+
+    <nav class="site-navbar navbar navbar-inverse navbar-fixed-top navbar-mega" role="navigation">
+        <div class="navbar-header">
+            <button class="navbar-toggle hamburger hamburger-close navbar-toggle-left hided" data-toggle="menubar" type="button"><span class="sr-only">Toggle navigation</span> <span class="hamburger-bar"></span></button> <button class="navbar-toggle collapsed" data-target="#site-navbar-collapse" data-toggle="collapse" type="button"><i aria-hidden="true" class="icon md-more"></i></button>
+
+            <div class="navbar-brand"><img class="navbar-brand-logo" src="assets/images/logo_wisedon.png" title="Remark">
+            </div>
+        </div>
+
+
+        <div class="navbar-container container-fluid">
+            <!-- Navbar Collapse -->
+
+
+            <div class="collapse navbar-collapse navbar-collapse-toolbar" id="site-navbar-collapse">
+                <!-- Navbar Toolbar -->
+
+
+                <ul class="nav navbar-toolbar">
+                    <li class="hidden-float" id="toggleMenubar">
+                        <a data-toggle="menubar" href="#" role="button"><i class="icon hamburger hamburger-arrow-left"><span class="sr-only">Toggle menubar</span> <span class="hamburger-bar"></span></i></a>
+                    </li>
+                </ul>
+                <!-- End Navbar Toolbar -->
+                <!-- Navbar Toolbar Right -->
+
+
+                <ul class="nav navbar-toolbar navbar-right navbar-toolbar-right">
+                    <li class="dropdown">
+                        <a aria-expanded="false" data-animation="scale-up" data-toggle="dropdown" href="javascript:void(0)" role="button" title="Notifications"><i aria-hidden="true" class="icon md-notifications"></i><span class="awhite">Notifications</span> <span class="chevronnotifications">▾</span></a>
+
+                        <ul class="dropdown-menu dropdown-menu-right dropdown-menu-media" role="menu">
+                            <li class="dropdown-menu-header" role="presentation">
+                                <h5>TEM 10 NOTIFICAÇÕES</h5>
+                            </li>
+
+
+                            <li class="list-group" role="presentation">
+                                <div data-role="container">
+                                    <div data-role="content">
+                                        <a class="list-group-item" href="javascript:void(0)" role="menuitem">
+                                            <div class="media">
+                                                <div class="media-left padding-right-10">
+                                                </div>
+
+
+                                                <div class="media-body">
+                                                    <h6 class="media-heading">Admin adicionou um novo critério a Telemóvel</h6>
+                                                    <time class="media-meta" datetime="2015-06-12T20:50:48+08:00">há 1 hora</time>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <a class="list-group-item" href="javascript:void(0)" role="menuitem">
+                                            <div class="media">
+                                                <div class="media-left padding-right-10">
+                                                </div>
+
+
+                                                <div class="media-body">
+                                                    <h6 class="media-heading">Admin adicionou um novo critério a Telemóvel</h6>
+                                                    <time class="media-meta" datetime="2015-06-12T20:50:48+08:00">há 1 hora</time>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <a class="list-group-item" href="javascript:void(0)" role="menuitem">
+                                            <div class="media">
+                                                <div class="media-left padding-right-10">
+                                                </div>
+
+
+                                                <div class="media-body">
+                                                    <h6 class="media-heading">Admin adicionou um novo critério a Telemóvel</h6>
+                                                    <time class="media-meta" datetime="2015-06-12T20:50:48+08:00">há 1 hora</time>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <a class="list-group-item" href="javascript:void(0)" role="menuitem">
+                                            <div class="media">
+                                                <div class="media-left padding-right-10">
+                                                </div>
+
+
+                                                <div class="media-body">
+                                                    <h6 class="media-heading">Admin adicionou um novo critério a Telemóvel</h6>
+                                                    <time class="media-meta" datetime="2015-06-12T20:50:48+08:00">há 1 hora</time>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <a class="list-group-item" href="javascript:void(0)" role="menuitem">
+                                            <div class="media">
+                                                <div class="media-left padding-right-10">
+                                                </div>
+
+
+                                                <div class="media-body">
+                                                    <h6 class="media-heading">Admin adicionou um novo critério a Telemóvel</h6>
+                                                    <time class="media-meta" datetime="2015-06-12T20:50:48+08:00">há 1 hora</time>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </li>
+
+
+                            <li class="dropdown-menu-footer" role="presentation">
+                                <a class="aorange">VER TODAS</a>
+                            </li>
+                        </ul>
+                    </li>
+
+
+                    <li class="dropdown">
+                        <a aria-expanded="false" class="navbar-avatar dropdown-toggle" data-animation="scale-up" data-toggle="dropdown" href="#" role="button"><span class="avatar avatar-online"><img alt="..." src="global/portraits/5.jpg"><span class="adminname">Admin</span> <span class="chevron">▾</span></span></a>
+
+                        <ul class="dropdown-menu dropdown-user" role="menu">
+                            <li class="userarea"><span class="userareatext">Admin</span><br>
+                                <span class="userareamail">admin@gmail.com</span>
+                            </li>
+
+
+                            <li style="list-style: none"><button class="btn btn-primary waves-effect waves-light buttonuserarea" type="button">BASIC PLAN</button>
+                            </li>
+
+
+                            <li role="presentation">
+                                <a href="javascript:void(0)" role="menuitem">Perfil de Utilizador</a>
+                            </li>
+
+
+                            <li class="divider" role="presentation">
+                            </li>
+
+
+                            <li role="presentation">
+                                <a href="javascript:void(0)" role="menuitem">Definições de conta</a>
+                            </li>
+
+
+                            <li class="divider" role="presentation">
+                            </li>
+
+
+                            <li role="presentation">
+                                <a href="javascript:void(0)" role="menuitem">Sair</a>
+                            </li>
+                        </ul>
+                    </li>
+
+
+                    <li class="dropdown">
+                        <a aria-expanded="false" class="dropdown-toggle" data-animation="scale-up" data-toggle="dropdown" href="javascript:void(0)" role="button"><span class="flag-icon flag-icon-us"></span> <span class="chevronflags">▾</span></a>
+
+                        <ul class="dropdown-menu" role="menu">
+                            <li role="presentation">
+                                <a href="javascript:void(0)" role="menuitem"><span class="flag-icon flag-icon-gb"></span> English</a>
+                            </li>
+
+
+                            <li role="presentation">
+                                <a href="javascript:void(0)" role="menuitem"><span class="flag-icon flag-icon-fr"></span> French</a>
+                            </li>
+
+
+                            <li role="presentation">
+                                <a href="javascript:void(0)" role="menuitem"><span class="flag-icon flag-icon-cn"></span> Chinese</a>
+                            </li>
+
+
+                            <li role="presentation">
+                                <a href="javascript:void(0)" role="menuitem"><span class="flag-icon flag-icon-de"></span> German</a>
+                            </li>
+
+
+                            <li role="presentation">
+                                <a href="javascript:void(0)" role="menuitem"><span class="flag-icon flag-icon-nl"></span> Dutch</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <!-- End Navbar Toolbar Right -->
+            </div>
+            <!-- End Navbar Collapse -->
+            <!-- Site Navbar Seach -->
+
+
+            <div class="collapse navbar-search-overlap" id="site-navbar-search">
+                <form role="search">
+                    <div class="form-group">
+                        <div class="input-search">
+                            <i aria-hidden="true" class="input-search-icon md-search"></i> <input class="form-control" name="site-search" placeholder="Search..." type="text"> <button aria-label="Close" class="input-search-close icon md-close" data-target="#site-navbar-search" data-toggle="collapse" type="button"></button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <!-- End Site Navbar Seach -->
+        </div>
+
+
+        <div style="height:40px;">
+            <p class="buttonindex"><button class="btn btn-primary waves-effect waves-light buttonprimary" type="button">Start our Tour Guide</button>
+            </p>
+
+
+            <p class="usertext">Hello admin., you have...</p>
+        </div>
+    </nav>
+
+
+    <div class="site-menubar">
+        <div class="site-menubar-body">
+            <div>
+                <div>
+                    <ul class="site-menu">
+                        <li class="site-menu-category">
+                        </li>
+
+
+                        <li class="site-menu-item active">
+                            <a class="animsition-link" href="#"><i aria-hidden="true" class="mdi mdi-home mdi-18px"></i> <span class="site-menu-title">Home</span></a>
+                        </li>
+
+
+                        <li class="site-menu-item active">
+                            <a class="animsition-link" href="models.html"><i aria-hidden="true" class="mdi mdi-note mdi-18px"></i> <span class="site-menu-title">My Models</span></a>
+                        </li>
+
+
+                        <li class="site-menu-item active">
+                            <a class="animsition-link" href="tasks.html"><i aria-hidden="true" class="mdi mdi-playlist-check mdi-18px"></i> <span class="site-menu-title">Task & Users</span></a>
+                        </li>
+
+
+                        <li class="site-menu-item active">
+                            <a class="animsition-link" href="#"><i aria-hidden="true" class="mdi mdi-clipboard-check mdi-18px"></i> <span class="site-menu-title">My Reports</span></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="site-gridmenu">
+        <div>
+            <div>
+                <ul>
+                    <li>
+                        <a href="apps/mailbox/mailbox.html"><i class="icon md-email"></i> <span>Mailbox</span></a>
+                    </li>
+                    <li>
+                        <a href="apps/calendar/calendar.html"><i class="icon md-calendar"></i> <span>Calendar</span></a>
+                    </li>
+
+                    <li>
+                        <a href="apps/contacts/contacts.html"><i class="icon md-account"></i> <span>Contacts</span></a>
+                    </li>
+
+                    <li>
+                        <a href="apps/media/overview.html"><i class="icon md-videocam"></i> <span>Media</span></a>
+                    </li>
+
+                    <li>
+                        <a href="apps/documents/categories.html"><i class="icon md-receipt"></i> <span>Documents</span></a>
+                    </li>
+
+                    <li>
+                        <a href="apps/projects/projects.html"><i class="icon md-image"></i> <span>Project</span></a>
+                    </li>
+
+                    <li>
+                        <a href="apps/forum/forum.html"><i class="icon md-comments"></i> <span>Forum</span></a>
+                    </li>
+
+                    <li>
+                        <a href="index.html"><i class="icon md-view-dashboard"></i> <span>Dashboard</span></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- Page -->
+
+
+    <div class="page animsition">
+        <div class="page-content container-fluid">
+            <div class="row" data-by-row="true" data-plugin="matchHeight">
+                <!-- End Widget Linearea Three -->
+            </div>
+
+            <div class="submenu">
+                <table>
+                    <tr>
+                        <td class="headsub first">
+                            <a href="factores.html">1. Definir Factores</a>
+                        </td>
+
+                        <td class="headsub">
+                            <a href="definir-escalas.html">2. Definir Escalas</a>
+                        </td>
+
+                        <td class="headsub active">
+                            <a href="ponderar-factores.html">3. Ponderar Factores</a>
+                        </td>
+
+                        <td class="headsub">
+                            <a href="avaliar-opcoes.html">4. Definir e Avaliar Opções</a>
+                        </td>
+
+                        <td class="headsub">
+                            <a href="analisar-resultados.html">5. Analisar Resultados</a>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="page-content container-fluid">
+                <div class="row" data-by-row="true" data-plugin="matchHeight">
+                </div>
+
+                <div class="col-xlg-5 col-md-12">
+                    <!-- Panel Projects -->
+
+                    <div class="" id="projects">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">
+                                <span class="titleorange">Ponderar Factores</span>
+                                <i aria-hidden="true" class="fa fa-question-circle fa-lg questionicon"></i>
+                                <span class="lowercasenobold">Show related help</span> <i aria-hidden="true" class="fa fa-play-circle fa-lg questionicon"></i>
+                                <span class="lowercasenobold">View video Tutorial</span>
+                            </h3>
+
+                            <p class="basictext">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce augue orci, imperdiet ut tincidunt quis, molestie quis odio.<br> Sed convallis, nibh ut fermentum aliquet, felis odio finibus nulla, sed accumsan lacus magna id turpis.</p>
+                            <br>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xlg-5 col-md-12">
+                    <div class="list-criteria-container">
+                        <h3>
+                            <span>New Blue Line mobile</span>
+                            <span class="lowercasenobold">create 12hours ago</span>
+                        </h3>
+                        <ol class="criterion-list sortable ui-sortable mjs-nestedSortable-branch mjs-nestedSortable-expanded">
+                           <li>
+                              <div>
+                                    <span class="disclose ui-icon ui-icon-triangle-1-n"></span>
+                                    <span class="itemTitle">Área Técnica(2)</span>
+                              </div>
+                              <ol>
+                                 <li>
+                                    <div>
+                                        <span class="disclose ui-icon ui-icon-triangle-1-n"></span>
+                                        <span class="itemTitle">Processamento(3)</span>
+                                    </div>
+                                    <ol>
+                                         <li>
+                                            <div>
+                                                <span class="itemTitle">resolução</span>
+                                            </div>
+                                         </li>
+                                         <li>
+                                            <div>
+                                                <span class="itemTitle">sistema operativo</span>
+                                            </div>
+                                         </li>
+                                         <li>
+                                            <div>
+                                                <span class="itemTitle">autonomia</span>
+                                            </div>
+                                         </li>
+                                    </ol>
+                                 </li>
+                                 <li>
+                                    <div>
+                                        <span class="disclose ui-icon ui-icon-triangle-1-n"></span>
+                                        <span class="itemTitle">Extras(2)</span>
+                                    </div>
+                                    <ol>
+                                         <li>
+                                            <div>
+                                                <span class="itemTitle">camera</span>
+                                            </div>
+                                         </li>
+                                         <li>
+                                            <div>
+                                                <span class="itemTitle">gps</span>
+                                            </div>
+                                         </li>
+                                    </ol>
+                                 </li>
+                              </ol>
+                           </li>
+                           <li>
+                                <div>
+                                    <span class="disclose ui-icon ui-icon-triangle-1-n"></span>
+                                    <span class="itemTitle">Preço de Equipamento</span>
+                                </div>
+                            </li>
+                           <li>
+                                <div>
+                                    <span class="disclose ui-icon ui-icon-triangle-1-n"></span>
+                                    <span class="itemTitle">Cor</span>
+                                </div>
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- End Widget Current Chart -->
+    <!-- End Panel Projects -->
+    <!-- Core  -->
+    <!--<script src="global/vendor/jquery/jquery.js"></script>-->
+    <script src="global/vendor/bootstrap/bootstrap.js"></script>
+    <script src="global/vendor/animsition/animsition.js"></script>
+    <script src="global/vendor/asscroll/jquery-asScroll.js"></script>
+    <script src="global/vendor/mousewheel/jquery.mousewheel.js"></script>
+    <script src="global/vendor/asscrollable/jquery.asScrollable.all.js"></script>
+    <script src="global/vendor/ashoverscroll/jquery-asHoverScroll.js"></script>
+    <script src="global/vendor/waves/waves.js"></script>
+    <!-- Plugins -->
+
+    <script src="global/vendor/switchery/switchery.min.js"></script>
+    <script src="global/vendor/intro-js/intro.js"></script>
+    <script src="global/vendor/screenfull/screenfull.js"></script>
+    <script src="global/vendor/slidepanel/jquery-slidePanel.js"></script>
+    <script src="global/vendor/jvectormap/jquery-jvectormap.min.js"></script>
+    <script src="global/vendor/jvectormap/maps/jquery-jvectormap-world-mill-en.js"></script>
+    <script src="global/vendor/matchheight/jquery.matchHeight-min.js"></script>
+    <script src="global/vendor/peity/jquery.peity.min.js"></script>
+    <!-- Scripts -->
+
+    <script src="global/js/core.js"></script>
+    <script src="assets/js/site.js"></script>
+    <script src="assets/js/sections/menu.js"></script>
+    <script src="assets/js/sections/menubar.js"></script>
+    <script src="assets/js/sections/gridmenu.js"></script>
+    <script src="assets/js/sections/sidebar.js"></script>
+    <script src="global/js/configs/config-colors.js"></script>
+    <script src="assets/js/configs/config-tour.js"></script>
+    <script src="global/js/components/asscrollable.js"></script>
+    <script src="global/js/components/animsition.js"></script>
+    <script src="global/js/components/slidepanel.js"></script>
+    <script src="global/js/components/switchery.js"></script>
+    <script src="global/js/components/tabs.js"></script>
+    <script src="global/js/components/matchheight.js"></script>
+    <script src="global/js/components/jvectormap.js"></script>
+    <script src="global/js/components/peity.js"></script>
+    <script src="assets/examples/js/dashboard/v1.js"></script>
+    <script src="assets/js/jquery.mjs.nestedSortable.js" type="text/javascript"></script>
+    <script>
+        $().ready(function() {
+            /*
+            var ns = $('.criterion-list').nestedSortable({
+                forcePlaceholderSize: true,
+                handle: 'div',
+                helper: 'clone',
+                items: 'li',
+                opacity: .6,
+                placeholder: 'placeholder',
+                revert: 250,
+                tabSize: 50,
+                tolerance: 'pointer',
+                toleranceElement: '>     div',
+                maxLevels: 3,
+                isTree: true,
+                expandOnHover: 700,
+                startCollapsed: false,
+                isAllowed: function(placeholder, placeholderParent, currentItem) {
+                    var current_elem_level = 0;
+                    var target_level = 0;
+                    if (placeholderParent != undefined){
+                        target_level = placeholderParent.parents('ol').length;
+                    }
+                    if (currentItem != undefined){
+                        current_elem_level = currentItem.parents('ol').length;
+                    }
+                    if (current_elem_level == 3 && target_level < 2){
+                        return false;
+                    }
+
+                    return true;
+                }
+            }); */
+
+            $('.disclose').attr('title', 'Click to show/hide children');
+
+            $('.disclose, .itemTitle').on('click', function() {
+                $(this).closest('li').toggleClass('mjs-nestedSortable-collapsed').toggleClass('mjs-nestedSortable-expanded');
+                $(this).parent().find('.disclose').toggleClass('ui-icon-plusthick').toggleClass('ui-icon-minusthick');
+            });
+
+        });
+    </script>
+</body>
+</html>

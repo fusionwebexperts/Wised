@@ -6,6 +6,7 @@
 $(document).ready(function($) {
   Site.run();
 
+  /*
   // Widget Linearea One
   // ---------------------
   (function() {
@@ -191,7 +192,7 @@ $(document).ready(function($) {
         }
       }
     });
-  })();
+  })();*/
 
   Waves.attach('.page-content .btn-floating', ['waves-light']);
 });
