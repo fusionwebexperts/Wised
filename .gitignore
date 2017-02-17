@@ -1,0 +1,40 @@
+# Python
+*.pyc
+venv
+.ropeproject
+
+# JS
+*.min.js.map
+
+
+# SASS
+.sass-cache
+*.css.map
+
+# Bower
+_bower_components
+
+# Node
+node_modules
+
+# Eclipse
+.project
+.pydevproject
+
+# PyCharm
+.idea
+
+# Vim
+*.swp
+
+#Temp Files
+*~
+temp
+.swp
+*htpasswd.users
+**/*_deploy
+**/*_deploy.json
+
+#Sublime
+ftpsync.settings
+
