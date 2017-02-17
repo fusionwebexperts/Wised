@@ -1,149 +1,558 @@
-.multisteprange{
-  display: inline-block;
-  width: 100%;
-  float: left;
-  padding-left: 20px;
+
+/* DEFINIR ESCALAS */
+
+.list-criteria-container.show-dialog{
+    opacity: .4;
 }
-
-@mixin rangeThumb {
-  width: 22px;
-  height: 22px;
-  margin: -5px 0  0;
-  border-radius: 50%;
-  background: #fff;
-  cursor: pointer;
-  border: 5px solid #37adbf;
-}
-
-@mixin rangeTrack {
-  width: 100%;
-  height: 10px;
-  cursor: pointer;
-  background: #fff;
-  border-top: 1px solid #ccc;
-  border-bottom: 1px solid #ccc;
-}
-
-.range {
-  position: relative;
-  width: 550px;
-  height: 5px;
-  float: left;
-}
-
-.range input {
-  width: 100%;
-  position: absolute;
-  top: 28px;
-  height: 0;
-  -webkit-appearance: none;
-
-  // Thumb
-  &::-webkit-slider-thumb {
-    -webkit-appearance: none; // needed again for Chrome & Safari
-    @include rangeThumb;
-  }
-
-  &::-moz-range-thumb {
-    @include rangeThumb;
-  }
-
-  &::-ms-thumb {
-    @include rangeThumb;
-  }
-
-  // Track
-  &::-webkit-slider-runnable-track {
-    @include rangeTrack;
-  }
-
-  &::-moz-range-track {
-    @include rangeTrack;
-  }
-
-  &::-ms-track {
-    @include rangeTrack;
-  }
-
-  &:focus { // override outline/background on focus
-    background: none;
-    outline: none;
-  }
-
-  &::-ms-track { // A little somethin' somethin' for IE
+.list-criteria-container.show-dialog:after{
+    content: '';
+    position: absolute;
     width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+.panel-dialog-container{
+    display: none;
+    position: absolute;
+    top: 40px;
+    margin: 15px;
+    background: #fff;
+    width: calc(100% - 60px);
+    min-height: 376px;
+    border: 1px solid #008ec9;
+}
+.panel-dialog-container.show{
+    display: block;
+}
+.panel-dialog-container .headertitle{
+    margin-top: -15px;
+    background: #008ec9;
+    color: #FFF;
+    height: 50px;
+}
+.panel-dialog-container .headertitle h3{
+    color: #FFF;
+    padding: 15px;
+}
+.panel-dialog-container .headertitle span.done{
+    display: block;
+    background: #005A94;
+    padding: 13px 20px;
+    position: absolute;
+    right: 0;
+    top: 0;
     cursor: pointer;
-    background: transparent;
-    border-color: transparent;
-    color: transparent;
+}
+.panel-dialog-container .dialog-breadcrumbs ul{
+    list-style: none;
+    padding: 0;
+    background: #00395B;
+    color: #006692;
+    display: inline-block;
+    width: 100%;
+}
+.panel-dialog-container .dialog-breadcrumbs ul li {
+    float: left;
+    padding: 10px 0;
+    width: calc(100% / 3);
+    text-align: center;
+}
+.panel-dialog-container .dialog-breadcrumbs ul li span{
+    position: relative;
+    display: block;
+    float: left;
+    width: 100%;
+}
+.panel-dialog-container .dialog-breadcrumbs ul li.active{
+    background: #005A94;
+    color: #FFF;
+}
+.panel-dialog-container .dialog-breadcrumbs ul li.active span:after{
+    border-left-color: #005A94;
+}
+.panel-dialog-container .dialog-breadcrumbs ul li:last-child span:before,
+.panel-dialog-container .dialog-breadcrumbs ul li:last-child span:after{
+    display: none;
+}
+.panel-dialog-container .dialog-breadcrumbs ul li span:before{
+    content: " ";
+    display: block;
+    width: 0;
+    height: 0;
+    border-top: 22px solid transparent;
+    border-bottom: 22px solid transparent;
+    border-left: 21px solid #008ec9;
+    position: absolute;
+    top: 50%;
+    margin-top: -22px;
+    margin-left: 1px;
+    left: 100%;
+    z-index: 1;
+}
+.panel-dialog-container .dialog-breadcrumbs ul li span:after{
+    content: " ";
+    display: block;
+    width: 0;
+    height: 0;
+    border-top: 22px solid transparent;
+    border-bottom: 22px solid transparent;
+    border-left: 21px solid hsl(202, 100%, 18%);
+    position: absolute;
+    top: 50%;
+    margin-top: -22px;
+    left: 100%;
+    z-index: 2;
+}
+.panel-footer{
+    position: absolute;
+    margin-top: 50px;
+    margin-bottom: 30px;
+    padding: 0;
+    width: 100%;
+}
+.panel-footer .buttons{
+    width: 100%;
+}
+.panel-footer .buttons a{
+    display: block;
+    background: #292929;
+    color: #fff;
+    padding: 5px 15px;
+    min-width: 85px;
+    text-align: center;
+}
+.panel-footer .buttons a.disabled{
+    background: #6E6E6E;
+}
+.panel-footer .buttons .btn-previous{
+    float: left;
+}
+.panel-footer .buttons .btn-next{
+    float: right;
+}
+.panel-dialog-container .dialog-page{
+    display: none;
+}
+.panel-dialog-container .panel-body{
+    min-height: 280px;
+}
+
+.references-table{
+    margin-top: 15px;
+    display: inline-block;
+    width: 100%;
+}
+.references-table .row{
+    padding: 10px 0;
+    margin: 0;
+    padding: 0;
+    display: inline-flex;
+}
+.references-table ol{
+    list-style: none;
+    width: 100%;
+}
+.references-table ol li{
+    display: block;
+    float: left;
+    width: 100%;
+}
+.references-table ol li.selected:not(.new-ref):not(.edit-ref) .row:not(.add-new-ref) > div:not(.ref-actions){
+    background: #ccc;
+    border-color: #fff;
+}
+.references-table ol li.neutral .row > div:not(.ref-actions){
+    background: #00ACEE;
+    border-color: #fff;
+    color: #fff;
+}
+.references-table ol li.good .row > div:not(.ref-actions){
+    background: #3CA735;
+    border-color: #fff;
+    color: #fff;
+}
+.references-table .ref-sort{
+    width: 25px;
+    float: left;
+    height: 50px;
+}
+.references-table .ref-sort:before{
+  position: absolute;
+  content: '';
+  margin-left: 5px;
+  margin-top: 30px;
+  width: 8px;
+  height: 8px;
+  background-image: url(../images/dragListicon.png);
+}
+.references-table .ref-content{
+    width: calc(100% - 25px);
+    float: left;
+}
+.references-table .ref-description{
+    padding: 10px;
+    border-top: 1px solid #ccc;
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+}
+.references-table .ref-name{
+    text-align: center;
+    border-top: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    font-weight: bold;
+    padding: 25px 0;
+}
+.references-table .ref-actions{
+    padding: 20px 0;
+    font-size: 21px;
+}
+.references-table .row.add-new-ref{
+    margin-left: 25px;
+    width: calc(100% - 25px);
+    float: left;
+}
+.references-table .row.add-new-ref > div{
+    padding: 0;
+    margin: 0;
+}
+.references-table .row.add-new-ref a{
+    border: 1px solid #f07d00;
+    color: #f07d00;
+    display: block;
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+    font-weight: bold;
+    cursor: pointer;
+}
+.references-table .new-ref-template{
+    display: none;
+}
+.references-table ol li textarea{
+    display: none;
+}
+.references-table ol li.new-ref textarea,
+.references-table ol li.edit-ref textarea{
+    width: 100%;
+    height: 80px;
+    border: none;
+    text-align: center;
+    display: block;
+}
+.references-table ol li.new-ref .ref-name,
+.references-table ol li.edit-ref .ref-name {
+    padding: 10px;
+    font-weight: normal;
+}
+.references-table ol li.new-ref .ref-sort:before,
+.references-table ol li.edit-ref .ref-sort:before{
+    display: none;
+}
+.references-table ol li .action-btn.save{
+    display: none;
+}
+.references-table ol li.new-ref .action-btn.save,
+.references-table ol li.edit-ref .action-btn.save{
+    display: block;
+}
+.references-table ol li.new-ref .action-btn.edit,
+.references-table ol li.new-ref .action-btn.delete,
+.references-table ol li.edit-ref .action-btn.edit,
+.references-table ol li.edit-ref .action-btn.delete{
+    display: none;
+}
+.references-table ol li.new-ref span,
+.references-table ol li.edit-ref span{
+    display: none;
+}
+.references-table ol li.placeholder{
+  height: 65px !important;
+}
+
+.ref-definition-buttons{
+    margin-top: 25px;
+    padding-right: 10px;
+    height: 35px;
+}
+.ref-definition-buttons button{
+    float: right;
+    margin: 0 0 0 15px;
+    background: none;
+    border: 1px solid #ccc;
+    color: #757575;
+    padding: 5px 10px 5px 30px;
+}
+.ref-definition-buttons button.disabled{
+    border-color: #e2e1e1;
+    color: #e2e1e1;
+}
+
+#define-scales .start-scoring{
+    padding: 20px 0 0 0;
+}
+#define-scales .start-scoring button{
+    margin: 0 auto;
+    display: block;
+}
+#define-scales.start-scoring{
+  
+  .ref-definition-buttons button,
+  .references-table li:last-child,
+  .references-table .ref-actions,
+  .references-table .ref-sort,
+  .start-scoring button{
+    display: none;
   }
 }
 
-// Labels below slider
-.range-labels {
-  margin: 18px -41px 0;
-  padding: 0;
-  list-style: none;
-  float: left;
-  width: 100%;
-  
-  li {
-    position: relative;
-    float: left;
-    width: 90.25px;
-    text-align: center;
-    color: #b2b2b2;
-    font-size: 14px;
-    cursor: pointer;
+#compare-refs{
+  padding-bottom: 60px;
+      
+  .question-container{
+    display: inline-block;
+    width: 100%;
     
-    &::before {
-      position: absolute;
-      top: 42px;
-      right: 0;
-      left: 0;
-      content: "";
-      margin: 0 auto;
-      width: 15px;
-      height: 15px;
-      background: #fff;
-      border-radius: 50%;
-      border: 1px solid #ccc;
-      z-index: 1000;
+    .questiontitle{
+      text-align: center;
+      
+      h3{
+        color: #009ADD;
+      }
+      span{
+        color: #424242;
+      }
     }
-    &::after {
-      position: absolute;
-      top: 46px;
-      right: 0;
-      left: 0;
-      content: "";
-      margin: 0 auto;
-      width: 18px;
-      height: 8px;
-      background: #fff;
-      z-index: 1001;
+    .question-options{
+      margin: 20px 0;
+      
+      .questionoption{
+        width: 100%;
+        display: inline-block;
+        margin-bottom: 50px;
+        color: #fff;
+        
+        > div{
+          padding: 10px;
+          height: 65px;
+        }
+        
+        &.first{
+          background: #3CA735;
+        }
+        &.second{
+          background: #00ACEE;
+        }
+        
+        .description{
+          width: 75%;
+          float: left;
+        }
+        .name{
+          width: 25%;
+          float: left;
+          border-left: 1px solid #fff;
+          padding-top: 20px;
+          text-align: center;
+        }
+      }
     }
-    &:last-child::after{
-      width: 10px;
-      left:-5px;
+    .question-answers{
+      width: 100%;
+      float: left;
+      min-height: 100px;
+      
+      .options{
+        display: table;
+        margin: 0 auto;
+        
+        input{
+          margin: 0 5px;
+        }
+        a{
+          margin-left: 15px;
+          text-decoration: underline;
+        }
+      }
     }
-    &:first-child::after{
-      width: 10px;
-      left: 5px;
+  }
+  .questions-navigation{
+    button{
+      display: inline;
+      background: #EE7500;
+    }
+    .next-question{
+      float: right;
+    }
+  }
+  .questions-controls{
+    width: calc(100% + 2px);
+    display: block;
+    background: #393939;
+    position: absolute;
+    bottom: -1px;
+    left: -1px;
+    padding: 10px;
+    
+    .use-by-default{
+      float: left;
+      margin-left: 20px;
+      padding-top: 6px;
+      color: #fff;
+    }
+  }
+}
+
+.multisteprange{
+  display: block;
+  width: 700px;
+  padding-left: 20px;
+  margin: 0 auto;
+  min-height: 90px;
+
+
+  @mixin rangeThumb {
+    width: 22px;
+    height: 22px;
+    margin: -5px 0  0;
+    border-radius: 50%;
+    background: #fff;
+    cursor: pointer;
+    border: 5px solid #37adbf;
+  }
+  
+  @mixin rangeTrack {
+    width: 100%;
+    height: 10px;
+    cursor: pointer;
+    background: #fff;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .range {
+    position: relative;
+    width: 550px;
+    height: 5px;
+    float: left;
+  }
+  
+  .range input {
+    width: 100%;
+    position: absolute;
+    top: 28px;
+    height: 0;
+    -webkit-appearance: none;
+  
+    // Thumb
+    &::-webkit-slider-thumb {
+      -webkit-appearance: none; // needed again for Chrome & Safari
+      @include rangeThumb;
+    }
+  
+    &::-moz-range-thumb {
+      @include rangeThumb;
+    }
+  
+    &::-ms-thumb {
+      @include rangeThumb;
+    }
+  
+    // Track
+    &::-webkit-slider-runnable-track {
+      @include rangeTrack;
+    }
+  
+    &::-moz-range-track {
+      @include rangeTrack;
+    }
+  
+    &::-ms-track {
+      @include rangeTrack;
+    }
+  
+    &:focus { // override outline/background on focus
+      background: none;
+      outline: none;
+    }
+  
+    &::-ms-track { // A little somethin' somethin' for IE
+      width: 100%;
+      cursor: pointer;
+      background: transparent;
+      border-color: transparent;
+      color: transparent;
     }
   }
   
-  .active {
-    color: #37adbf;
-  }
-  
-  .selected::before {
-    background: #37adbf;
-  }
-  .selected::after {
-    display: none;
-  }
-  
-  .active.selected::before {
-    display: none;
+  // Labels below slider
+  .range-labels {
+    margin: 18px -41px 0;
+    padding: 0;
+    list-style: none;
+    float: left;
+    width: 100%;
+    
+    li {
+      position: relative;
+      float: left;
+      width: 90.25px;
+      text-align: center;
+      color: #393939;
+      font-size: 14px;
+      cursor: pointer;
+      
+      &::before {
+        position: absolute;
+        top: 42px;
+        right: 0;
+        left: 0;
+        content: "";
+        margin: 0 auto;
+        width: 15px;
+        height: 15px;
+        background: #fff;
+        border-radius: 50%;
+        border: 1px solid #ccc;
+        z-index: 1000;
+      }
+      &::after {
+        position: absolute;
+        top: 46px;
+        right: 0;
+        left: 0;
+        content: "";
+        margin: 0 auto;
+        width: 18px;
+        height: 8px;
+        background: #fff;
+        z-index: 1001;
+      }
+      &:last-child::after{
+        width: 10px;
+        left:-5px;
+      }
+      &:first-child::after{
+        width: 10px;
+        left: 5px;
+      }
+    }
+    
+    .active {
+      color: #37adbf;
+    }
+    
+    .selected::before {
+      background: #37adbf;
+    }
+    .selected::after {
+      display: none;
+    }
+    
+    .active.selected::before {
+      display: none;
+    }
   }
 }

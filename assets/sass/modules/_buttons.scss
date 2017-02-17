@@ -1,0 +1,58 @@
+
+.right-button {
+    float: right;
+}
+.border-button {
+  background: none;
+  border: 1px solid #333;
+  font-size: 12px;
+  font-weight: normal;
+  padding: 8px 15px;
+  
+  &.white{
+      border-color: #fff;
+      color: #fff;
+  }
+}
+.border-button.orange {
+  border-color: #f07d00;
+  color: #f07d00;
+}
+
+.btn-lg {
+    padding: 10px 18px;
+    font-size: 18px;
+    line-height: 1.3333333;
+    border-radius: 0px;
+    width: 200px;
+    height: 45px;
+    font-weight: 500;
+}
+
+.btn-default{
+    display: inline;
+    background: #757575;
+    color: #fff;
+    padding: 5px 15px;
+    min-width: 85px;
+    text-align: center;
+    border: none;
+    
+    &.yellow{
+        background: #EE7500;
+    }
+}
+.btn-default.disabled{
+    background: #C4C4C4 !important;
+    color: #fff !important;
+}
+.btn-default:hover{
+    color: #fff;
+}
+
+.left{
+    float: left;
+}
+.right{
+    float: right;
+}

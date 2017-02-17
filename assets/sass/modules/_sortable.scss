@@ -254,18 +254,9 @@ li.mjs-nestedSortable-collapsed.mjs-nestedSortable-hovering div {
   margin-left: 80px !important;
   width: calc(100% - 80px);
 }
-.criterion-list > li > ol > li.placeholder{
-  /*margin-left: 8% !important;*/
-}
 
 /* LEVEL 3 */
-.criterion-list > li > ol > li > ol > li.placeholder{
-  /*margin-left: 12% !important;*/
-}
-.criterion-list > li > ol > li > ol li div {
-  /*margin-left: 12% !important;*/
-  /*width: calc(100% - 12%); */
-}
+
 .criterion-list > li > ol > li > ol li div:before{
   margin-left: -20px;
 }

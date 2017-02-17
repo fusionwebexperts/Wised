@@ -1,0 +1,176 @@
+/**General Elements login/register/return password/email verification**/
+.site-menubar {
+    padding: 0px 0px;
+    position: fixed;
+    top: 111px;
+}
+.modal{
+    z-index: 99999999999 !important;
+}
+
+pre,
+code {
+    font-size: 12px;
+}
+
+pre {
+    width: 100%;
+    overflow: auto;
+}
+
+small {
+    font-size: 90%;
+}
+
+small code {
+    font-size: 11px;
+}
+.btn-lg {
+    padding: 10px 18px;
+    font-size: 18px;
+    line-height: 1.3333333;
+    border-radius: 0px;
+    width: 140px;
+    height: 45px;
+    font-weight: 500;
+}
+.social {
+    background-color: #2e2a24;
+    height: 50px;
+    padding-top: 3px;
+    padding-left: 10px;
+}
+.socialsign {
+    color: #c9c9c9;
+}
+.btn-primary {
+    color: #fff;
+    background-color: #f07d00;
+    border-color: #f07d00;
+}
+.icon {
+    color: #008ec9;
+}
+span.icontexto {
+    color: #cececd;
+}
+.btn-icon {
+    padding-top: 0px !important;
+}
+.panel {
+    background-color: #009ee3 !important;
+}
+.checkbox-lg label {
+    padding-left: 12px;
+    color: #fff;
+    padding-top: 2px;
+}
+a.pw {
+    color: #fff;
+}
+.form-control {
+    border: 0px solid #e0e0e0;
+    border-radius: 0px;
+}
+label.labelform {
+    float: left;
+    color: #fff;
+}
+.signin {
+    color: #fff;
+    font-size: 18px;
+}
+.lowercase {
+    text-transform: lowercase;
+}
+.bluebold {
+    color: #00608b;
+    font-weight: bolder;
+}
+a.bluebold {
+    text-decoration: underline;
+}
+a.bluebold:hover {
+    color: #fff;
+}
+.logopanel {
+    background-color: #fff;
+}
+img.brand-img {
+    padding: 30px;
+    width: 80%;
+}
+.linkwhite {
+    margin-left: 0px;
+}
+/** Specific Login Page **/
+
+.page-login-v3 form a {
+    margin-left: 0px !important;
+}
+.page-login-v3 span.pw {
+    font-size: 12px !important;
+    color: #fff;
+}
+.page-login-v3 .panel .panel-body {
+    padding: 10px 40px 40px;
+}
+/** Specific register page **/
+
+.page-register-v3 .panel .panel-body {
+    padding: 25px 40px 40px;
+}
+.page-register-v3 form {
+    margin: 25px 0 30px;
+}
+.page-register-v3 .btn-primary {
+    color: #fff;
+    background-color: #f07d00;
+    border-color: #f07d00;
+    float: left;
+}
+.page-register-v3 form a {
+    margin-left: 0px;
+}
+.page-register-v3 .checkbox-custom label {
+    position: relative;
+    display: inline-block;
+    padding-left: 10px;
+    vertical-align: middle;
+    color: #fff;
+}
+.page-register-v3 a.linkwhite {
+    text-decoration: underline;
+    color: #fff;
+}
+a.linkwhite.already {
+    top: 60px;
+    position: relative;
+}
+/** Page Forget password // Verification of Email // Recover Password **/
+
+.titleh4 {
+    COLOR: #fff;
+}
+.subtitlep {
+    color: #fff !important;
+}
+
+
+/* MODALS */
+.modal-content .headertitle{
+  background: #009ee3;
+  padding: 10px 30px;
+  font-size: 22px;
+}
+.modal-content .headertitle h3{
+  color: #fff;
+}
+
+
+/* FORMS */
+.form-group > div{
+    margin: 10px 0;
+}
+
+
