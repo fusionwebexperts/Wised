@@ -406,12 +406,16 @@
 }
 
 .multisteprange{
+  position: relative;
   display: block;
-  width: 700px;
+  width: 850px;
   padding-left: 20px;
   margin: 0 auto;
   min-height: 90px;
-
+  
+  $num_options: 8;
+  $range_width: 620px;
+  $range_paddings: 80px;
 
   @mixin rangeThumb {
     width: 22px;
@@ -434,9 +438,33 @@
   
   .range {
     position: relative;
-    width: 550px;
+    width: $range_width;
     height: 5px;
     float: left;
+    display: none;
+  }
+  .range-line{
+    position: absolute;
+    width: $range_width;
+    height: 10px;
+    float: left;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    top: 63px;
+    
+    &:before{
+      position: absolute;
+      content: '';
+      height: 8px;
+      background: #fff;
+      z-index: 999;
+    }
+    &:after{
+      position: absolute;
+      content: '';
+      height: 8px;
+      background: #37adbf;
+    }
   }
   
   .range input {
@@ -498,7 +526,7 @@
     li {
       position: relative;
       float: left;
-      width: 90.25px;
+      width: ($range_width + $range_paddings) / $num_options;
       text-align: center;
       color: #393939;
       font-size: 14px;
@@ -530,13 +558,38 @@
         background: #fff;
         z-index: 1001;
       }
-      &:last-child::after{
+      &.last:before{
+        left: 3px;
+      }
+      &.last:after{
         width: 10px;
-        left:-5px;
+        left: -5px;
+      }
+      &.isolated:after{
+        width: 0;
+        left: 0;
       }
       &:first-child::after{
         width: 10px;
         left: 5px;
+      }
+      &.isolated{
+        span{
+          position: absolute;
+          top: 40px;
+          left: 55px;
+          width: 63px;
+        }
+      }
+      
+      .interval{
+        position: absolute;
+        background: #ffffff;
+        width: 84px;
+        height: 10px;
+        top: 45px;
+        left: -37px;
+        z-index: 999;
       }
     }
     
@@ -546,13 +599,20 @@
     
     .selected::before {
       background: #37adbf;
+      border-color: transparent;
     }
     .selected::after {
       display: none;
     }
     
     .active.selected::before {
-      display: none;
+      width: 22px;
+      height: 22px;
+      margin-top: -3px;
+      border-radius: 50%;
+      background: #fff;
+      cursor: pointer;
+      border: 5px solid #37adbf;
     }
   }
 }

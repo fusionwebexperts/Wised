@@ -21370,16 +21370,37 @@ td.headsub.first {
       color: #fff; }
 
 .multisteprange {
+  position: relative;
   display: block;
-  width: 700px;
+  width: 850px;
   padding-left: 20px;
   margin: 0 auto;
   min-height: 90px; }
   .multisteprange .range {
     position: relative;
-    width: 550px;
+    width: 620px;
     height: 5px;
-    float: left; }
+    float: left;
+    display: none; }
+  .multisteprange .range-line {
+    position: absolute;
+    width: 620px;
+    height: 10px;
+    float: left;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    top: 63px; }
+    .multisteprange .range-line:before {
+      position: absolute;
+      content: '';
+      height: 8px;
+      background: #fff;
+      z-index: 999; }
+    .multisteprange .range-line:after {
+      position: absolute;
+      content: '';
+      height: 8px;
+      background: #37adbf; }
   .multisteprange .range input {
     width: 100%;
     position: absolute;
@@ -21450,7 +21471,7 @@ td.headsub.first {
     .multisteprange .range-labels li {
       position: relative;
       float: left;
-      width: 90.25px;
+      width: 87.5px;
       text-align: center;
       color: #393939;
       font-size: 14px;
@@ -21479,20 +21500,45 @@ td.headsub.first {
         height: 8px;
         background: #fff;
         z-index: 1001; }
-      .multisteprange .range-labels li:last-child::after {
+      .multisteprange .range-labels li.last:before {
+        left: 3px; }
+      .multisteprange .range-labels li.last:after {
         width: 10px;
         left: -5px; }
+      .multisteprange .range-labels li.isolated:after {
+        width: 0;
+        left: 0; }
       .multisteprange .range-labels li:first-child::after {
         width: 10px;
         left: 5px; }
+      .multisteprange .range-labels li.isolated span {
+        position: absolute;
+        top: 40px;
+        left: 55px;
+        width: 63px; }
+      .multisteprange .range-labels li .interval {
+        position: absolute;
+        background: #ffffff;
+        width: 84px;
+        height: 10px;
+        top: 45px;
+        left: -37px;
+        z-index: 999; }
     .multisteprange .range-labels .active {
       color: #37adbf; }
     .multisteprange .range-labels .selected::before {
-      background: #37adbf; }
+      background: #37adbf;
+      border-color: transparent; }
     .multisteprange .range-labels .selected::after {
       display: none; }
     .multisteprange .range-labels .active.selected::before {
-      display: none; }
+      width: 22px;
+      height: 22px;
+      margin-top: -3px;
+      border-radius: 50%;
+      background: #fff;
+      cursor: pointer;
+      border: 5px solid #37adbf; }
 
 a.iconestatic {
   color: #9e9e9e;
