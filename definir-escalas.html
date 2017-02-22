@@ -604,7 +604,7 @@
                                             </ol>
                                         </div>
                                         <div class="start-scoring">
-                                            <button class="btn-default disabled">Start Scoring</button>
+                                            <button class="btn-action disabled">Start Scoring</button>
                                         </div>
                                     </div>
                                     <div id="compare-refs" class="dialog-page">
@@ -652,19 +652,18 @@
                                                     </ul>
                                                     <div class="range-line"></div>
                                                     <div class="range">
-                                                      <input type="range" min="1" max="8" steps="1" value="1">
+                                                      <input type="text" name="range-input" value="1">
                                                     </div>
                                                 </div>
                                                 <div class="options">
                                                     <input type="checkbox" name="add-variant"/>
                                                     <label>Adicionar variante</label>
-                                                    <a href="">Limpar valores</a>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="questions-navigation">
-                                            <button class="previous-question btn-default disabled">Pergunta anterior</button>
-                                            <button class="next-question btn-default">Pergunta seguinte</button>
+                                            <button class="previous-question btn-action disabled">Pergunta anterior</button>
+                                            <button class="next-question btn-action">Pergunta seguinte</button>
                                         </div>
                                         <div class="questions-controls">
                                             <buton class="border-button white left">View table mode</buton>
@@ -672,7 +671,7 @@
                                                 <input type="checkbox"/>
                                                 <label>Use by default</label>
                                             </div>
-                                            <buton class="btn-default yellow right">Get Scale</buton>
+                                            <buton class="btn-action yellow right">Get Scale</buton>
                                         </div>
                                     </div>
                                     
@@ -783,8 +782,8 @@
                         var style = '';
             
                         var cur_label = $('.range-labels').find('li:nth-child(' + index + ')');
-                      
-                        if (self._multiple_steps === true){
+                        
+                        if (self._multiple_steps === true && index > 1 && index < 8){
                             var old_first_index = $('.range-labels li.active').first().index() + 1;
                             var old_last_index = $('.range-labels li.active').last().index() + 1;
                             var new_first_index = 1;
@@ -828,24 +827,26 @@
                           
                             style += '.range-line:after {width: '+ last_index_width +'px;}';
                             style += '.range-line:before {width: '+ first_index_width +'px;}';
+                            
+                            $rangeInput.val(new_first_index + ',' + new_last_index);
                         } else {
                             $('.range-labels li').removeClass('active selected');
                             cur_label.addClass('active selected');
+                            
+                            if(index === 1 || index === 8){
+                                $('input[name=add-variant]').prop('checked', false);
+                                self._multiple_steps = false;
+                            }
+                            $rangeInput.val(index);
                         }
                     
                         return style;
                     }
                     
-                    $rangeInput.on('input', function () {
-                      sheet.textContent = getTrackStyle(this);
-                    });
-                    
                     // Change input value on label click
                     $('.range-labels li').on('click', function () {
                       var index = $(this).index();
-                    
                       sheet.textContent = getTrackStyle(index + 1);
-                      //$rangeInput.val(index + 1).trigger('input');
                       
                     });
                 };
@@ -894,6 +895,14 @@
                             });
                         });
                     }, 1000);   
+                    
+                };
+                
+                FactorDialogPage.prototype.changeQuestion = function($button) {
+                    var self = this;
+                    
+                    //if ($button.hasClass('disabled'))
+                    //    return false;
                     
                 };
                 

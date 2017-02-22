@@ -20442,7 +20442,7 @@ h4.example-title {
   height: 45px;
   font-weight: 500; }
 
-.btn-default {
+.btn-action {
   display: inline;
   background: #757575;
   color: #fff;
@@ -20450,14 +20450,14 @@ h4.example-title {
   min-width: 85px;
   text-align: center;
   border: none; }
-  .btn-default.yellow {
+  .btn-action.yellow {
     background: #EE7500; }
 
-.btn-default.disabled {
+.btn-action.disabled {
   background: #C4C4C4 !important;
   color: #fff !important; }
 
-.btn-default:hover {
+.btn-action:hover {
   color: #fff; }
 
 .left {
@@ -20846,12 +20846,12 @@ ul.jqtree-tree li.jqtree-selected > .jqtree-element:hover {
 .factornext button {
   margin-right: 0; }
 
-.table {
+.submenu .table {
   width: 97%;
   max-width: 100%;
   margin-bottom: 22px; }
 
-td.headsub {
+.submenu td.headsub {
   padding-top: 5%;
   font-weight: 400;
   padding-bottom: 5%;
@@ -21911,37 +21911,37 @@ span.chevronstatus {
 
 .buttonmodelcompleted {
   width: 200px;
-  background-color: #3CA735;
+  background-color: #3CA735 !important;
   border: 0px;
   border-radius: 0px; }
 
 .buttonmodelevaluation {
   width: 200px;
-  background-color: #FF7E00;
+  background-color: #FF7E00 !important;
   border: 0px;
   border-radius: 0px; }
 
 .buttonmodeleapproved {
   width: 200px;
-  background-color: #00A1F3;
+  background-color: #00A1F3 !important;
   border: 0px;
   border-radius: 0px; }
 
 .buttonmodelonprocess {
   width: 200px;
-  background-color: #FFC900;
+  background-color: #FFC900 !important;
   border: 0px;
   border-radius: 0px; }
 
 .buttonmodelcompleted.task {
   width: 120px;
-  background-color: #3CA735;
+  background-color: #3CA735 !important;
   border: 0px;
   border-radius: 0px; }
 
 .buttonmodelactive.task {
   width: 120px;
-  background-color: #FF7E00;
+  background-color: #FF7E00 !important;
   border: 0px;
   border-radius: 0px; }
 
@@ -22196,58 +22196,6 @@ ul.dropdown-menu.dropdown-menu-right {
     padding-left: 0px !important;
     padding-right: 0px !important;
     top: 10px; } }
-@media (max-width: 1300px) {
-  .buttonsize {
-    width: 32%;
-    left: 0%;
-    position: relative;
-    padding-left: 4% !important; }
-
-  .buttonmodelcompleted {
-    width: 150px;
-    background-color: #3CA735;
-    border: 0px;
-    border-radius: 0px; }
-
-  .buttonmodelevaluation {
-    width: 150px;
-    background-color: #FF7E00;
-    border: 0px;
-    border-radius: 0px; }
-
-  .buttonmodeleapproved {
-    width: 150px;
-    background-color: #00A1F3;
-    border: 0px;
-    border-radius: 0px; }
-
-  .buttonmodelonprocess {
-    width: 150px;
-    background-color: #FFC900;
-    border: 0px;
-    border-radius: 0px; }
-
-  .buttonmodelcompleted.task {
-    width: 120px;
-    background-color: #3CA735;
-    border: 0px;
-    border-radius: 0px; }
-
-  .buttonmodelactive.task {
-    width: 120px;
-    background-color: #FF7E00;
-    border: 0px;
-    border-radius: 0px; }
-
-  body.dashboard.site-menubar-fold .buttonsize {
-    padding-left: 10% !important; }
-
-  body.dashboard.site-menubar-fold .panel-title {
-    display: block;
-    padding: 60px 0px; }
-
-  .buttonsize.task {
-    width: 18%; } }
 /**General Elements login/register/return password/email verification**/
 .site-menubar {
   padding: 0px 0px;

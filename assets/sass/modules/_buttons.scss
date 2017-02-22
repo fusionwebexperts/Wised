@@ -29,7 +29,7 @@
     font-weight: 500;
 }
 
-.btn-default{
+.btn-action{
     display: inline;
     background: #757575;
     color: #fff;
@@ -42,11 +42,11 @@
         background: #EE7500;
     }
 }
-.btn-default.disabled{
+.btn-action.disabled{
     background: #C4C4C4 !important;
     color: #fff !important;
 }
-.btn-default:hover{
+.btn-action:hover{
     color: #fff;
 }
 
