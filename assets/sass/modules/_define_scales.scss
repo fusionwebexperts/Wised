@@ -270,6 +270,7 @@
 }
 .references-table ol li.placeholder{
   height: 65px !important;
+  background: #eee;
 }
 
 .ref-definition-buttons{
@@ -304,7 +305,7 @@
   .references-table .ref-actions,
   .references-table .ref-sort,
   .start-scoring button{
-    display: none;
+    display: none !important;
   }
 }
 
@@ -401,6 +402,51 @@
       margin-left: 20px;
       padding-top: 6px;
       color: #fff;
+    }
+  }
+}
+
+a.show-matrix-table{
+  color: #ef7c00;
+  text-decoration: underline;
+  
+  i{
+    float: right;
+    font-size: 20px;
+    margin-top: -8px;
+  }
+}
+.matrix-table{
+  
+  table{
+    margin: 0 auto;
+    margin-top: 30px;
+    
+    thead{
+      th{
+        border: none;
+        font-weight: bold;
+      }
+    }
+    tbody{
+      
+    }
+    th, td{
+      padding: 5px;
+      text-align: center;
+      border: 1px solid #eee;
+      min-width: 120px;
+      
+      &.featured{
+        font-weight: bold;
+        background: #eee;
+      }
+      &.transparent{
+        border: none;
+      }
+    }
+    tr{
+      
     }
   }
 }

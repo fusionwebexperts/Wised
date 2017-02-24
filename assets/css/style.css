@@ -21271,7 +21271,8 @@ td.headsub.first {
   display: none; }
 
 .references-table ol li.placeholder {
-  height: 65px !important; }
+  height: 65px !important;
+  background: #eee; }
 
 .ref-definition-buttons {
   margin-top: 25px;
@@ -21302,7 +21303,7 @@ td.headsub.first {
 #define-scales.start-scoring .references-table .ref-actions,
 #define-scales.start-scoring .references-table .ref-sort,
 #define-scales.start-scoring .start-scoring button {
-  display: none; }
+  display: none !important; }
 
 #compare-refs {
   padding-bottom: 60px; }
@@ -21368,6 +21369,31 @@ td.headsub.first {
       margin-left: 20px;
       padding-top: 6px;
       color: #fff; }
+
+a.show-matrix-table {
+  color: #ef7c00;
+  text-decoration: underline; }
+  a.show-matrix-table i {
+    float: right;
+    font-size: 20px;
+    margin-top: -8px; }
+
+.matrix-table table {
+  margin: 0 auto;
+  margin-top: 30px; }
+  .matrix-table table thead th {
+    border: none;
+    font-weight: bold; }
+  .matrix-table table th, .matrix-table table td {
+    padding: 5px;
+    text-align: center;
+    border: 1px solid #eee;
+    min-width: 120px; }
+    .matrix-table table th.featured, .matrix-table table td.featured {
+      font-weight: bold;
+      background: #eee; }
+    .matrix-table table th.transparent, .matrix-table table td.transparent {
+      border: none; }
 
 .multisteprange {
   position: relative;
