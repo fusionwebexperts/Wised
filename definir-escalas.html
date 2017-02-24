@@ -479,11 +479,12 @@
                                     <ul>
                                         <li class="active" page="define-scales"><span>1. Definir Escalas</span></li>
                                         <li page="compare-refs"><span>2. Comparar Referências</span></li>
-                                        <li><span>3. Obter Escala</span></li>
+                                        <li page="obtain-scale"><span>3. Obter Escala</span></li>
                                     </ul>
                                 </div>
                                 <div class="panel-body container-fluid">
                                     
+                                    <!-- DEFINE SCALES -->
                                     <div id="define-scales" class="dialog-page">
                                         <div class="row">
                                             <div class="col-md-12">
@@ -604,9 +605,44 @@
                                             </ol>
                                         </div>
                                         <div class="start-scoring">
-                                            <button class="btn-action disabled">Start Scoring</button>
+                                            <a class="left show-matrix-table">Show Matrix Table<i class="mdi mdi-menu-up"></i></a>
+                                            <button class="btn-action disabled right">Start Scoring</button>
+                                        </div>
+                                        <div class="matrix-table">
+                                            <table>
+                                                <thead>
+                                                    <tr>
+                                                        <th></th>
+                                                        <th>Windows</th>
+                                                        <th>Android</th>
+                                                        <th>Opção 4</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td class="featured">IOS</td>
+                                                        <td>Extremo</td>
+                                                        <td>Muito Fraco</td>
+                                                        <td>Forte</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="transparent"></td>
+                                                        <td class="featured">Windows</td>
+                                                        <td>Extremo</td>
+                                                        <td>-</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="transparent"></td>
+                                                        <td class="transparent"></td>
+                                                        <td class="featured">Android</td>
+                                                        <td>Muito Forte</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
                                         </div>
                                     </div>
+                                    
+                                    <!-- COMPARE REFS-->
                                     <div id="compare-refs" class="dialog-page">
                                         <div class="question-container">
                                             <div class="questiontitle">
@@ -633,9 +669,6 @@
                                             </div>
                                             <div class="question-answers">
                                                 
-                                                <!-- http://codepen.io/trevanhetzel/pen/rOVrGK 
-                                                     http://codepen.io/anon/pen/ygwVJj
-                                                -->
                                                 <div class="multisteprange">
                                                     <ul class="range-labels">
                                                       <li class="active selected">Indiferente</li>
@@ -666,12 +699,29 @@
                                             <button class="next-question btn-action">Pergunta seguinte</button>
                                         </div>
                                         <div class="questions-controls">
-                                            <buton class="border-button white left">View table mode</buton>
+                                            <buton class="border-button white left" id="view-table-mode">View table mode</buton>
                                             <div class="use-by-default">
                                                 <input type="checkbox"/>
                                                 <label>Use by default</label>
                                             </div>
-                                            <buton class="btn-action yellow right">Get Scale</buton>
+                                            <buton id="get-scale" class="btn-action yellow right">Get Scale</buton>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- OBTAIN SCALE -->
+                                    <div id="obtain-scale" class="dialog-page">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce augue orci, imperdiet ut tincidunt quis, molestie quis odio. Sed convallis, nibh ut fermentum aliquet, felis odio finibus nulla, sed accumsan lacus magna id turpis.</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-5">
+                                                
+                                            </div>
+                                            <div class="col-md-7">
+                                                <canvas id="lineChart" width="400" height="250"></canvas>
+                                            </div>
                                         </div>
                                     </div>
                                     
@@ -730,6 +780,7 @@
     <script src="global/js/components/peity.js"></script>
     <script src="assets/examples/js/dashboard/v1.js"></script>
     <script src="assets/js/jquery.mjs.nestedSortable.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
     <script>
         $().ready(function() {
             
@@ -739,12 +790,46 @@
                 $(this).parent().find('.disclose').toggleClass('ui-icon-plusthick').toggleClass('ui-icon-minusthick');
             });
             
+            var data = {
+                labels: ["January", "February", "March", "April", "May", "June", "July"],
+                datasets: [
+                    {
+                        label: "My First dataset",
+                        fill: false,
+                        lineTension: 0.1,
+                        backgroundColor: "rgba(75,192,192,0.4)",
+                        borderColor: "rgba(75,192,192,1)",
+                        borderCapStyle: 'butt',
+                        borderDash: [],
+                        borderDashOffset: 0.0,
+                        borderJoinStyle: 'miter',
+                        pointBorderColor: "rgba(75,192,192,1)",
+                        pointBackgroundColor: "#fff",
+                        pointBorderWidth: 1,
+                        pointHoverRadius: 5,
+                        pointHoverBackgroundColor: "rgba(75,192,192,1)",
+                        pointHoverBorderColor: "rgba(220,220,220,1)",
+                        pointHoverBorderWidth: 2,
+                        pointRadius: 1,
+                        pointHitRadius: 10,
+                        data: [65, 59, 80, 81, 56, 55, 40],
+                        spanGaps: false,
+                    }
+                ]
+            };
+            
+            var myLineChart = new Chart($("#lineChart"), {
+                type: 'line',
+                data: data,
+                options: []
+            });
             
             var FactorDialogPage;
             FactorDialogPage = (function(){
                 function FactorDialogPage(){
                     this.current_page = 'define-scales';
                     //this.current_page = 'compare-refs';
+                    //this.current_page = 'obtain-scale';
                     this._initEventHandlers();
                     this._initRangeInput();
                     this._multiple_steps = false;
@@ -766,6 +851,14 @@
                     
                     $('input[name=add-variant]').on('change', function() {
                         self._multiple_steps = $(this).is(':checked');
+                    });
+                    
+                    $('#view-table-mode').on('click', function() {
+                       self.showTableMode($(this)); 
+                    });
+                    
+                    $('#get-scale').on('click', function() {
+                       self.obtainScale($(this)); 
                     });
                 };
                 
@@ -889,6 +982,7 @@
                                 $(".references-table li:visible:first").css('margin-bottom', '80px');
                                 
                                 setTimeout(function() {
+                                    
                                     self.current_page = 'compare-refs';
                                     self.refreshPage();
                                 }, 1000);
@@ -904,6 +998,28 @@
                     //if ($button.hasClass('disabled'))
                     //    return false;
                     
+                };
+                
+                FactorDialogPage.prototype.showTableMode = function($button) {
+                    var self = this;
+                    
+                    self.current_page = 'define-scales';
+                    self.refreshPage();
+                    
+                    setTimeout(function() {   
+                        $(".references-table li:visible").css('margin-bottom', '0');
+                        $(".references-table li:not(.placeholder):not(.new-ref-template)").fadeTo('slow', 1, function(){
+                            $('#define-scales').removeClass('start-scoring');
+                        });
+                    }, 1000);
+                    
+                };
+                
+                FactorDialogPage.prototype.obtainScale = function($button) {
+                    var self = this;
+                    
+                    self.current_page = 'obtain-scale';
+                    self.refreshPage();
                 };
                 
                 return FactorDialogPage;
