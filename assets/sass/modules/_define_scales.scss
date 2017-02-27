@@ -106,13 +106,15 @@
 }
 .panel-footer{
     position: absolute;
-    margin-top: 50px;
+    margin-top: 0;
     margin-bottom: 30px;
     padding: 0;
     width: 100%;
 }
 .panel-footer .buttons{
     width: 100%;
+    margin-top: 50px;
+    display: inline-block;
 }
 .panel-footer .buttons a{
     display: block;
@@ -291,21 +293,72 @@
     color: #e2e1e1;
 }
 
-#define-scales .start-scoring{
+#define-scales .start-scoring-container{
     padding: 20px 0 0 0;
+    
+    a.show-matrix-table{
+      color: #ef7c00;
+      text-decoration: underline;
+      display: none;
+      
+      i{
+        float: right;
+        font-size: 20px;
+        margin-top: -8px;
+      }
+    }
+    
 }
-#define-scales .start-scoring button{
+#define-scales .start-scoring-container button{
     margin: 0 auto;
     display: block;
 }
-#define-scales.start-scoring{
+#define-scales{
   
-  .ref-definition-buttons button,
-  .references-table li:last-child,
-  .references-table .ref-actions,
-  .references-table .ref-sort,
-  .start-scoring button{
-    display: none !important;
+  &.start-scoring{
+  
+    .ref-definition-buttons button,
+    .references-table li:last-child,
+    .references-table .ref-actions,
+    .references-table .ref-sort,
+    .start-scoring button{
+      display: none !important;
+    }
+    
+    .references-table .ref-name{
+      width: 25% !important;
+    }
+  }
+  
+  &.matrix-table-mode{
+    .ref-definition-buttons button,
+    .references-table .ref-actions,
+    .references-table .ref-sort{
+      display: none !important;
+    }
+    
+    .references-table .ref-name{
+      width: 25% !important;
+    }
+    .references-table .add-new-ref{
+      margin: 0;
+      
+      > div{
+        width: 100% !important;
+      }
+    }
+    
+    .start-scoring-container{
+      a.show-matrix-table{
+        display: block;
+      }
+      button{
+        float: right;
+      }
+    }
+    .matrix-table{
+      display: block;
+    }
   }
 }
 
@@ -331,13 +384,13 @@
       
       .questionoption{
         width: 100%;
-        display: inline-block;
+        display: inline-flex;
         margin-bottom: 50px;
         color: #fff;
         
         > div{
           padding: 10px;
-          height: 65px;
+          min-height: 65px;
         }
         
         &.first{
@@ -388,35 +441,24 @@
       float: right;
     }
   }
-  .questions-controls{
-    width: calc(100% + 2px);
-    display: block;
-    background: #393939;
-    position: absolute;
-    bottom: -1px;
-    left: -1px;
-    padding: 10px;
-    
-    .use-by-default{
-      float: left;
-      margin-left: 20px;
-      padding-top: 6px;
-      color: #fff;
-    }
+}
+.painel-controls{
+  width: calc(100% + 2px);
+  background: #393939;
+  padding: 10px;
+  float: left;
+  display: none;
+  
+  .use-by-default{
+    float: left;
+    margin-left: 20px;
+    padding-top: 6px;
+    color: #fff;
   }
 }
 
-a.show-matrix-table{
-  color: #ef7c00;
-  text-decoration: underline;
-  
-  i{
-    float: right;
-    font-size: 20px;
-    margin-top: -8px;
-  }
-}
 .matrix-table{
+  display: none;
   
   table{
     margin: 0 auto;
@@ -429,7 +471,13 @@ a.show-matrix-table{
       }
     }
     tbody{
-      
+      td:hover{
+        cursor: pointer;
+        font-weight: bold;
+      }
+      td.active{
+        color: #3CA735;
+      }
     }
     th, td{
       padding: 5px;
@@ -440,9 +488,17 @@ a.show-matrix-table{
       &.featured{
         font-weight: bold;
         background: #eee;
+        
+        &:hover{
+          cursor: initial;
+        }
       }
       &.transparent{
         border: none;
+        
+        &:hover{
+          cursor: initial;
+        }
       }
     }
     tr{

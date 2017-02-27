@@ -604,10 +604,11 @@
                                                 </li>
                                             </ol>
                                         </div>
-                                        <div class="start-scoring">
+                                        <div class="start-scoring-container">
                                             <a class="left show-matrix-table">Show Matrix Table<i class="mdi mdi-menu-up"></i></a>
-                                            <button class="btn-action disabled right">Start Scoring</button>
+                                            <button class="btn-start-scoring btn-action disabled">Start Scoring</button>
                                         </div>
+                                        
                                         <div class="matrix-table">
                                             <table>
                                                 <thead>
@@ -640,6 +641,7 @@
                                                 </tbody>
                                             </table>
                                         </div>
+                                        
                                     </div>
                                     
                                     <!-- COMPARE REFS-->
@@ -698,14 +700,6 @@
                                             <button class="previous-question btn-action disabled">Pergunta anterior</button>
                                             <button class="next-question btn-action">Pergunta seguinte</button>
                                         </div>
-                                        <div class="questions-controls">
-                                            <buton class="border-button white left" id="view-table-mode">View table mode</buton>
-                                            <div class="use-by-default">
-                                                <input type="checkbox"/>
-                                                <label>Use by default</label>
-                                            </div>
-                                            <buton id="get-scale" class="btn-action yellow right">Get Scale</buton>
-                                        </div>
                                     </div>
                                     
                                     <!-- OBTAIN SCALE -->
@@ -717,16 +711,24 @@
                                         </div>
                                         <div class="row">
                                             <div class="col-md-5">
-                                                
+                                                <canvas id="bubbleChart" width="250" height="250"></canvas>
                                             </div>
                                             <div class="col-md-7">
-                                                <canvas id="lineChart" width="400" height="250"></canvas>
+                                                <canvas id="lineChart" width="400" height="300"></canvas>
                                             </div>
                                         </div>
                                     </div>
                                     
                                 </div>
                                 <div class="panel-footer">
+                                    <div class="painel-controls">
+                                        <buton class="border-button white left" id="view-table-mode">View table mode</buton>
+                                        <div class="use-by-default">
+                                            <input type="checkbox"/>
+                                            <label>Use by default</label>
+                                        </div>
+                                        <buton id="get-scale" class="btn-action yellow right">Get Scale</buton>
+                                    </div>
                                     <div class="buttons">
                                         <a class="btn-previous disabled">Previous</a>
                                         <a class="btn-next">Next</a>
@@ -780,7 +782,8 @@
     <script src="global/js/components/peity.js"></script>
     <script src="assets/examples/js/dashboard/v1.js"></script>
     <script src="assets/js/jquery.mjs.nestedSortable.js" type="text/javascript"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+    <script src="assets/js/charts.js"></script>
     <script>
         $().ready(function() {
             
@@ -790,43 +793,11 @@
                 $(this).parent().find('.disclose').toggleClass('ui-icon-plusthick').toggleClass('ui-icon-minusthick');
             });
             
-            var data = {
-                labels: ["January", "February", "March", "April", "May", "June", "July"],
-                datasets: [
-                    {
-                        label: "My First dataset",
-                        fill: false,
-                        lineTension: 0.1,
-                        backgroundColor: "rgba(75,192,192,0.4)",
-                        borderColor: "rgba(75,192,192,1)",
-                        borderCapStyle: 'butt',
-                        borderDash: [],
-                        borderDashOffset: 0.0,
-                        borderJoinStyle: 'miter',
-                        pointBorderColor: "rgba(75,192,192,1)",
-                        pointBackgroundColor: "#fff",
-                        pointBorderWidth: 1,
-                        pointHoverRadius: 5,
-                        pointHoverBackgroundColor: "rgba(75,192,192,1)",
-                        pointHoverBorderColor: "rgba(220,220,220,1)",
-                        pointHoverBorderWidth: 2,
-                        pointRadius: 1,
-                        pointHitRadius: 10,
-                        data: [65, 59, 80, 81, 56, 55, 40],
-                        spanGaps: false,
-                    }
-                ]
-            };
-            
-            var myLineChart = new Chart($("#lineChart"), {
-                type: 'line',
-                data: data,
-                options: []
-            });
             
             var FactorDialogPage;
             FactorDialogPage = (function(){
-                function FactorDialogPage(){
+                function FactorDialogPage(config){
+                    this._define_scales_handler = config.define_scales;
                     this.current_page = 'define-scales';
                     //this.current_page = 'compare-refs';
                     //this.current_page = 'obtain-scale';
@@ -845,7 +816,7 @@
                        self.hideDialog();
                     });
                     
-                    $('.start-scoring button').on('click', function() {
+                    $('.btn-start-scoring').on('click', function() {
                        self.startScoring($(this)); 
                     });
                     
@@ -859,6 +830,14 @@
                     
                     $('#get-scale').on('click', function() {
                        self.obtainScale($(this)); 
+                    });
+                    
+                    $('.btn-previous').on('click', function() {
+                       self.gotoPreviousPage($(this)); 
+                    });
+                    
+                    $('.btn-next').on('click', function() {
+                       self.gotoNextPage($(this)); 
                     });
                 };
                 
@@ -964,8 +943,41 @@
                     $('.dialog-breadcrumbs ul li').removeClass('active');
                     $('.dialog-breadcrumbs ul li[page=' + self.current_page + ']').addClass('active');
                     
-                    $('.panel-dialog-container .dialog-page:not(#' + self.current_page + ')').fadeOut(300, function() {
+                    self._define_scales_handler.destroySortable();
+                    
+                    $.when($('.panel-dialog-container .dialog-page:not(#' + self.current_page + ')').fadeOut(500)).then(function() {
                         $('.dialog-page#' + self.current_page).fadeIn();
+                        
+                        if (self.current_page == 'define-scales'){
+                            $(".references-table li:visible").css('margin-bottom', '0');
+                            $(".references-table li:not(.placeholder):not(.new-ref-template)").fadeTo(100, 1);
+                            
+                            self._define_scales_handler.initSortable();
+                            $('#define-scales').attr('class', 'dialog-page');
+                            $('.painel-controls').hide();
+                            
+                        } else if (self.current_page == 'compare-refs'){
+                            $('.painel-controls').show();
+                            
+                        } else if (self.current_page == 'obtain-scale'){
+                            $('.painel-controls').show();
+                            
+                        }
+                        
+                        $('html, body').animate({
+                            scrollTop: $(".panel-dialog-container").offset().top - 150
+                        }, 1000);
+                        
+                        
+                        $('.btn-previous').removeClass('disabled');
+                        $('.btn-next').removeClass('disabled');
+                        if ($('.dialog-breadcrumbs ul li.active').prev().length == 0){
+                            $('.btn-previous').addClass('disabled');
+                        }
+                        if ($('.dialog-breadcrumbs ul li.active').next().length == 0){
+                            $('.btn-next').addClass('disabled');
+                        }
+                        
                     });
                 };
                 
@@ -977,8 +989,8 @@
                     
                     $('#define-scales').addClass('start-scoring');
                     setTimeout(function() {
-                        $(".references-table li:visible:not(:first):not(:last)").fadeTo( "slow" , 0.4, function() {
-                            $(".references-table li:visible:not(:first):not(:last)").fadeOut(500, function(){
+                        $.when($(".references-table li:visible:not(:first):not(:last)").fadeTo( "slow" , 0.4)).then(function() {
+                            $.when($(".references-table li:visible:not(:first):not(:last)").fadeOut(500)).then(function(){
                                 $(".references-table li:visible:first").css('margin-bottom', '80px');
                                 
                                 setTimeout(function() {
@@ -1006,10 +1018,17 @@
                     self.current_page = 'define-scales';
                     self.refreshPage();
                     
+                    $('.dialog-breadcrumbs ul li').removeClass('active');
+                    $('.dialog-breadcrumbs ul li[page=compare-refs]').addClass('active');
+                    
                     setTimeout(function() {   
                         $(".references-table li:visible").css('margin-bottom', '0');
-                        $(".references-table li:not(.placeholder):not(.new-ref-template)").fadeTo('slow', 1, function(){
+                        $.when($(".references-table li:not(.placeholder):not(.new-ref-template)").fadeTo('slow', 1)).then(function(){
                             $('#define-scales').removeClass('start-scoring');
+                            $('#define-scales').addClass('matrix-table-mode');
+                            $('.painel-controls').show();
+                            
+                            self._define_scales_handler.destroySortable();
                         });
                     }, 1000);
                     
@@ -1022,10 +1041,32 @@
                     self.refreshPage();
                 };
                 
+                FactorDialogPage.prototype.gotoNextPage = function($button) {
+                    var self = this;
+                    
+                    if ($button.hasClass('disabled'))
+                        return false;
+                    
+                    var $next = $('.dialog-breadcrumbs ul li.active').next();
+                    self.current_page = $next.attr('page');
+                    self.refreshPage();
+                    
+                };
+                
+                FactorDialogPage.prototype.gotoPreviousPage = function($button) {
+                    var self = this;
+                    
+                    if ($button.hasClass('disabled'))
+                        return false;
+                        
+                    var $previous = $('.dialog-breadcrumbs ul li.active').prev();
+                    self.current_page = $previous.attr('page');
+                    self.refreshPage();
+                    
+                };
+                
                 return FactorDialogPage;
             })();
-            var factor_dialog_page = new FactorDialogPage();
-            
             
             
             
@@ -1034,10 +1075,9 @@
                 function DefineScalesPage(){
                     this.status = 'list';
                     this._initEventHandlers();
-                    this._initSortable();
                 };
                 
-                DefineScalesPage.prototype._initSortable = function(){
+                DefineScalesPage.prototype.initSortable = function(){
                     var self = this;
                     this._sortable = $('.references-table > ol').nestedSortable({
                         forcePlaceholderSize: true,
@@ -1049,6 +1089,13 @@
                         expandOnHover: 700,
                         isAllowed: self._isAllowedToSort
                     });
+                };
+                
+                DefineScalesPage.prototype.destroySortable = function(){
+                    var self = this;
+                    if ($('.references-table > ol').data('mjsNestedSortable') !== undefined){
+                        $('.references-table > ol').nestedSortable('destroy');    
+                    }
                 };
                 
                 DefineScalesPage.prototype._initEventHandlers = function() {
@@ -1088,6 +1135,13 @@
                     $('body').on('click', 'button.define-good', function(){
                         self._selectGoodRow($(this));
                     });
+                    
+                    $('body').on('click', '.matrix-table td', function(){
+                        if ($(this).hasClass('featured') === false){
+                            $(this).toggleClass('active');
+                        }
+                    });
+                    
                 };
                 
                 DefineScalesPage.prototype._addNewReference = function() {
@@ -1285,7 +1339,14 @@
                 
                 return DefineScalesPage;
             })();
-            var define_scales_pagehandler = new DefineScalesPage();
+            
+            /* INITIALIZATIONS OF PAGES */
+            
+            var define_scales_dialoghandler = new DefineScalesPage();
+            
+            var factor_dialog_page = new FactorDialogPage({
+                define_scales: define_scales_dialoghandler
+            });
 
         });
     </script>

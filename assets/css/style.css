@@ -21109,13 +21109,15 @@ td.headsub.first {
 
 .panel-footer {
   position: absolute;
-  margin-top: 50px;
+  margin-top: 0;
   margin-bottom: 30px;
   padding: 0;
   width: 100%; }
 
 .panel-footer .buttons {
-  width: 100%; }
+  width: 100%;
+  margin-top: 50px;
+  display: inline-block; }
 
 .panel-footer .buttons a {
   display: block;
@@ -21291,10 +21293,18 @@ td.headsub.first {
   border-color: #e2e1e1;
   color: #e2e1e1; }
 
-#define-scales .start-scoring {
+#define-scales .start-scoring-container {
   padding: 20px 0 0 0; }
+  #define-scales .start-scoring-container a.show-matrix-table {
+    color: #ef7c00;
+    text-decoration: underline;
+    display: none; }
+    #define-scales .start-scoring-container a.show-matrix-table i {
+      float: right;
+      font-size: 20px;
+      margin-top: -8px; }
 
-#define-scales .start-scoring button {
+#define-scales .start-scoring-container button {
   margin: 0 auto;
   display: block; }
 
@@ -21304,6 +21314,24 @@ td.headsub.first {
 #define-scales.start-scoring .references-table .ref-sort,
 #define-scales.start-scoring .start-scoring button {
   display: none !important; }
+#define-scales.start-scoring .references-table .ref-name {
+  width: 25% !important; }
+#define-scales.matrix-table-mode .ref-definition-buttons button,
+#define-scales.matrix-table-mode .references-table .ref-actions,
+#define-scales.matrix-table-mode .references-table .ref-sort {
+  display: none !important; }
+#define-scales.matrix-table-mode .references-table .ref-name {
+  width: 25% !important; }
+#define-scales.matrix-table-mode .references-table .add-new-ref {
+  margin: 0; }
+  #define-scales.matrix-table-mode .references-table .add-new-ref > div {
+    width: 100% !important; }
+#define-scales.matrix-table-mode .start-scoring-container a.show-matrix-table {
+  display: block; }
+#define-scales.matrix-table-mode .start-scoring-container button {
+  float: right; }
+#define-scales.matrix-table-mode .matrix-table {
+  display: block; }
 
 #compare-refs {
   padding-bottom: 60px; }
@@ -21320,12 +21348,12 @@ td.headsub.first {
       margin: 20px 0; }
       #compare-refs .question-container .question-options .questionoption {
         width: 100%;
-        display: inline-block;
+        display: inline-flex;
         margin-bottom: 50px;
         color: #fff; }
         #compare-refs .question-container .question-options .questionoption > div {
           padding: 10px;
-          height: 65px; }
+          min-height: 65px; }
         #compare-refs .question-container .question-options .questionoption.first {
           background: #3CA735; }
         #compare-refs .question-container .question-options .questionoption.second {
@@ -21356,44 +21384,46 @@ td.headsub.first {
     background: #EE7500; }
   #compare-refs .questions-navigation .next-question {
     float: right; }
-  #compare-refs .questions-controls {
-    width: calc(100% + 2px);
-    display: block;
-    background: #393939;
-    position: absolute;
-    bottom: -1px;
-    left: -1px;
-    padding: 10px; }
-    #compare-refs .questions-controls .use-by-default {
-      float: left;
-      margin-left: 20px;
-      padding-top: 6px;
-      color: #fff; }
 
-a.show-matrix-table {
-  color: #ef7c00;
-  text-decoration: underline; }
-  a.show-matrix-table i {
-    float: right;
-    font-size: 20px;
-    margin-top: -8px; }
+.painel-controls {
+  width: calc(100% + 2px);
+  background: #393939;
+  padding: 10px;
+  float: left;
+  display: none; }
+  .painel-controls .use-by-default {
+    float: left;
+    margin-left: 20px;
+    padding-top: 6px;
+    color: #fff; }
 
-.matrix-table table {
-  margin: 0 auto;
-  margin-top: 30px; }
-  .matrix-table table thead th {
-    border: none;
-    font-weight: bold; }
-  .matrix-table table th, .matrix-table table td {
-    padding: 5px;
-    text-align: center;
-    border: 1px solid #eee;
-    min-width: 120px; }
-    .matrix-table table th.featured, .matrix-table table td.featured {
-      font-weight: bold;
-      background: #eee; }
-    .matrix-table table th.transparent, .matrix-table table td.transparent {
-      border: none; }
+.matrix-table {
+  display: none; }
+  .matrix-table table {
+    margin: 0 auto;
+    margin-top: 30px; }
+    .matrix-table table thead th {
+      border: none;
+      font-weight: bold; }
+    .matrix-table table tbody td:hover {
+      cursor: pointer;
+      font-weight: bold; }
+    .matrix-table table tbody td.active {
+      color: #3CA735; }
+    .matrix-table table th, .matrix-table table td {
+      padding: 5px;
+      text-align: center;
+      border: 1px solid #eee;
+      min-width: 120px; }
+      .matrix-table table th.featured, .matrix-table table td.featured {
+        font-weight: bold;
+        background: #eee; }
+        .matrix-table table th.featured:hover, .matrix-table table td.featured:hover {
+          cursor: initial; }
+      .matrix-table table th.transparent, .matrix-table table td.transparent {
+        border: none; }
+        .matrix-table table th.transparent:hover, .matrix-table table td.transparent:hover {
+          cursor: initial; }
 
 .multisteprange {
   position: relative;
