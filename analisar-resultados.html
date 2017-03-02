@@ -12,10 +12,11 @@
     <title>WiseD On</title>
     <link href="assets/images/apple-touch-icon.png" rel="apple-touch-icon">
     <link href="assets/images/favicon.ico" rel="shortcut icon">
+    
     <!-- Stylesheets -->
     <link href="global/css/bootstrap.min.css" rel="stylesheet">
     <link href="global/css/bootstrap-extend.min.css" rel="stylesheet">
-    <link href="assets/css/site.min.css" rel="stylesheet">
+    
     <!-- Plugins -->
     <link href="global/vendor/animsition/animsition.css" rel="stylesheet">
     <link href="global/vendor/asscrollable/asScrollable.css" rel="stylesheet">
@@ -25,21 +26,18 @@
     <link href="global/vendor/flag-icon-css/flag-icon.css" rel="stylesheet">
     <link href="global/vendor/waves/waves.css" rel="stylesheet">
     <link href="global/vendor/jvectormap/jquery-jvectormap.css" rel="stylesheet">
-    <link href="assets/examples/css/dashboard/v1.css" rel="stylesheet">
+    
     <!-- Fonts -->
-    <link href="global/fonts/material-design/material-design.min.css" rel="stylesheet">
-    <link href="global/fonts/brand-icons/brand-icons.min.css" rel="stylesheet">
-    <link href='http://fonts.googleapis.com/css?family=Roboto:300,400,500,300italic' rel='stylesheet'>
+    <link href="assets/fonts/material-design/material-design.min.css" rel="stylesheet">
+    <link href="assets/fonts/brand-icons/brand-icons.min.css" rel="stylesheet">
+    <link href='//fonts.googleapis.com/css?family=Roboto:300,400,500,300italic' rel='stylesheet'>
+    
     <!-- Css webexperts -->
-    <link href='assets/css/style_general.css' rel='stylesheet'>
-    <link href="assets/css/style_wisedon.css" rel="stylesheet">
-    <link href="assets/css/factores.css" rel="stylesheet">
-    <link href="assets/css/sortable.css" rel="stylesheet">
-    <link href="assets/css/font-awesome.min.css" rel="stylesheet">
-    <link href="assets/css/materialdesignicons.min.css" rel="stylesheet">
-    <link href="assets/css/materialdesignicons.css" rel="stylesheet">
+    <link href="assets/css/style.min.css" rel="stylesheet">
+    
     <script src="global/vendor/modernizr/modernizr.js"></script>
     <script src="global/vendor/breakpoints/breakpoints.js"></script>
+    
     <script>
         Breakpoints();
     </script>
@@ -381,7 +379,7 @@
                 <div class="row" data-by-row="true" data-plugin="matchHeight">
                 </div>
 
-                <div class="col-xlg-5 col-md-12">
+                <div class="col-md-12">
                     <!-- Panel Projects -->
 
                     <div class="" id="projects">
@@ -398,7 +396,7 @@
                     </div>
                 </div>
 
-                <div class="col-xlg-5 col-md-12">
+                <div class="col-md-12">
 
                 </div>
             </div>
@@ -449,38 +447,6 @@
     <script src="assets/js/jquery.mjs.nestedSortable.js" type="text/javascript"></script>
     <script>
         $().ready(function() {
-            /*
-            var ns = $('.criterion-list').nestedSortable({
-                forcePlaceholderSize: true,
-                handle: 'div',
-                helper: 'clone',
-                items: 'li',
-                opacity: .6,
-                placeholder: 'placeholder',
-                revert: 250,
-                tabSize: 50,
-                tolerance: 'pointer',
-                toleranceElement: '>     div',
-                maxLevels: 3,
-                isTree: true,
-                expandOnHover: 700,
-                startCollapsed: false,
-                isAllowed: function(placeholder, placeholderParent, currentItem) {
-                    var current_elem_level = 0;
-                    var target_level = 0;
-                    if (placeholderParent != undefined){
-                        target_level = placeholderParent.parents('ol').length;
-                    }
-                    if (currentItem != undefined){
-                        current_elem_level = currentItem.parents('ol').length;
-                    }
-                    if (current_elem_level == 3 && target_level < 2){
-                        return false;
-                    }
-
-                    return true;
-                }
-            }); */
 
             $('.disclose').attr('title', 'Click to show/hide children');
 

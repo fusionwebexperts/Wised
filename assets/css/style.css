@@ -21083,7 +21083,7 @@ td.headsub.first {
   display: block;
   width: 0;
   height: 0;
-  border-top: 22px solid transparent;
+  border-top: 21px solid transparent;
   border-bottom: 22px solid transparent;
   border-left: 21px solid #008ec9;
   position: absolute;
@@ -21098,12 +21098,12 @@ td.headsub.first {
   display: block;
   width: 0;
   height: 0;
-  border-top: 22px solid transparent;
+  border-top: 20px solid transparent;
   border-bottom: 22px solid transparent;
   border-left: 21px solid #003a5c;
   position: absolute;
   top: 50%;
-  margin-top: -22px;
+  margin-top: -21px;
   left: 100%;
   z-index: 2; }
 
@@ -21358,6 +21358,12 @@ td.headsub.first {
           background: #3CA735; }
         #compare-refs .question-container .question-options .questionoption.second {
           background: #00ACEE; }
+        #compare-refs .question-container .question-options .questionoption.no-bg {
+          background: #FFF !important;
+          color: #333;
+          border: 1px solid #ccc; }
+          #compare-refs .question-container .question-options .questionoption.no-bg .name {
+            border-left: 1px solid #ccc; }
         #compare-refs .question-container .question-options .questionoption .description {
           width: 75%;
           float: left; }
@@ -21384,6 +21390,9 @@ td.headsub.first {
     background: #EE7500; }
   #compare-refs .questions-navigation .next-question {
     float: right; }
+
+#obtain-scale .charts {
+  margin-top: 50px; }
 
 .painel-controls {
   width: calc(100% + 2px);
