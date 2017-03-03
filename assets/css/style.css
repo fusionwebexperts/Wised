@@ -21146,6 +21146,16 @@ td.headsub.first {
   margin-top: 15px;
   display: inline-block;
   width: 100%; }
+  .references-table.swings .ref-description {
+    text-align: center;
+    padding-top: 20px;
+    font-weight: bold; }
+    .references-table.swings .ref-description span:nth-child(1) {
+      margin-right: 10%;
+      color: #3CA735; }
+    .references-table.swings .ref-description span:nth-child(2) {
+      margin-left: 10%;
+      color: #00ACEE; }
 
 .references-table .row {
   padding: 10px 0;
@@ -21362,8 +21372,18 @@ td.headsub.first {
           background: #FFF !important;
           color: #333;
           border: 1px solid #ccc; }
-          #compare-refs .question-container .question-options .questionoption.no-bg .name {
-            border-left: 1px solid #ccc; }
+        #compare-refs .question-container .question-options .questionoption.swings .description {
+          text-align: center;
+          padding-top: 20px;
+          font-weight: bold; }
+          #compare-refs .question-container .question-options .questionoption.swings .description span:nth-child(1) {
+            margin-right: 10%;
+            color: #3CA735; }
+          #compare-refs .question-container .question-options .questionoption.swings .description span:nth-child(2) {
+            margin-left: 10%;
+            color: #00ACEE; }
+        #compare-refs .question-container .question-options .questionoption.swings .name {
+          border-left: 1px solid #ccc; }
         #compare-refs .question-container .question-options .questionoption .description {
           width: 75%;
           float: left; }

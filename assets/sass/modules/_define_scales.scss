@@ -144,6 +144,23 @@
     margin-top: 15px;
     display: inline-block;
     width: 100%;
+    
+  &.swings{
+    .ref-description{
+      text-align: center;
+      padding-top: 20px;
+      font-weight: bold;
+      
+      span:nth-child(1){
+        margin-right: 10%;
+        color: #3CA735;
+      }
+      span:nth-child(2){
+        margin-left: 10%;
+        color: #00ACEE;
+      }
+    }
+  }
 }
 .references-table .row{
     padding: 10px 0;
@@ -403,6 +420,23 @@
           background: #FFF !important;
           color: #333;
           border: 1px solid #ccc;
+        }
+        
+        &.swings{
+          .description{
+            text-align: center;
+            padding-top: 20px;
+            font-weight: bold;
+            
+            span:nth-child(1){
+              margin-right: 10%;
+              color: #3CA735;
+            }
+            span:nth-child(2){
+              margin-left: 10%;
+              color: #00ACEE;
+            }
+          }
           
           .name{
             border-left: 1px solid #ccc;

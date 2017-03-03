@@ -492,7 +492,7 @@
                                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce augue orci, imperdiet ut tincidunt quis, molestie quis odio. Sed convallis, nibh ut fermentum aliquet, felis odio finibus nulla, sed accumsan lacus magna id turpis.</p>
                                             </div>
                                         </div>
-                                        <div class="references-table">
+                                        <div class="references-table swings">
                                             <ol class="is-sortable">
                                                 <li>
                                                     <div class="ref-sort">
@@ -550,7 +550,7 @@
                                                 <span>Qual a diferença de valor entre os dois niveis seguintes?</span>
                                             </div>
                                             <div class="question-options">
-                                                <div class="first questionoption no-bg">
+                                                <div class="first questionoption no-bg swings">
                                                     <div class="description">
                                                         <span>1MP</span> > <span>3MP</span>
                                                     </div>
@@ -558,7 +558,7 @@
                                                         Resolução
                                                     </div>
                                                 </div>
-                                                <div class="second questionoption no-bg">
+                                                <div class="second questionoption no-bg swings">
                                                     <div class="description">
                                                         <span>32h</span> > <span>48h</span>
                                                     </div>
@@ -608,14 +608,23 @@
                                             </div>
                                         </div>
                                         <div class="row charts">
+                                            <div class="col-md-12">
+                                                <canvas id="barChart" width="400" height="150"></canvas>
+                                            </div>
+                                            <!--
                                             <div class="col-md-6">
                                                 <canvas id="bubbleChart" width="400" height="300"></canvas>
                                             </div>
                                             <div class="col-md-6">
                                                 <canvas id="lineChart" width="400" height="300"></canvas>
-                                            </div>
+                                            </div> -->
                                         </div>
                                         
+                                        <div class="options-container">
+                                            <a class="left show-matrix-table">Show Matrix Table<i class="mdi mdi-menu-up"></i></a>
+                                            <button class="btn-action">Edit weight</button>
+                                            <button class="btn-action">Propose weight</button>
+                                        </div>
                                         
                                         <div class="matrix-table">
                                             <table>
@@ -726,7 +735,7 @@
             
             lineChartConfig.data.datasets[0].data = [80, 75, 65, 59, 56, 55, 40];
             lineChartConfig.data.labels = ["Windows", "Android", "IOS", "Windows 8", "Windows 10", "Windows 7", "Linux"];
-            var myLineChart = new Chart($("#lineChart"), lineChartConfig);
+            //var myLineChart = new Chart($("#lineChart"), lineChartConfig);
     
     
             bubbleChartConfig.data.datasets[0].data = [
@@ -772,9 +781,48 @@
                     y: -12,
                     label: 'Opção 4'
                 }];
-            var myBublleChart = new Chart($("#bubbleChart"), bubbleChartConfig);
+            //var myBublleChart = new Chart($("#bubbleChart"), bubbleChartConfig);
             
-            
+            var myBarChart = new Chart($("#barChart"), {
+                type: 'bar',
+                data: {
+                    labels: ["Resolução", "Sistema Operativo", "Autonomia"],
+                    datasets: [
+                        {
+                            backgroundColor: [
+                                'rgb(0, 90, 148)',
+                                'rgb(0, 90, 148)',
+                                'rgb(0, 90, 148)',
+                            ],
+                            data: [50, 30, 20],
+                        }
+                    ]
+                },
+                options: {
+                    legend: {
+                        display: false
+                    },
+                    layout: {
+                        padding: 25  
+                    },
+                    scales: {
+                        yAxes: [{
+                            gridLines: {
+                                display:false
+                            },
+                            ticks: {
+                                display: false,
+                                beginAtZero:true,
+                            }
+                        }],
+                        xAxes: [{
+                            gridLines: {
+                                display:false
+                            }
+                        }]
+                    }
+                }
+            });
             
             
             /* CONTROLLER - FACTOR DIALOG PAGE  */
