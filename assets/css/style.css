@@ -20861,7 +20861,9 @@ ul.jqtree-tree li.jqtree-selected > .jqtree-element:hover {
 
 .submenu {
   background-color: #2c2c2c;
-  height: 100px; }
+  height: 100px;
+  width: calc(100% + 60px);
+  margin-left: -30px; }
 
 td.headsub.first {
   margin-left: 0px !important; }
@@ -21178,12 +21180,10 @@ td.headsub.first {
 
 .references-table ol li.neutral .row > div:not(.ref-actions) {
   background: #00ACEE;
-  border-color: #fff;
   color: #fff; }
 
 .references-table ol li.good .row > div:not(.ref-actions) {
   background: #3CA735;
-  border-color: #fff;
   color: #fff; }
 
 .references-table .ref-sort {

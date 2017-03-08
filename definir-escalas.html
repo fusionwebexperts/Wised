@@ -646,59 +646,61 @@
                                     
                                     <!-- COMPARE REFS-->
                                     <div id="compare-refs" class="dialog-page">
-                                        <div class="question-container">
-                                            <div class="questiontitle">
-                                                <h3>Pergunta 3 de 15</h3>
-                                                <span>Qual a diferença de valor entre os dois niveis seguintes?</span>
+                                        <div class="questions-container">
+                                            <div class="question-container current-question">
+                                                <div class="questiontitle">
+                                                    <h3>Pergunta 3 de 15</h3>
+                                                    <span>Qual a diferença de valor entre os dois niveis seguintes?</span>
+                                                </div>
+                                                <div class="question-options">
+                                                    <div class="first questionoption">
+                                                        <div class="description">
+                                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce augue orci, imperdiet ut tincidunt quis, molestie quis odio. Sed convallis, nibh ut fermentum aliquet, felis odio finibus nulla, sed accumsan lacus magna id turpis.
+                                                        </div>
+                                                        <div class="name">
+                                                            IOS
+                                                        </div>
+                                                    </div>
+                                                    <div class="second questionoption">
+                                                        <div class="description">
+                                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce augue orci, imperdiet ut tincidunt quis, molestie quis odio. Sed convallis, nibh ut fermentum aliquet, felis odio finibus nulla, sed accumsan lacus magna id turpis.
+                                                        </div>
+                                                        <div class="name">
+                                                            ANDROID
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="question-answers">
+                                                    
+                                                    <div class="multisteprange">
+                                                        <ul class="range-labels">
+                                                          <li class="active selected">Indiferente</li>
+                                                          <li>Muito Fraco</li>
+                                                          <li>Fraco</li>
+                                                          <li>Moderado</li>
+                                                          <li>Forte</li>
+                                                          <li>Muito Forte</li>
+                                                          <li class="last">Extremo</li>
+                                                          <li class="isolated">
+                                                              <div class="interval"></div>
+                                                              <span>Não sei</span>
+                                                          </li>
+                                                        </ul>
+                                                        <div class="range-line"></div>
+                                                        <div class="range">
+                                                          <input type="text" name="range-input" value="1">
+                                                        </div>
+                                                    </div>
+                                                    <div class="options">
+                                                        <input type="checkbox" name="add-variant"/>
+                                                        <label>Adicionar variante</label>
+                                                    </div>
+                                                </div>
                                             </div>
-                                            <div class="question-options">
-                                                <div class="first questionoption">
-                                                    <div class="description">
-                                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce augue orci, imperdiet ut tincidunt quis, molestie quis odio. Sed convallis, nibh ut fermentum aliquet, felis odio finibus nulla, sed accumsan lacus magna id turpis.
-                                                    </div>
-                                                    <div class="name">
-                                                        IOS
-                                                    </div>
-                                                </div>
-                                                <div class="second questionoption">
-                                                    <div class="description">
-                                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce augue orci, imperdiet ut tincidunt quis, molestie quis odio. Sed convallis, nibh ut fermentum aliquet, felis odio finibus nulla, sed accumsan lacus magna id turpis.
-                                                    </div>
-                                                    <div class="name">
-                                                        ANDROID
-                                                    </div>
-                                                </div>
+                                            <div class="questions-navigation">
+                                                <button class="previous-question btn-action disabled">Pergunta anterior</button>
+                                                <button class="next-question btn-action">Pergunta seguinte</button>
                                             </div>
-                                            <div class="question-answers">
-                                                
-                                                <div class="multisteprange">
-                                                    <ul class="range-labels">
-                                                      <li class="active selected">Indiferente</li>
-                                                      <li>Muito Fraco</li>
-                                                      <li>Fraco</li>
-                                                      <li>Moderado</li>
-                                                      <li>Forte</li>
-                                                      <li>Muito Forte</li>
-                                                      <li class="last">Extremo</li>
-                                                      <li class="isolated">
-                                                          <div class="interval"></div>
-                                                          <span>Não sei</span>
-                                                      </li>
-                                                    </ul>
-                                                    <div class="range-line"></div>
-                                                    <div class="range">
-                                                      <input type="text" name="range-input" value="1">
-                                                    </div>
-                                                </div>
-                                                <div class="options">
-                                                    <input type="checkbox" name="add-variant"/>
-                                                    <label>Adicionar variante</label>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="questions-navigation">
-                                            <button class="previous-question btn-action disabled">Pergunta anterior</button>
-                                            <button class="next-question btn-action">Pergunta seguinte</button>
                                         </div>
                                     </div>
                                     
@@ -908,7 +910,7 @@
                 
                 FactorDialogPage.prototype.showDialog = function() {
                     $('.list-criteria-container').addClass('show-dialog');
-                    $('.panel-dialog-container').addClass('show'); 
+                    $('.panel-dialog-container').addClass('show');
                     
                     this.refreshPage();
                 };
@@ -918,6 +920,7 @@
                     $('.panel-dialog-container').removeClass('show'); 
                     
                     $('.panel-dialog-container .dialog-page').hide();
+                    $('.list-criteria-container').css('height', 'auto');
                 };
                 
                 FactorDialogPage.prototype.refreshPage = function() {
@@ -961,6 +964,8 @@
                             $('.btn-next').addClass('disabled');
                         }
                         
+                    
+                        $('.list-criteria-container').height($('.panel-dialog-container').height() + 50);
                     });
                 };
                 
