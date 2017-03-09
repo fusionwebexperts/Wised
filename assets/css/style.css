@@ -21297,11 +21297,16 @@ td.headsub.first {
   background: none;
   border: 1px solid #ccc;
   color: #757575;
-  padding: 5px 10px 5px 30px; }
+  padding: 5px 10px 5px 30px;
+  background-repeat: no-repeat;
+  background-position: 8px; }
+  .ref-definition-buttons button.define-good {
+    background-image: url(../images/good.png); }
+  .ref-definition-buttons button.define-neutral {
+    background-image: url(../images/neutral.png); }
 
 .ref-definition-buttons button.disabled {
-  border-color: #e2e1e1;
-  color: #e2e1e1; }
+  opacity: .4; }
 
 #define-scales .start-scoring-container {
   padding: 20px 0 0 0; }
