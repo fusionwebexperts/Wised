@@ -20454,8 +20454,7 @@ h4.example-title {
     background: #EE7500; }
 
 .btn-action.disabled {
-  background: #C4C4C4 !important;
-  color: #fff !important; }
+  opacity: .3; }
 
 .btn-action:hover {
   color: #fff; }
@@ -21308,16 +21307,24 @@ td.headsub.first {
 .ref-definition-buttons button.disabled {
   opacity: .4; }
 
+a.show-matrix-table {
+  color: #ef7c00;
+  text-decoration: underline;
+  display: none; }
+  a.show-matrix-table i {
+    float: right;
+    font-size: 20px;
+    margin-top: -8px; }
+
+.options-container .btn-action {
+  float: right;
+  margin-left: 5px;
+  background: #FFF;
+  border: 1px solid #393939;
+  color: #393939; }
+
 #define-scales .start-scoring-container {
   padding: 20px 0 0 0; }
-  #define-scales .start-scoring-container a.show-matrix-table {
-    color: #ef7c00;
-    text-decoration: underline;
-    display: none; }
-    #define-scales .start-scoring-container a.show-matrix-table i {
-      float: right;
-      font-size: 20px;
-      margin-top: -8px; }
 
 #define-scales .start-scoring-container button {
   margin: 0 auto;
@@ -21341,11 +21348,9 @@ td.headsub.first {
   margin: 0; }
   #define-scales.matrix-table-mode .references-table .add-new-ref > div {
     width: 100% !important; }
-#define-scales.matrix-table-mode .start-scoring-container a.show-matrix-table {
-  display: block; }
 #define-scales.matrix-table-mode .start-scoring-container button {
   float: right; }
-#define-scales.matrix-table-mode .matrix-table {
+#define-scales.matrix-table-mode a.show-matrix-table, #define-scales.matrix-table-mode .matrix-table {
   display: block; }
 
 #compare-refs {
@@ -21418,6 +21423,17 @@ td.headsub.first {
 
 #obtain-scale .charts {
   margin-top: 50px; }
+#obtain-scale.matrix-table-mode a.show-matrix-table, #obtain-scale.matrix-table-mode .matrix-table {
+  display: block; }
+#obtain-scale .options-container {
+  float: left;
+  width: 100%; }
+  #obtain-scale .options-container .propose-weight.enabled {
+    color: #f07d00;
+    border-color: #f07d00; }
+#obtain-scale .matrix-table {
+  float: left;
+  width: 100%; }
 
 .painel-controls {
   width: calc(100% + 2px);
@@ -21425,6 +21441,8 @@ td.headsub.first {
   padding: 10px;
   float: left;
   display: none; }
+  .painel-controls.disabled {
+    opacity: .3; }
   .painel-controls .use-by-default {
     float: left;
     margin-left: 20px;

@@ -43,8 +43,7 @@
     }
 }
 .btn-action.disabled{
-    background: #C4C4C4 !important;
-    color: #fff !important;
+    opacity: .3;
 }
 .btn-action:hover{
     color: #fff;

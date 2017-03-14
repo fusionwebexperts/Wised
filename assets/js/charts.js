@@ -38,35 +38,52 @@ Chart.pluginService.register({
       var drawed_values = [];
       $('.bubble-val').remove();
       Chart.helpers.each(chart.pluginTooltips, function(tooltip) {
-                                
+            
         tooltip.initialize();
         tooltip.update();
         tooltip.pivot();
         
-        var tooltip_value = tooltip._view.dataPoints[0].yLabel;
-        if($.inArray(tooltip_value, drawed_values) === -1){
-          drawed_values.push(tooltip_value);
-          tooltip._model.x = tooltip._model.x + 40;
-          tooltip._model.xAlign = 'left';
-          
-          var elem = $("<div class='bubble-val'></div>").css({
-            "position": "absolute",
-            "font-size": "12px",
-            "color": "#666",
-            "left": tooltip._view.caretX + 25,
-            "top": tooltip._view.caretY - 10
-          });
-
-          elem.html(tooltip_value);
-          $(chart.chart.canvas).parent().append(elem);
-        } else {
-          tooltip._model.x = tooltip._model.x - (tooltip._model.width + 40);
-          tooltip._model.xAlign = 'right';
-        } 
-                   
-        // we don't actually need this since we are not animating tooltips
-        tooltip.transition(1).draw();
-        
+        if(chart.config.type == 'bubble'){
+            
+            var tooltip_value = tooltip._view.dataPoints[0].yLabel;
+            if($.inArray(tooltip_value, drawed_values) === -1){
+              drawed_values.push(tooltip_value);
+              tooltip._model.x = tooltip._model.x + 40;
+              tooltip._model.xAlign = 'left';
+              
+              var elem = $("<div class='bubble-val'></div>").css({
+                "position": "absolute",
+                "font-size": "12px",
+                "color": "#666",
+                "left": tooltip._view.caretX + 25,
+                "top": tooltip._view.caretY - 10
+              });
+    
+              elem.html(tooltip_value);
+              $(chart.chart.canvas).parent().append(elem);
+            } else {
+              tooltip._model.x = tooltip._model.x - (tooltip._model.width + 40);
+              tooltip._model.xAlign = 'right';
+            } 
+            
+            // we don't actually need this since we are not animating tooltips
+            tooltip.transition(1).draw();
+        }
+        else if(chart.config.type == 'bar'){
+            var tooltip_value = tooltip._view.dataPoints[0].yLabel + '%';
+            
+            var elem = $("<div class='bubble-val'></div>").css({
+                "position": "absolute",
+                "font-size": "12px",
+                "color": "#f07d00",
+                "left": tooltip._view.caretX + 10,
+                "top": tooltip._view.caretY - 20
+            });
+    
+            elem.html(tooltip_value);
+            $(chart.chart.canvas).parent().append(elem);
+        }
+                       
       });
       chart.options.tooltips.enabled = false;
     }
@@ -200,3 +217,48 @@ var bubbleChartConfig = {
         }
     }
 };
+
+
+var barChartConfig = {
+    type: 'bar',
+    data: {
+        labels: ["Resolução", "Sistema Operativo", "Autonomia"],
+        datasets: [
+            {
+                backgroundColor: [
+                    'rgb(0, 90, 148)',
+                    'rgb(0, 90, 148)',
+                    'rgb(0, 90, 148)',
+                ],
+            }
+        ]
+    },
+    options: {
+        showAllTooltips: true,
+        tooltips: {
+            enabled: false
+        },
+        legend: {
+            display: false
+        },
+        layout: {
+            padding: 25  
+        },
+        scales: {
+            yAxes: [{
+                gridLines: {
+                    display:false
+                },
+                ticks: {
+                    display: false,
+                    beginAtZero:true,
+                }
+            }],
+            xAxes: [{
+                gridLines: {
+                    display:false
+                }
+            }]
+        }
+    }
+}; 

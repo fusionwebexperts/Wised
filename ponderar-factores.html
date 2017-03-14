@@ -536,7 +536,6 @@
                                             </ol>
                                         </div>
                                         <div class="start-scoring-container">
-                                            <a class="left show-matrix-table">Show Matrix Table<i class="mdi mdi-menu-up"></i></a>
                                             <button class="btn-start-scoring btn-action">Start weighting</button>
                                         </div>
                                         
@@ -613,24 +612,24 @@
                                             </div>
                                         </div>
                                         <div class="row charts">
-                                            <!--
+                                            
                                             <div class="col-md-12">
                                                 <canvas id="barChart" width="400" height="150"></canvas>
-                                            </div>-->
+                                            </div>
                                             
+                                            <!--
                                             <div class="col-md-6">
                                                 <canvas id="bubbleChart" width="400" height="300"></canvas>
                                             </div>
                                             <div class="col-md-6">
                                                 <canvas id="lineChart" width="400" height="300"></canvas>
-                                            </div> 
+                                            </div> -->
                                         </div>
-                                        
-                                        <!--
+
                                         <div class="options-container">
                                             <a class="left show-matrix-table">Show Matrix Table<i class="mdi mdi-menu-up"></i></a>
-                                            <button class="btn-action">Edit weight</button>
-                                            <button class="btn-action">Propose weight</button>
+                                            <button class="btn-action propose-weight">Propose weight</button>
+                                            <button class="btn-action edit-weight">Edit weight</button>
                                         </div>
                                         
                                         <div class="matrix-table">
@@ -664,7 +663,7 @@
                                                     </tr>
                                                 </tbody>
                                             </table>
-                                        </div> -->
+                                        </div>
                                         
                                     </div>
                                     
@@ -742,7 +741,7 @@
             
             lineChartConfig.data.datasets[0].data = [80, 75, 65, 59, 56, 55, 40];
             lineChartConfig.data.labels = ["Windows", "Android", "IOS", "Windows 8", "Windows 10", "Windows 7", "Linux"];
-            var myLineChart = new Chart($("#lineChart"), lineChartConfig);
+            //var myLineChart = new Chart($("#lineChart"), lineChartConfig);
     
     
             bubbleChartConfig.data.datasets[0].data = [
@@ -788,49 +787,10 @@
                     y: -12,
                     label: 'Opção 4'
                 }];
-            var myBublleChart = new Chart($("#bubbleChart"), bubbleChartConfig);
+            //var myBublleChart = new Chart($("#bubbleChart"), bubbleChartConfig);
             
-            /*
-            var myBarChart = new Chart($("#barChart"), {
-                type: 'bar',
-                data: {
-                    labels: ["Resolução", "Sistema Operativo", "Autonomia"],
-                    datasets: [
-                        {
-                            backgroundColor: [
-                                'rgb(0, 90, 148)',
-                                'rgb(0, 90, 148)',
-                                'rgb(0, 90, 148)',
-                            ],
-                            data: [50, 30, 20],
-                        }
-                    ]
-                },
-                options: {
-                    legend: {
-                        display: false
-                    },
-                    layout: {
-                        padding: 25  
-                    },
-                    scales: {
-                        yAxes: [{
-                            gridLines: {
-                                display:false
-                            },
-                            ticks: {
-                                display: false,
-                                beginAtZero:true,
-                            }
-                        }],
-                        xAxes: [{
-                            gridLines: {
-                                display:false
-                            }
-                        }]
-                    }
-                }
-            }); */
+            barChartConfig.data.datasets[0].data = [50, 30, 20];
+            var myBarChart = new Chart($("#barChart"), barChartConfig);
             
             
             /* CONTROLLER - FACTOR DIALOG PAGE  */
@@ -989,21 +949,12 @@
                 FactorDialogPage.prototype.showTableMode = function($button) {
                     var self = this;
                     
-                    self.current_page = 'define-scales';
+                    self.current_page = 'obtain-scale';
                     self.refreshPage();
                     
-                    $('.dialog-breadcrumbs ul li').removeClass('active');
-                    $('.dialog-breadcrumbs ul li[page=compare-refs]').addClass('active');
-                    
                     setTimeout(function() {   
-                        $(".references-table li:visible").css('margin-bottom', '0');
-                        $.when($(".references-table li:not(.placeholder):not(.new-ref-template)").fadeTo('slow', 1)).then(function(){
-                            $('#define-scales').removeClass('start-scoring');
-                            $('#define-scales').addClass('matrix-table-mode');
-                            $('.painel-controls').show();
-                            
-                            self._define_swings_handler.destroySortable();
-                        });
+                        $('#obtain-scale').addClass('matrix-table-mode');
+                        $('.painel-controls').show();
                     }, 1000);
                     
                 };
@@ -1081,10 +1032,61 @@
             })();
             
             
+            /* MODULE - PROPOSE WEIGHTS  */
+            /* ========================================================== */
+            
+            var ProposeWeightsPage;
+            ProposeWeightsPage = (function(){
+                function ProposeWeightsPage(){
+                    this._initEventHandlers();
+                };
+                
+                ProposeWeightsPage.prototype._initEventHandlers = function() {
+                    var self = this;
+                    
+                    $('body').on('click', '.edit-weight', function() {
+                        self.editWeights($(this));
+                    });
+                    $('body').on('click', '.propose-weight', function() {
+                        self.proposeWeights($(this));
+                    });
+                };
+                
+                ProposeWeightsPage.prototype.editWeights = function($button) {
+                    var self = this;
+                    
+                    $('.bubble-val:visible').each(function(){
+                        var value = $(this).html();
+                        var input = $("<input type='text' name='' value='" + value + "'/>").css({
+                            "position": "absolute",
+                            "width": "35px",
+                            "text-align": "center",
+                            "left": $(this).position().left - 5,
+                            "top": $(this).position().top - 30
+                        });
+                        $(this).parent().append(input);
+                    });
+                    $button.addClass('disabled');
+                    $('.propose-weight').addClass('enabled');
+                    $('.painel-controls').addClass('disabled');
+                    $('.buttons > *').addClass('disabled');
+                    
+                };
+                
+                ProposeWeightsPage.prototype.proposeWeights = function($button) {
+                    var self = this;
+                    
+                };
+                
+                return ProposeWeightsPage;
+            })();
+            
+            
             /* INITIALIZATIONS OF PAGES */
             /* ========================================================== */
             
             var define_swings_handler = new DefineSwingsPage();
+            var propose_weights_handler = new ProposeWeightsPage();
             
             var factor_dialog_page = new FactorDialogPage({
                 define_swings: define_swings_handler

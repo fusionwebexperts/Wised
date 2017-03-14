@@ -315,21 +315,31 @@
 .ref-definition-buttons button.disabled{
     opacity: .4;
 }
+a.show-matrix-table{
+  color: #ef7c00;
+  text-decoration: underline;
+  display: none;
+  
+  i{
+    float: right;
+    font-size: 20px;
+    margin-top: -8px;
+  }
+}
+.options-container{
+  //display: none;
+  
+  .btn-action{
+    float: right;
+    margin-left: 5px;
+    background: #FFF;
+    border: 1px solid #393939;
+    color: #393939;
+  }
+}
 
 #define-scales .start-scoring-container{
     padding: 20px 0 0 0;
-    
-    a.show-matrix-table{
-      color: #ef7c00;
-      text-decoration: underline;
-      display: none;
-      
-      i{
-        float: right;
-        font-size: 20px;
-        margin-top: -8px;
-      }
-    }
     
 }
 #define-scales .start-scoring-container button{
@@ -372,14 +382,11 @@
     }
     
     .start-scoring-container{
-      a.show-matrix-table{
-        display: block;
-      }
       button{
         float: right;
       }
     }
-    .matrix-table{
+    a.show-matrix-table, .matrix-table{
       display: block;
     }
   }
@@ -495,6 +502,24 @@
   .charts{
     margin-top: 50px;
   }
+  &.matrix-table-mode{
+    a.show-matrix-table, .matrix-table{
+      display: block;
+    }
+  }
+  .options-container{
+    float: left;
+    width: 100%;
+    
+    .propose-weight.enabled{
+      color: rgb(240, 125, 0);
+      border-color: rgb(240, 125, 0);
+    }
+  }
+  .matrix-table{
+    float: left;
+    width: 100%;
+  }
 }
 
 .painel-controls{
@@ -503,6 +528,10 @@
   padding: 10px;
   float: left;
   display: none;
+  
+  &.disabled{
+    opacity: .3;
+  }
   
   .use-by-default{
     float: left;
