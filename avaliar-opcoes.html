@@ -402,7 +402,117 @@
                 </div>
 
                 <div class="col-md-12">
-
+                    <div class="list-criteria-container">
+                        <h3>
+                            <span>New Blue Line mobile</span>
+                            <span class="lowercasenobold">create 12hours ago</span>
+                            <button class="border-button blue active right-button">Pontuações</button>
+                            <button class="border-button blue right-button">Impacto</button>
+                        </h3>
+                        <div class="options-evaluation">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th></th>
+                                        <th colspan="5">Alternatives</th>
+                                    </tr>
+                                    <tr>
+                                        <th>Criteria</th>
+                                        <th>Apple</th>
+                                        <th>Windows</th>
+                                        <th>Samsung</th>
+                                        <th>Blackberry</th>
+                                        <th><input type="text" name="" placeholder="add name"/></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>RANK</td>
+                                        <td>#2</td>
+                                        <td>#3</td>
+                                        <td>#1</td>
+                                        <td>#4</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr class="collapsible level-1">
+                                        <td colspan="6">
+                                            <span class="mdi mdi-menu-down"></span>
+                                            Área Técnica
+                                        </td>
+                                    </tr>
+                                    <tr class="collapsible level-2">
+                                        <td colspan="6">
+                                            <span class="mdi mdi-menu-down"></span>
+                                            Processamento
+                                        </td>
+                                    </tr>
+                                    <tr class="option">
+                                        <td>Resolução</td>
+                                        <td>82</td>
+                                        <td>42</td>
+                                        <td>0</td>
+                                        <td>5</td>
+                                        <th><input type="text" name="" placeholder="add option"/></th>
+                                    </tr>
+                                    <tr class="option">
+                                        <td>Sistema Operativo</td>
+                                        <td>32</td>
+                                        <td>120</td>
+                                        <td>64</td>
+                                        <td>2</td>
+                                        <th><input type="text" name="" placeholder="add option"/></th>
+                                    </tr>
+                                    <tr class="option">
+                                        <td>Autonomia</td>
+                                        <td>56</td>
+                                        <td>32</td>
+                                        <td>46</td>
+                                        <td>100</td>
+                                        <th><input type="text" name="" placeholder="add option"/></th>
+                                    </tr>
+                                    <tr class="collapsible level-2">
+                                        <td colspan="6">
+                                            <span class="mdi mdi-menu-down"></span>
+                                            Extras
+                                        </td>
+                                    </tr>
+                                    <tr class="option">
+                                        <td>Camera</td>
+                                        <td>12</td>
+                                        <td>64</td>
+                                        <td>12</td>
+                                        <td>24</td>
+                                        <th><input type="text" name="" placeholder="add option"/></th>
+                                    </tr>
+                                    <tr class="option">
+                                        <td>GPS</td>
+                                        <td>0</td>
+                                        <td>100</td>
+                                        <td>88</td>
+                                        <td>27</td>
+                                        <th><input type="text" name="" placeholder="add option"/></th>
+                                    </tr>
+                                    <tr class="collapsible level-1">
+                                        <td colspan="6">Preço do Equipamento</td>
+                                    </tr>
+                                    <tr class="collapsible level-1">
+                                        <td colspan="6">Cor</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            
+                            <table class="total-score">
+                                <tr>
+                                    <td>TOTAL SCORE</td>
+                                    <td>93</td>
+                                    <td>89</td>
+                                    <td>100</td>
+                                    <td>65</td>
+                                    <td></td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -458,6 +568,18 @@
             $('.disclose, .itemTitle').on('click', function() {
                 $(this).closest('li').toggleClass('mjs-nestedSortable-collapsed').toggleClass('mjs-nestedSortable-expanded');
                 $(this).parent().find('.disclose').toggleClass('ui-icon-plusthick').toggleClass('ui-icon-minusthick');
+            });
+            
+            $('.collapsible').on('click', function(){
+                if($(this).hasClass('level-1')){
+                    var childs = $(this).nextUntil('.level-1');
+                    if (childs.filter('.level-2:visible').length > 0){
+                        childs = childs.filter(':visible');
+                    }
+                } else if($(this).hasClass('level-2')){
+                    var childs = $(this).nextUntil('.level-1, .level-2');
+                }
+                childs.toggle("faster");
             });
 
         });

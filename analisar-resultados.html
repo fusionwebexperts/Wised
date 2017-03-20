@@ -379,25 +379,55 @@
                 <div class="row" data-by-row="true" data-plugin="matchHeight">
                 </div>
 
-                <div class="col-md-12">
+               <div class="col-md-12">
                     <!-- Panel Projects -->
 
                     <div class="" id="projects">
                         <div class="panel-heading">
                             <h3 class="panel-title">
-                                <span class="titleorange">Analisar Resultados</span>
+                                <span class="titleorange">Definir e Avaliar Opções</span>
                                 <i aria-hidden="true" class="fa fa-question-circle fa-lg questionicon"></i>
                                 <span class="lowercasenobold">Show related help</span> <i aria-hidden="true" class="fa fa-play-circle fa-lg questionicon"></i>
                                 <span class="lowercasenobold">View video Tutorial</span>
                             </h3>
                             <p class="basictext">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce augue orci, imperdiet ut tincidunt quis, molestie quis odio.<br> Sed convallis, nibh ut fermentum aliquet, felis odio finibus nulla, sed accumsan lacus magna id turpis.</p>
-                            <br>
+                            <a class="factornext">
+                                <button class="btn excel btn-primary waves-effect waves-light buttonprimary" type="button">Gerar Relatório</button>
+                            </a>
                         </div>
                     </div>
                 </div>
 
                 <div class="col-md-12">
-
+                    <div class="results-panel fixed">
+                        <div class="content">
+                            <h3>Pontuações Globais</h3>
+                        </div>
+                    </div>
+                    <div class="results-panel collapssible">
+                        <div class="title">
+                            Análise de Pontuações Parciais <span class="mdi mdi-plus"></span>
+                        </div>
+                        <div class="content">
+                            <p class="basictext">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce augue orci, imperdiet ut tincidunt quis, molestie quis odio.<br> Sed convallis, nibh ut fermentum aliquet, felis odio finibus nulla, sed accumsan lacus magna id turpis.</p>
+                        </div>
+                    </div>
+                    <div class="results-panel collapssible">
+                        <div class="title">
+                            Análise de Perfis <span class="mdi mdi-plus"></span>
+                        </div>
+                        <div class="content">
+                            <p class="basictext">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce augue orci, imperdiet ut tincidunt quis, molestie quis odio.<br> Sed convallis, nibh ut fermentum aliquet, felis odio finibus nulla, sed accumsan lacus magna id turpis.</p>
+                        </div>
+                    </div>
+                    <div class="results-panel collapssible">
+                        <div class="title">
+                            Análise de Sensibilidade <span class="mdi mdi-plus"></span>
+                        </div>
+                        <div class="content">
+                            <p class="basictext">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce augue orci, imperdiet ut tincidunt quis, molestie quis odio.<br> Sed convallis, nibh ut fermentum aliquet, felis odio finibus nulla, sed accumsan lacus magna id turpis.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -454,7 +484,22 @@
                 $(this).closest('li').toggleClass('mjs-nestedSortable-collapsed').toggleClass('mjs-nestedSortable-expanded');
                 $(this).parent().find('.disclose').toggleClass('ui-icon-plusthick').toggleClass('ui-icon-minusthick');
             });
+    
+            $('.results-panel.collapssible').on('click', function(){
+                $(this).siblings('.collapssible.open').find('.title span').removeClass('mdi-window-minimize').addClass('mdi-plus');
+                $(this).siblings('.collapssible.open').find('.content').slideToggle("faster");
+                $(this).siblings('.collapssible.open').removeClass('open');
+                
 
+                if(!$(this).hasClass('open')){
+                    $(this).addClass('open')
+                           .find('.title span').removeClass('mdi-plus').addClass('mdi-window-minimize'); 
+                } else {
+                    $(this).removeClass('open')
+                           .find('.title span').removeClass('mdi-window-minimize').addClass('mdi-plus');
+                }
+                $(this).find('.content').slideToggle("faster");
+            });
         });
     </script>
 </body>

@@ -14,9 +14,22 @@
       color: #fff;
   }
 }
-.border-button.orange {
-  border-color: #f07d00;
-  color: #f07d00;
+.border-button{
+    
+    &.orange {
+      border-color: #f07d00;
+      color: #f07d00;
+    }
+    
+    &.blue{
+        border-color: #008ec9;
+        color: #008ec9;
+        
+        &.active{
+            background: #008ec9;
+            color: #FFF;
+        }
+    }
 }
 
 .btn-lg {
