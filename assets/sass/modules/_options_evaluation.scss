@@ -1,3 +1,7 @@
+.list-criteria-container.options {
+    position: relative;
+}
+
 .options-evaluation{
     margin-top: 20px;
     
@@ -66,14 +70,14 @@
                 }
                 &.level-1{
                     background: #f07d00;
-                    td{
+                    td:nth-child(1){
                         padding-left: 25px;
                         text-transform: uppercase;
                     }
                 }
                 &.level-2{
                     background: #008ec9;
-                    td{
+                    td:nth-child(1){
                         padding-left: 50px;
                     }
                 }
@@ -82,7 +86,7 @@
                         background: #FFF;
                     }
                 }
-                td{
+                td:nth-child(1){
                     text-align: left;
                     padding-left: 75px;
                 }
@@ -102,6 +106,69 @@
                 width: 100%;
                 padding: 3px;
             }
+            
+            &.add-col{
+                display: none;
+            }
+            &.no-padding{
+                padding: 0;
+            }
         }
+    }
+}
+.footer-buttons{
+    width: 100%;
+    position: absolute;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    margin-left: -15px;
+    display: inline-block;
+    
+    a{
+        display: block;
+        background: #292929;
+        color: #fff;
+        padding: 5px 15px;
+        min-width: 85px;
+        text-align: center;
+        
+        &.disabled{
+            background: #6E6E6E;
+        }
+        &.btn-previous{
+            float: left;   
+        }
+        &.btn-next{
+            float: right;
+        }
+    }
+}
+
+.btn-group{
+    box-shadow: none;
+    width: 100% !important;
+}
+.bootstrap-select>.dropdown-toggle{
+    box-shadow: none;
+    background-color: transparent;
+    border: none;
+    border-color: transparent;
+    
+    span{
+        text-align: center !important;
+        
+        .caret{
+            display: none;
+        }
+    }
+}
+.open>.dropdown-toggle.btn-default, .open>.dropdown-toggle.btn-default:hover, .open>.dropdown-toggle.btn-default:focus{
+    background: #FFF;
+}
+.dropdown-menu{
+    margin-top: 0px;
+    
+    li a{
+        text-align: center !important;
     }
 }
