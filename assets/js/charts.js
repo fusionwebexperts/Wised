@@ -36,7 +36,8 @@ Chart.pluginService.register({
       // turn on tooltips
       chart.options.tooltips.enabled = true;
       var drawed_values = [];
-      $('.bubble-val').remove();
+      var bubble_class = $(chart.chart.canvas).attr('id') + '-bubble-val';
+      $('.' + bubble_class).remove();
       Chart.helpers.each(chart.pluginTooltips, function(tooltip) {
             
         tooltip.initialize();
@@ -51,7 +52,7 @@ Chart.pluginService.register({
               tooltip._model.x = tooltip._model.x + 40;
               tooltip._model.xAlign = 'left';
               
-              var elem = $("<div class='bubble-val'></div>").css({
+              var elem = $("<div class='bubble-val " + bubble_class + "'></div>").css({
                 "position": "absolute",
                 "font-size": "12px",
                 "color": "#666",
@@ -72,7 +73,7 @@ Chart.pluginService.register({
         else if(chart.config.type == 'bar'){
             var tooltip_value = tooltip._view.dataPoints[0].yLabel + '%';
             
-            var elem = $("<div class='bubble-val'></div>").css({
+            var elem = $("<div class='bubble-val " + bubble_class + "'></div>").css({
                 "position": "absolute",
                 "font-size": "12px",
                 "color": "#f07d00",

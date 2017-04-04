@@ -402,6 +402,12 @@
                     <div class="results-panel fixed">
                         <div class="content">
                             <h3>Pontuações Globais</h3>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <canvas id="barChart1" width="400" height="150"></canvas>
+                                </div>
+                            </div>
+                            
                         </div>
                     </div>
                     <div class="results-panel collapssible">
@@ -410,6 +416,121 @@
                         </div>
                         <div class="content">
                             <p class="basictext">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce augue orci, imperdiet ut tincidunt quis, molestie quis odio.<br> Sed convallis, nibh ut fermentum aliquet, felis odio finibus nulla, sed accumsan lacus magna id turpis.</p>
+                            
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <canvas id="barChart2" width="400" height="150"></canvas>
+                                </div>
+                            </div>
+                            
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="specifications-table">
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <th></th>
+                                                    <th>Área Técnica</th>
+                                                    <th>Preço do Equipamento</th>
+                                                    <th>Cor</th>
+                                                    <th>TOTAL</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td class="good">Bom</td>
+                                                    <td>100</td>
+                                                    <td>100</td>
+                                                    <td>100</td>
+                                                    <td>100</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Apple</td>
+                                                    <td>100</td>
+                                                    <td>100</td>
+                                                    <td>100</td>
+                                                    <td>100</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Windows</td>
+                                                    <td>100</td>
+                                                    <td>100</td>
+                                                    <td>100</td>
+                                                    <td>100</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Samsung</td>
+                                                    <td>100</td>
+                                                    <td>100</td>
+                                                    <td>100</td>
+                                                    <td>100</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="neutral">Neutro</td>
+                                                    <td>100</td>
+                                                    <td>100</td>
+                                                    <td>100</td>
+                                                    <td>100</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Opção 4</td>
+                                                    <td>100</td>
+                                                    <td>100</td>
+                                                    <td>100</td>
+                                                    <td>100</td>
+                                                </tr>
+                                            </tbody>
+                                            <tfoot>
+                                                <tr>
+                                                    <td>Pesos</td>
+                                                    <td><div class="weight">100</div></td>
+                                                    <td><div class="weight">100</div></td>
+                                                    <td><div class="weight">100</div></td>
+                                                    <td></td>
+                                                </tr>
+                                            </tfoot>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <canvas id="bubbleChart" width="400" height="300"></canvas>
+                                </div>
+                            </div>
+                            
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="bottom-line"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="row">
+                                <div class="col-md-6">
+                                    
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <label>Área Técnica</label>
+                                            <div class="range-slider">
+                                              <input class="range-slider__range" type="range" value="100" min="0" max="500">
+                                              <span class="range-slider__value">0</span>
+                                            </div>
+                                            <label>Preço de Equipamento</label>
+                                            <div class="range-slider">
+                                              <input class="range-slider__range" type="range" value="100" min="0" max="500">
+                                              <span class="range-slider__value">0</span>
+                                            </div>
+                                            <label>Cor</label>
+                                            <div class="range-slider">
+                                              <input class="range-slider__range" type="range" value="100" min="0" max="500">
+                                              <span class="range-slider__value">0</span>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                            
                         </div>
                     </div>
                     <div class="results-panel collapssible">
@@ -418,6 +539,45 @@
                         </div>
                         <div class="content">
                             <p class="basictext">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce augue orci, imperdiet ut tincidunt quis, molestie quis odio.<br> Sed convallis, nibh ut fermentum aliquet, felis odio finibus nulla, sed accumsan lacus magna id turpis.</p>
+                            
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label>Perfil de Opções</label>
+                                    
+                                </div>
+                                <div class="col-md-6">
+                                    <label>Perfil de de Diferenças(Vantagens)</label>
+                                    
+                                </div>
+                            </div>
+                            
+                            <div class="row">
+                                <div class="col-md-6">
+                                    
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <label>Resolução</label>
+                                            <div class="range-slider">
+                                              <input class="range-slider__range" type="range" value="100" min="0" max="500">
+                                              <span class="range-slider__value">0</span>
+                                            </div>
+                                            <label>Sistema Operativo</label>
+                                            <div class="range-slider">
+                                              <input class="range-slider__range" type="range" value="100" min="0" max="500">
+                                              <span class="range-slider__value">0</span>
+                                            </div>
+                                            <label>Autonomia</label>
+                                            <div class="range-slider">
+                                              <input class="range-slider__range" type="range" value="100" min="0" max="500">
+                                              <span class="range-slider__value">0</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="results-panel collapssible">
@@ -426,6 +586,12 @@
                         </div>
                         <div class="content">
                             <p class="basictext">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce augue orci, imperdiet ut tincidunt quis, molestie quis odio.<br> Sed convallis, nibh ut fermentum aliquet, felis odio finibus nulla, sed accumsan lacus magna id turpis.</p>
+                            
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <canvas id="lineChart" width="400" height="250"></canvas>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -475,32 +641,206 @@
     <script src="global/js/components/peity.js"></script>
     <script src="assets/examples/js/dashboard/v1.js"></script>
     <script src="assets/js/jquery.mjs.nestedSortable.js" type="text/javascript"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+    <script src="assets/js/charts.js"></script>
+    
     <script>
         $().ready(function() {
-
-            $('.disclose').attr('title', 'Click to show/hide children');
-
-            $('.disclose, .itemTitle').on('click', function() {
-                $(this).closest('li').toggleClass('mjs-nestedSortable-collapsed').toggleClass('mjs-nestedSortable-expanded');
-                $(this).parent().find('.disclose').toggleClass('ui-icon-plusthick').toggleClass('ui-icon-minusthick');
+            
+            /* INITIALIZATION OF CHARTS  */
+            /* ========================================================== */
+            
+            var bar1Config = JSON.parse(JSON.stringify(barChartConfig));
+            
+            bar1Config.data.datasets[0].data = [78, 64, 47, 28]
+            bar1Config.data.datasets[0].backgroundColor = [
+                'rgb(0, 90, 148)',
+                'rgb(240, 125, 0)',
+                'rgb(255, 214, 0)',
+                'rgb(67, 160, 71)',
+            ];
+            bar1Config.data.labels = ["Samsung", "Apple", "Windows", "Opção 4"];
+            bar1Config.options.scales.yAxes[0].gridLines.display = true;
+            bar1Config.options.scales.yAxes[0].ticks.display = true;
+            bar1Config.options.scales.yAxes[0].scaleLabel = {
+                display: true,
+                labelString: 'Lorem ipslium'
+            };
+            var myBarChart1 = new Chart($("#barChart1"), bar1Config);
+            
+            
+            var bar2Config = JSON.parse(JSON.stringify(barChartConfig));
+            bar2Config.data.datasets[0].data = [25, 78, 35]
+            bar2Config.data.datasets[0].backgroundColor = [
+                'rgb(67, 160, 71)',
+                'rgb(67, 160, 71)',
+                'rgb(67, 160, 71)',
+            ];
+            bar2Config.data.labels = ["Área Técnica", "Preço de Equipamento", "Cor"];
+            bar2Config.options.scales.yAxes[0].gridLines.display = true;
+            bar2Config.options.scales.yAxes[0].ticks.display = true;
+            bar2Config.options.scales.yAxes[0].scaleLabel = {
+                display: true,
+                labelString: 'Lorem ipslium'
+            };
+            var myBarChart2 = new Chart($("#barChart2"), bar2Config);
+            
+            
+            bubbleChartConfig.data.datasets[0].data = [
+                {
+                    x: 0,
+                    r: 5,
+                    y: 89,
+                    label: 'Apple'
+                },
+                {
+                    x: 0,
+                    r: 5,
+                    y: 72,
+                    label: 'Samsung'
+                },
+                {
+                    x: 0,
+                    r: 5,
+                    y: 45,
+                    label: 'Windows'
+                },
+                {
+                    x: 0,
+                    r: 5,
+                    y: 45,
+                    label: 'Windows 2'
+                },
+                {
+                    x: 0,
+                    r: 5,
+                    y: 0,
+                    label: 'Neutral'
+                },
+                {
+                    x: 0,
+                    r: 5,
+                    y: 100,
+                    label: 'Bom'
+                },
+                {
+                    x: 0,
+                    r: 5,
+                    y: -12,
+                    label: 'Opção 4'
+                }];
+            var myBublleChart = new Chart($("#bubbleChart"), bubbleChartConfig);
+            
+            var data = {
+                labels: [],
+                datasets: [
+                    {
+                        fill: false,
+                        lineTension: 0.1,
+                        backgroundColor: "rgba(75,192,192,0.4)",
+                        borderColor: "rgba(75,192,192,1)",
+                        borderCapStyle: 'butt',
+                        borderDash: [],
+                        borderDashOffset: 0.0,
+                        borderJoinStyle: 'miter',
+                        pointBorderColor: "rgba(75,192,192,1)",
+                        pointBackgroundColor: "#fff",
+                        pointBorderWidth: 0,
+                        pointHoverRadius: 0,
+                        pointHoverBackgroundColor: "rgba(75,192,192,1)",
+                        pointHoverBorderColor: "rgba(220,220,220,1)",
+                        pointHoverBorderWidth: 0,
+                        pointRadius: 0,
+                        pointHitRadius: 0,
+                        data: [59, 50],
+                    },
+                    {
+                        fill: false,
+                        pointBorderWidth: 0,
+                        pointHoverBorderWidth: 0,
+                        pointRadius: 0,
+                        pointHitRadius: 0,
+                        data: [50, 52],
+                    },
+                    {
+                        fill: false,
+                        pointBorderWidth: 0,
+                        pointHoverBorderWidth: 0,
+                        pointRadius: 0,
+                        pointHitRadius: 0,
+                        data: [80, 42],
+                    }
+                ]
+            };
+            
+            var option = {
+            	showLines: true,
+            	title:{
+                    display: false
+                },
+                legend: {
+                    display: false
+                },
+                layout: {
+                  padding: 25  
+                },
+            	scales: {
+                    yAxes: [{
+                        labelString: 'Lorem ipslium',
+                        ticks: {
+                            beginAtZero: true,
+                        }
+                    }],
+            	}
+            };
+            var myLineChart = Chart.Line($('#lineChart'),{
+            	data:data,
+                options:option
             });
-    
-            $('.results-panel.collapssible').on('click', function(){
+            
+
+            $('.results-panel.collapssible').on('click', function(e){
                 $(this).siblings('.collapssible.open').find('.title span').removeClass('mdi-window-minimize').addClass('mdi-plus');
                 $(this).siblings('.collapssible.open').find('.content').slideToggle("faster");
                 $(this).siblings('.collapssible.open').removeClass('open');
                 
-
                 if(!$(this).hasClass('open')){
                     $(this).addClass('open')
                            .find('.title span').removeClass('mdi-plus').addClass('mdi-window-minimize'); 
                 } else {
+                    
+                    if ($(e.target)[0] != $(this).find('.title span')[0])
+                        return;
+                        
                     $(this).removeClass('open')
                            .find('.title span').removeClass('mdi-window-minimize').addClass('mdi-plus');
                 }
                 $(this).find('.content').slideToggle("faster");
             });
+            
+            
+            var rangeSlider = function(){
+              var slider = $('.range-slider'),
+                  range = $('.range-slider__range'),
+                  value = $('.range-slider__value');
+                
+              slider.each(function(){
+            
+                value.each(function(){
+                  var value = $(this).prev().attr('value');
+                  $(this).html(value);
+                });
+            
+                range.on('input', function(){
+                  $(this).next(value).html(this.value);
+                });
+              });
+            };
+            
+            rangeSlider();
+            
         });
+        
     </script>
 </body>
 </html>
