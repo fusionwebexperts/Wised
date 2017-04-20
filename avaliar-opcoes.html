@@ -490,7 +490,7 @@
                                         </td>
                                         <td class="add-col"><input type="text" name="" placeholder="add option"/></td>
                                     </tr>
-                                    <tr class="option">
+                                    <tr class="option level-3">
                                         <td>Sistema Operativo</td>
                                         <td>
                                             <div class="score-mode">32</div>
@@ -510,7 +510,7 @@
                                         </td>
                                         <td class="add-col"><input type="text" name="" placeholder="add option"/></td>
                                     </tr>
-                                    <tr class="option">
+                                    <tr class="option level-3">
                                         <td>Autonomia</td>
                                         <td>
                                             <div class="score-mode">56</div>
@@ -536,7 +536,13 @@
                                             Extras
                                         </td>
                                     </tr>
-                                    <tr class="option">
+                                    <tr class="collapsible level-3">
+                                        <td colspan="5">
+                                            <span class="mdi mdi-menu-down"></span>
+                                            Extras
+                                        </td>
+                                    </tr>
+                                    <tr class="option level-4">
                                         <td>Camera</td>
                                         <td>
                                             <div class="score-mode">12</div>
@@ -556,7 +562,85 @@
                                         </td>
                                         <td class="add-col"><input type="text" name="" placeholder="add option"/></td>
                                     </tr>
-                                    <tr class="option">
+                                    <tr class="collapsible level-3">
+                                        <td colspan="5">
+                                            <span class="mdi mdi-menu-down"></span>
+                                            Extras
+                                        </td>
+                                    </tr>
+                                    <tr class="option level-4">
+                                        <td>Camera</td>
+                                        <td>
+                                            <div class="score-mode">12</div>
+                                            <div class="impact-mode"></div>
+                                        </td>
+                                        <td>
+                                            <div class="score-mode">64</div>
+                                            <div class="impact-mode"></div>
+                                        </td>
+                                        <td>
+                                            <div class="score-mode">12</div>
+                                            <div class="impact-mode"></div>
+                                        </td>
+                                        <td>
+                                            <div class="score-mode">24</div>
+                                            <div class="impact-mode"></div>
+                                        </td>
+                                        <td class="add-col"><input type="text" name="" placeholder="add option"/></td>
+                                    </tr>
+                                    <tr class="collapsible level-4">
+                                        <td colspan="5">
+                                            <span class="mdi mdi-menu-down"></span>
+                                            Extras
+                                        </td>
+                                    </tr>
+                                    <tr class="option level-5">
+                                        <td>GPS</td>
+                                        <td>
+                                            <div class="score-mode">0</div>
+                                            <div class="impact-mode"></div>
+                                        </td>
+                                        <td>
+                                            <div class="score-mode">100</div>
+                                            <div class="impact-mode"></div>
+                                        </td>
+                                        <td>
+                                            <div class="score-mode">88</div>
+                                            <div class="impact-mode"></div>
+                                        </td>
+                                        <td>
+                                            <div class="score-mode">27</div>
+                                            <div class="impact-mode"></div>
+                                        </td>
+                                        <td class="add-col"><input type="text" name="" placeholder="add option"/></td>
+                                    </tr>
+                                    <tr class="collapsible level-5">
+                                        <td colspan="5">
+                                            <span class="mdi mdi-menu-down"></span>
+                                            Extras
+                                        </td>
+                                    </tr>
+                                    <tr class="option level-6">
+                                        <td>GPS</td>
+                                        <td>
+                                            <div class="score-mode">0</div>
+                                            <div class="impact-mode"></div>
+                                        </td>
+                                        <td>
+                                            <div class="score-mode">100</div>
+                                            <div class="impact-mode"></div>
+                                        </td>
+                                        <td>
+                                            <div class="score-mode">88</div>
+                                            <div class="impact-mode"></div>
+                                        </td>
+                                        <td>
+                                            <div class="score-mode">27</div>
+                                            <div class="impact-mode"></div>
+                                        </td>
+                                        <td class="add-col"><input type="text" name="" placeholder="add option"/></td>
+                                    </tr>
+                                    <tr class="option level-3">
                                         <td>GPS</td>
                                         <td>
                                             <div class="score-mode">0</div>
@@ -686,11 +770,31 @@
                     $('.collapsible').on('click', function(){
                         if($(this).hasClass('level-1')){
                             var childs = $(this).nextUntil('.level-1');
-                            if (childs.filter('.level-2:visible').length > 0){
+                            if (childs.filter('.level-2:visible, .level-3:visible, .level-4:visible, .level-5:visible, .level-6:visible').length > 0){
                                 childs = childs.filter(':visible');
                             }
                         } else if($(this).hasClass('level-2')){
                             var childs = $(this).nextUntil('.level-1, .level-2');
+                            if (childs.filter('.level-3:visible, .level-4:visible, .level-5:visible, .level-6:visible').length > 0){
+                                childs = childs.filter(':visible');
+                            }
+                        } else if($(this).hasClass('level-3')){
+                            var childs = $(this).nextUntil('.level-1, .level-2, .level-3');
+                            if (childs.filter('.level-4:visible, .level-5:visible, .level-6:visible').length > 0){
+                                childs = childs.filter(':visible');
+                            }
+                        } else if($(this).hasClass('level-4')){
+                            var childs = $(this).nextUntil('.level-1, .level-2, .level-3, .level-4');
+                            if (childs.filter('.level-5:visible, .level-6:visible').length > 0){
+                                childs = childs.filter(':visible');
+                            }
+                        } else if($(this).hasClass('level-5')){
+                            var childs = $(this).nextUntil('.level-1, .level-2, .level-3, .level-4, .level-5');
+                            if (childs.filter('.level-6:visible').length > 0){
+                                childs = childs.filter(':visible');
+                            }
+                        } else if($(this).hasClass('level-6')){
+                            var childs = $(this).nextUntil('.level-1, .level-2, .level-3, .level-4, .level-5, .level-6');
                         }
                         childs.toggle("faster");
                     });

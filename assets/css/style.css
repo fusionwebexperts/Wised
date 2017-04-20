@@ -21705,6 +21705,21 @@ a.show-matrix-table {
       background: #008ec9; }
       .options-evaluation table tbody tr.level-2 td:nth-child(1) {
         padding-left: 50px; }
+    .options-evaluation table tbody tr.level-3 td:nth-child(1) {
+      color: #333;
+      padding-left: 75px; }
+    .options-evaluation table tbody tr.level-4 td:nth-child(1) {
+      color: #333;
+      padding-left: 100px; }
+    .options-evaluation table tbody tr.level-5 td:nth-child(1) {
+      color: #333;
+      padding-left: 125px; }
+    .options-evaluation table tbody tr.level-6 td:nth-child(1) {
+      color: #333;
+      padding-left: 150px; }
+    .options-evaluation table tbody tr.level-7 td:nth-child(1) {
+      color: #333;
+      padding-left: 175px; }
     .options-evaluation table tbody tr.option input[type=text] {
       background: #FFF; }
     .options-evaluation table tbody tr td:nth-child(1) {
