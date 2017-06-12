@@ -21959,6 +21959,9 @@ input::-moz-focus-inner,
 input::-moz-focus-outer {
   border: 0; }
 
+.navbar {
+  min-height: 111px !important; }
+
 a.iconestatic {
   color: #9e9e9e;
   text-decoration: none; }
@@ -22563,9 +22566,6 @@ a.referencetask {
   color: #6E6E6E;
   background: 0 0; }
 
-body.dashboard.site-menubar-fold .buttonsize {
-  padding-left: 11% !important; }
-
 body.dashboard.site-menubar-fold .panel-title {
   display: block;
   padding: 60px 0px; }
@@ -22588,7 +22588,7 @@ ul.dropdown-menu.dropdown-menu-right {
     width: 17%;
     left: 5%;
     position: relative;
-    padding-left: 0% !Important;
+    padding-left: 0% !important;
     top: 10px; }
 
   .col-xlg-5 {
@@ -22598,7 +22598,7 @@ ul.dropdown-menu.dropdown-menu-right {
     width: 36%;
     left: 3%;
     position: relative;
-    padding-left: 8% !Important; }
+    padding-left: 8% !important; }
 
   .pagination {
     display: inline;
@@ -22615,6 +22615,9 @@ ul.dropdown-menu.dropdown-menu-right {
     padding-left: 0px !important;
     padding-right: 0px !important;
     top: 10px; } }
+.tasks .buttonsize {
+  width: 31% !important; }
+
 /**General Elements login/register/return password/email verification**/
 .site-menubar {
   padding: 0px 0px;
