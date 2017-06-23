@@ -1,9 +1,9 @@
 
-$("#lupa").on('click', function() {
+$(".open-details").on('click', function() {
    $(this).hide();
-   $("#close").show();
+   $(this).parent().find(".close-details").show();
 });
-$("#close").on('click', function() {
+$(".close-details").on('click', function() {
    $(this).hide();
-   $("#lupa").show();
+   $(this).parent().find(".open-details").show();
 });
