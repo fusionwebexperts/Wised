@@ -756,9 +756,42 @@
             /* INITIALIZATION OF CHARTS  */
             /* ========================================================== */
             
-            lineChartConfig.data.datasets[0].data = [80, 75, 65, 59, 56, 55, 40];
-            lineChartConfig.data.labels = ["Windows", "Android", "IOS", "Windows 8", "Windows 10", "Windows 7", "Linux"];
-            var myLineChart = new Chart($("#lineChart"), lineChartConfig);
+            lineChartConfig.data.datasets[0].data = [
+                {
+                    x: 5,
+                    y: 90,
+                    showTooltip: true,
+                    label: "Windows"
+                },
+                {
+                    x: 10,
+                    y: 80,
+                    label: "Android"
+                },
+                {
+                    x: 30,
+                    y: 60,
+                    showTooltip: true,
+                    label: "IOS"
+                },
+                {
+                    x: 50,
+                    y: 30,
+                    label: "Windows 8"
+                },
+                {
+                    x: 60,
+                    y: 0,
+                    showTooltip: true,
+                    label: "Windows 7"
+                },
+                {
+                    x: 65,
+                    y: -5,
+                    label: "Linux"
+                }
+            ];
+            var myLineChart = Chart.Scatter($("#lineChart"), lineChartConfig);
     
     
             bubbleChartConfig.data.datasets[0].data = [
@@ -783,20 +816,18 @@
                 {
                     x: 0,
                     r: 5,
-                    y: 45,
-                    label: 'Windows 2'
-                },
-                {
-                    x: 0,
-                    r: 5,
                     y: 0,
-                    label: 'Neutral'
+                    label: 'Neutral',
+                    xAlign: 'right',
+                    backgroundColor: 'rgb(60, 167, 53)'
                 },
                 {
                     x: 0,
                     r: 5,
                     y: 100,
-                    label: 'Bom'
+                    label: 'Bom',
+                    xAlign: 'right',
+                    backgroundColor: 'rgb(0, 172, 238)'
                 },
                 {
                     x: 0,

@@ -252,6 +252,123 @@ $range-label-width: 40px !default;
 }
 
 
+table.options-table {
+    color: #393939;
+    
+    width: 100%;
+    font-size: 13px;
+    
+    tbody{
+        tr{
+            td{
+                text-align: left;
+            }
+            td .mdi-menu-down{
+                color: #333;
+            }
+            &.level-1{
+                background: #f9f9f9;
+                td{
+                    padding-left: 10px;
+                    .title{
+                        color: #ef7c00;
+                        padding-left: 20px;
+                        
+                        &:before{
+                            position: absolute;
+                            content: '';
+                            width: 12px;
+                            height: 12px;
+                            margin-left: -18px;
+                            background: #ef7c00;
+                            margin-top: 5px;
+                            border-radius: 2px;
+                        }
+                    }
+                }
+            }
+            &.level-2{
+                background: #f9f9f9;
+                td{
+                    padding-left: 25px;
+                    .title{
+                        color: #009ee2;
+                        padding-left: 20px;
+                        
+                        &:before{
+                            position: absolute;
+                            content: '';
+                            width: 12px;
+                            height: 12px;
+                            margin-left: -18px;
+                            background: #009ee2;
+                            margin-top: 5px;
+                            border-radius: 2px;
+                        }
+                    }
+                }
+            }
+            &.level-3{
+                td{
+                    color: #333;
+                    padding-left: 60px;
+                }
+            }
+            &.level-4{
+                td:nth-child(1){
+                    color: #333;
+                    padding-left: 100px;
+                }
+            }
+            &.level-5{
+                td:nth-child(1){
+                    color: #333;
+                    padding-left: 125px;
+                }
+            }
+            &.level-6{
+                td:nth-child(1){
+                    color: #333;
+                    padding-left: 150px;
+                }
+            }
+            &.level-7{
+                td:nth-child(1){
+                    color: #333;
+                    padding-left: 175px;
+                }
+            }
+            &.option{
+                input[type=text]{
+                    background: #FFF;
+                }
+            }
+        }   
+    }
+    td, th{
+        border: 1px solid #ECECEC;
+        padding: 5px 10px;
+        text-align: center;
+        width: 15%;
+        
+        &:nth-child(1){
+            width: 25%;
+        }
+        
+        input[type=text]{
+            width: 100%;
+            padding: 3px;
+        }
+        
+        &.add-col{
+            display: none;
+        }
+        &.no-padding{
+            padding: 0;
+        }
+    }
+}
+
 // Firefox Overrides
 ::-moz-range-track {
     background: $range-track-color;
@@ -261,4 +378,9 @@ $range-label-width: 40px !default;
 input::-moz-focus-inner,
 input::-moz-focus-outer { 
   border: 0; 
+}
+
+.horizontal-charts{
+    margin-top: 40px;
+    margin-bottom: 40px;
 }

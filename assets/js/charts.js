@@ -37,6 +37,7 @@ Chart.pluginService.register({
       chart.options.tooltips.enabled = true;
       var drawed_values = [];
       var bubble_class = $(chart.chart.canvas).attr('id') + '-bubble-val';
+      var i = 0;
       $('.' + bubble_class).remove();
       Chart.helpers.each(chart.pluginTooltips, function(tooltip) {
             
@@ -44,13 +45,26 @@ Chart.pluginService.register({
         tooltip.update();
         tooltip.pivot();
         
+        var tooltip_value = tooltip._view.dataPoints[0].yLabel;
+        var tooltip_data = tooltip._data.datasets[0].data[i];
+        
         if(chart.config.type == 'bubble'){
             
-            var tooltip_value = tooltip._view.dataPoints[0].yLabel;
             if($.inArray(tooltip_value, drawed_values) === -1){
+              tooltip._model.xAlign = 'left';
+            } else {
+              tooltip._model.xAlign = 'right';
+            }
+            
+            if (tooltip_data.xAlign !== undefined)
+                tooltip._model.xAlign = tooltip_data.xAlign;
+            
+            if (tooltip_data.backgroundColor !== undefined)
+                tooltip._model.backgroundColor = tooltip_data.backgroundColor;
+            
+            if(tooltip._model.xAlign === 'left'){
               drawed_values.push(tooltip_value);
               tooltip._model.x = tooltip._model.x + 40;
-              tooltip._model.xAlign = 'left';
               
               var elem = $("<div class='bubble-val " + bubble_class + "'></div>").css({
                 "position": "absolute",
@@ -64,7 +78,6 @@ Chart.pluginService.register({
               $(chart.chart.canvas).parent().append(elem);
             } else {
               tooltip._model.x = tooltip._model.x - (tooltip._model.width + 40);
-              tooltip._model.xAlign = 'right';
             } 
             
             // we don't actually need this since we are not animating tooltips
@@ -84,7 +97,17 @@ Chart.pluginService.register({
             elem.html(tooltip_value);
             $(chart.chart.canvas).parent().append(elem);
         }
-                       
+        else if(chart.config.type == 'scatter'){
+            if (tooltip_data.showTooltip === true){
+                tooltip.transition(1).draw();
+            }
+        }
+        else if(chart.config.type == 'horizontalBar'){
+            tooltip._model.xAlign = 'left';
+            tooltip.transition(1).draw();
+        }
+        
+        i++;
       });
       chart.options.tooltips.enabled = false;
     }
@@ -94,7 +117,6 @@ Chart.pluginService.register({
 
 
 var lineChartConfig = {
-    type: 'line',
     data: {
         labels: [],
         datasets: [
@@ -131,15 +153,21 @@ var lineChartConfig = {
             backgroundColor: '#CCC',
             cornerRadius: 0,
             caretSize: 12,
-            xPadding: 15
+            xPadding: 15,
+            callbacks: {
+                label: function(tooltipItem, data) {
+                    var value = data.datasets[0].data[tooltipItem.index];
+                    var position = value.x + ',' + value.y
+                    return value.label + ' (' + position + ')';
+                },
+            }
         },
+        showAllTooltips: true,
         scales: {
             xAxes: [{
+                position: 'bottom',
                 gridLines: {
                     display:false
-                },
-                ticks: {
-                    display: false
                 },
                 scaleLabel: {
                     display: true,
@@ -147,6 +175,7 @@ var lineChartConfig = {
                 }
             }],
             yAxes: [{
+                position: 'left',
                 scaleLabel: {
                     display: true,
                     labelString: 'Pontuação'
