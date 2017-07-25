@@ -292,3 +292,35 @@ var barChartConfig = {
         }
     }
 }; 
+
+
+var barChartStackedConfig = {
+    tooltips: {
+        enabled: false
+    },
+    legend:{
+        display:false
+    },
+    scales: {
+        yAxes: [{
+            gridLines: {
+                display:false
+            }
+        }]
+    },
+    tooltips: {
+        backgroundColor: 'transparent',
+        bodyFontColor: '#333',
+        displayColors: false,
+        callbacks: {
+            label: function(tooltipItem, data) {
+                var value = data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index];
+                return value;
+            },
+            title: function(tooltipItem, data) {
+                return;
+            }
+        }
+    },
+    showAllTooltips: true,
+};

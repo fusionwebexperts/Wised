@@ -398,19 +398,19 @@
                     </div>
                 </div>
 
-                <div class="col-md-12">
+                <div class="col-md-12" id="scores">
                     <div class="results-panel fixed">
                         <div class="content">
                             <h3>Pontuações Globais</h3>
                             <div class="row">
                                 <div class="col-md-12">
-                                    <canvas id="barChart1" width="400" height="150"></canvas>
+                                    <canvas id="barChart_Global" width="400" height="150"></canvas>
                                 </div>
                             </div>
                             
                         </div>
                     </div>
-                    <div class="results-panel collapssible">
+                    <div class="results-panel collapssible disabled">
                         <div class="title">
                             Análise de Pontuações Parciais <span class="mdi mdi-plus"></span>
                         </div>
@@ -419,7 +419,7 @@
                             
                             <div class="row">
                                 <div class="col-md-12">
-                                    <canvas id="barChart2" width="400" height="150"></canvas>
+                                    <canvas id="barChart_Scores" width="400" height="150"></canvas>
                                 </div>
                             </div>
                             
@@ -428,72 +428,17 @@
                                     <div class="specifications-table">
                                         <table>
                                             <thead>
-                                                <tr>
-                                                    <th></th>
-                                                    <th>Área Técnica</th>
-                                                    <th>Preço do Equipamento</th>
-                                                    <th>Cor</th>
-                                                    <th>TOTAL</th>
-                                                </tr>
+                                                <tr></tr>
                                             </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td class="good">Bom</td>
-                                                    <td>100</td>
-                                                    <td>100</td>
-                                                    <td>100</td>
-                                                    <td>100</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Apple</td>
-                                                    <td>100</td>
-                                                    <td>100</td>
-                                                    <td>100</td>
-                                                    <td>100</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Windows</td>
-                                                    <td>100</td>
-                                                    <td>100</td>
-                                                    <td>100</td>
-                                                    <td>100</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Samsung</td>
-                                                    <td>100</td>
-                                                    <td>100</td>
-                                                    <td>100</td>
-                                                    <td>100</td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="neutral">Neutro</td>
-                                                    <td>100</td>
-                                                    <td>100</td>
-                                                    <td>100</td>
-                                                    <td>100</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Opção 4</td>
-                                                    <td>100</td>
-                                                    <td>100</td>
-                                                    <td>100</td>
-                                                    <td>100</td>
-                                                </tr>
-                                            </tbody>
+                                            <tbody></tbody>
                                             <tfoot>
-                                                <tr>
-                                                    <td>Pesos</td>
-                                                    <td><div class="weight">100</div></td>
-                                                    <td><div class="weight">100</div></td>
-                                                    <td><div class="weight">100</div></td>
-                                                    <td></td>
-                                                </tr>
+                                                <tr></tr>
                                             </tfoot>
                                         </table>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
-                                    <canvas id="bubbleChart" width="400" height="300"></canvas>
+                                    <canvas id="bublleChart_Scores" width="400" height="300"></canvas>
                                 </div>
                             </div>
                             
@@ -506,68 +451,12 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <table class="options-table">
-                                        <tbody>
-                                            <tr class="collapsible level-1">
-                                                <td>
-                                                    <span class="mdi mdi-menu-down"></span>
-                                                    <span class="title">Área Técnica</span>
-                                                </td>
-                                            </tr>
-                                            <tr class="collapsible level-2">
-                                                <td>
-                                                    <span class="mdi mdi-menu-down"></span>
-                                                    <span class="title">Processamento</span>
-                                                </td>
-                                            </tr>
-                                            <tr class="option level-3">
-                                                <td>Resolução</td>
-                                            </tr>
-                                            <tr class="option level-3">
-                                                <td>Sistema Operativo</td>
-                                            </tr>
-                                            <tr class="option level-3">
-                                                <td>Autonomia</td>
-                                            </tr>
-                                            <tr class="collapsible level-2">
-                                                <td>
-                                                    <span class="mdi mdi-menu-down"></span>
-                                                    <span class="title">Extras</span>
-                                                </td>
-                                            </tr>
-                                            <tr class="option level-3">
-                                                <td>Camera</td>
-                                            </tr>
-                                            <tr class="option level-3">
-                                                <td>GPS</td>
-                                            </tr>
-                                            <tr class="collapsible level-1">
-                                                <td><span class="title">Preço do Equipamento</span></td>
-                                            </tr>
-                                            <tr class="collapsible level-1">
-                                                <td><span class="title">Cor</span></td>
-                                            </tr>
-                                        </tbody>
+                                        <tbody></tbody>
                                     </table>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="row">
-                                        <div class="col-md-12">
-                                            <label>Área Técnica</label>
-                                            <div class="range-slider">
-                                              <input class="range-slider__range" type="range" value="100" min="0" max="500">
-                                              <span class="range-slider__value">0</span>
-                                            </div>
-                                            <label>Preço de Equipamento</label>
-                                            <div class="range-slider">
-                                              <input class="range-slider__range" type="range" value="100" min="0" max="500">
-                                              <span class="range-slider__value">0</span>
-                                            </div>
-                                            <label>Cor</label>
-                                            <div class="range-slider">
-                                              <input class="range-slider__range" type="range" value="100" min="0" max="500">
-                                              <span class="range-slider__value">0</span>
-                                            </div>
-                                        </div>
+                                        <div class="col-md-12 scores-range"></div>
                                         
                                     </div>
                                 </div>
@@ -575,7 +464,7 @@
                             
                         </div>
                     </div>
-                    <div class="results-panel collapssible">
+                    <div class="results-panel collapssible disabled" id="profile_analysis">
                         <div class="title">
                             Análise de Perfis <span class="mdi mdi-plus"></span>
                         </div>
@@ -586,80 +475,37 @@
                                 <div class="col-md-6">
                                     <label>Perfil de Opções</label>
                                     
-                                    <canvas id="horizontalChart1"></canvas>
+                                    <canvas id="profileOptionsChart"></canvas>
                                     
                                 </div>
                                 <div class="col-md-6">
                                     <label>Perfil de de Diferenças(Vantagens)</label>
                                     
-                                    <canvas id="horizontalChart2"></canvas>
+                                    <canvas id="profileDiffrencesChart"></canvas>
+                                </div>
+                                
+                                <div class="col-md-12 comparison-labels">
+                                    <ul>
+                                        <li><a href=""><span style="background: rgba(0, 90, 148, 1);"></span>Samsung</a></li>
+                                        <li><a href=""><span style="background: rgba(240, 125, 0, 1);"></span>Apple</a></li>
+                                        <li><a href=""><span style="background: rgba(255, 214, 0, 1);"></span>Windows</a></li>
+                                        <li><a href=""><span style="background: rgba(67, 160, 71, 1);"></span>Opção 4</a></li>
+                                    </ul>
                                 </div>
                             </div>
+                            
+                            <hr class="separator"><br>
                             
                             <div class="row">
                                 <div class="col-md-6">
                                     <table class="options-table">
                                         <tbody>
-                                            <tr class="collapsible level-1">
-                                                <td>
-                                                    <span class="mdi mdi-menu-down"></span>
-                                                    <span class="title">Área Técnica</span>
-                                                </td>
-                                            </tr>
-                                            <tr class="collapsible level-2">
-                                                <td>
-                                                    <span class="mdi mdi-menu-down"></span>
-                                                    <span class="title">Processamento</span>
-                                                </td>
-                                            </tr>
-                                            <tr class="option level-3">
-                                                <td>Resolução</td>
-                                            </tr>
-                                            <tr class="option level-3">
-                                                <td>Sistema Operativo</td>
-                                            </tr>
-                                            <tr class="option level-3">
-                                                <td>Autonomia</td>
-                                            </tr>
-                                            <tr class="collapsible level-2">
-                                                <td>
-                                                    <span class="mdi mdi-menu-down"></span>
-                                                    <span class="title">Extras</span>
-                                                </td>
-                                            </tr>
-                                            <tr class="option level-3">
-                                                <td>Camera</td>
-                                            </tr>
-                                            <tr class="option level-3">
-                                                <td>GPS</td>
-                                            </tr>
-                                            <tr class="collapsible level-1">
-                                                <td><span class="title">Preço do Equipamento</span></td>
-                                            </tr>
-                                            <tr class="collapsible level-1">
-                                                <td><span class="title">Cor</span></td>
-                                            </tr>
                                         </tbody>
                                     </table>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="row">
-                                        <div class="col-md-12">
-                                            <label>Resolução</label>
-                                            <div class="range-slider">
-                                              <input class="range-slider__range" type="range" value="100" min="0" max="500">
-                                              <span class="range-slider__value">0</span>
-                                            </div>
-                                            <label>Sistema Operativo</label>
-                                            <div class="range-slider">
-                                              <input class="range-slider__range" type="range" value="100" min="0" max="500">
-                                              <span class="range-slider__value">0</span>
-                                            </div>
-                                            <label>Autonomia</label>
-                                            <div class="range-slider">
-                                              <input class="range-slider__range" type="range" value="100" min="0" max="500">
-                                              <span class="range-slider__value">0</span>
-                                            </div>
+                                        <div class="col-md-12 profile-analysis-range">
                                         </div>
                                     </div>
                                     
@@ -667,14 +513,27 @@
                             </div>
                         </div>
                     </div>
-                    <div class="results-panel collapssible">
+                    <div class="results-panel collapssible disabled">
                         <div class="title">
                             Análise de Sensibilidade <span class="mdi mdi-plus"></span>
                         </div>
                         <div class="content">
                             <p class="basictext">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce augue orci, imperdiet ut tincidunt quis, molestie quis odio.<br> Sed convallis, nibh ut fermentum aliquet, felis odio finibus nulla, sed accumsan lacus magna id turpis.</p>
                             
+                            <br><br>
                             <div class="row">
+                                <div class="col-md-6 col-md-offset-4">
+                                    <b>Intersect</b> 
+                                    <select>
+                                        <option>Apple</option>
+                                        <option>Samsung</option>
+                                    </select>
+                                    <b>with</b> 
+                                    <select>
+                                        <option>Samsung</option>
+                                        <option>Apple</option>
+                                    </select>
+                                </div>
                                 <div class="col-md-12">
                                     <canvas id="lineChart" width="400" height="250"></canvas>
                                 </div>
@@ -737,84 +596,44 @@
             /* INITIALIZATION OF CHARTS  */
             /* ========================================================== */
             
-            var bar1Config = JSON.parse(JSON.stringify(barChartConfig));
+            var globalBarChart_config = JSON.parse(JSON.stringify(barChartConfig));
             
-            bar1Config.data.datasets[0].data = [78, 64, 47, 28]
-            bar1Config.data.datasets[0].backgroundColor = [
-                'rgb(0, 90, 148)',
-                'rgb(240, 125, 0)',
-                'rgb(255, 214, 0)',
-                'rgb(67, 160, 71)',
+            globalBarChart_config.data.datasets[0].data = [78, 64, 47, 28];
+            globalBarChart_config.data.datasets[0].backgroundColor = [
+                'rgba(0, 90, 148, 1)',
+                'rgba(240, 125, 0, 1)',
+                'rgba(255, 214, 0, 1)',
+                'rgba(67, 160, 71, 1)',
             ];
-            bar1Config.data.labels = ["Samsung", "Apple", "Windows", "Opção 4"];
-            bar1Config.options.scales.yAxes[0].gridLines.display = true;
-            bar1Config.options.scales.yAxes[0].ticks.display = true;
-            bar1Config.options.scales.yAxes[0].scaleLabel = {
+            globalBarChart_config.data.labels = ["Samsung", "Apple", "Windows", "Opção 4"];
+            globalBarChart_config.options.scales.yAxes[0].gridLines.display = true;
+            globalBarChart_config.options.scales.yAxes[0].ticks.display = true;
+            globalBarChart_config.options.scales.yAxes[0].scaleLabel = {
                 display: true,
                 labelString: 'Lorem ipslium'
             };
-            var myBarChart1 = new Chart($("#barChart1"), bar1Config);
+            var barChart_Global = new Chart($("#barChart_Global"), globalBarChart_config);
             
-            
-            var bar2Config = JSON.parse(JSON.stringify(barChartConfig));
-            bar2Config.data.datasets[0].data = [25, 78, 35]
-            bar2Config.data.datasets[0].backgroundColor = [
-                'rgb(67, 160, 71)',
-                'rgb(67, 160, 71)',
-                'rgb(67, 160, 71)',
-            ];
-            bar2Config.data.labels = ["Área Técnica", "Preço de Equipamento", "Cor"];
-            bar2Config.options.scales.yAxes[0].gridLines.display = true;
-            bar2Config.options.scales.yAxes[0].ticks.display = true;
-            bar2Config.options.scales.yAxes[0].scaleLabel = {
+            var chartScores_config = JSON.parse(JSON.stringify(barChartConfig));
+            chartScores_config.options.scales.yAxes[0].gridLines.display = true;
+            chartScores_config.options.scales.yAxes[0].ticks.display = true;
+            chartScores_config.options.scales.yAxes[0].scaleLabel = {
                 display: true,
                 labelString: 'Lorem ipslium'
             };
-            var myBarChart2 = new Chart($("#barChart2"), bar2Config);
+            var barChart_Scores = new Chart($("#barChart_Scores"), chartScores_config);
+            var bublleChart_Scores = new Chart($("#bublleChart_Scores"), bubbleChartConfig);
             
             
-            bubbleChartConfig.data.datasets[0].data = [
-                 {
-                    x: 0,
-                    r: 5,
-                    y: 89,
-                    label: 'Apple'
-                },
-                {
-                    x: 0,
-                    r: 5,
-                    y: 72,
-                    label: 'Samsung'
-                },
-                {
-                    x: 0,
-                    r: 5,
-                    y: 45,
-                    label: 'Windows'
-                },
-                {
-                    x: 0,
-                    r: 5,
-                    y: 0,
-                    label: 'Neutral',
-                    xAlign: 'right',
-                    backgroundColor: 'rgb(60, 167, 53)'
-                },
-                {
-                    x: 0,
-                    r: 5,
-                    y: 100,
-                    label: 'Bom',
-                    xAlign: 'right',
-                    backgroundColor: 'rgb(0, 172, 238)'
-                },
-                {
-                    x: 0,
-                    r: 5,
-                    y: -12,
-                    label: 'Opção 4'
-                }];
-            var myBublleChart = new Chart($("#bubbleChart"), bubbleChartConfig);
+            var profileOptionsChart = new Chart($('#profileOptionsChart'), {
+                type: 'horizontalBar',
+                options: barChartStackedConfig,
+            });
+            
+            var profileDiffrencesChart = new Chart($('#profileDiffrencesChart'), {
+                type: 'horizontalBar',
+                options: barChartStackedConfig,
+            });
             
             var data = {
                 labels: [],
@@ -858,108 +677,517 @@
                 ]
             };
             
-            var option = {
-            	showLines: true,
-            	title:{
-                    display: false
-                },
-                legend: {
-                    display: false
-                },
-                layout: {
-                  padding: 25  
-                },
-            	scales: {
-                    yAxes: [{
-                        labelString: 'Lorem ipslium',
-                        ticks: {
-                            beginAtZero: true,
-                        }
-                    }],
-            	}
-            };
             var myLineChart = Chart.Line($('#lineChart'),{
-            	data:data,
-                options:option
+            	data: data,
+                options: {
+                	showLines: true,
+                	title:{
+                        display: false
+                    },
+                    legend: {
+                        display: false
+                    },
+                    layout: {
+                      padding: 25  
+                    },
+                	scales: {
+                        yAxes: [{
+                            labelString: 'Lorem ipslium',
+                            ticks: {
+                                beginAtZero: true,
+                            }
+                        }],
+                	}
+                }
             });
             
             
-            var barOptions_stacked = {
-                tooltips: {
-                    enabled: false
-                },
-                legend:{
-                    display:false
-                },
-                scales: {
-                    yAxes: [{
-                        gridLines: {
-                            display:false
-                        }
+            /* SAMPLE DATA OF JSON TO RECEIVE FROM SERVER */
+            /* ========================================================== */
+            
+            // BAR CHART ON SCORES 
+            var general_data = {
+                barScores: {
+                    labels: ["Área Técnica", "Preço de Equipamento", "Cor"],
+                    datasets: [{
+                        data: [25, 78, 35],
+                        backgroundColor: [
+                            'rgba(67, 160, 71, 1)',
+                            'rgba(67, 160, 71, 1)',
+                            'rgba(67, 160, 71, 1)',
+                        ]
                     }]
                 },
-                tooltips: {
-                    backgroundColor: 'transparent',
-                    bodyFontColor: '#333',
-                    displayColors: false,
-                    callbacks: {
-                        label: function(tooltipItem, data) {
-                            var value = data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index];
-                            return value;
-                        },
-                        title: function(tooltipItem, data) {
-                            return;
-                        }
-                    }
-                },
-                showAllTooltips: true,
+                
             };
             
-            var myHorizontalChart1 = new Chart($('#horizontalChart1'), {
-                type: 'horizontalBar',
-                data: {
-                    labels: ["Resolução", "Sistema Operativo", "Autonomia"],
-                    
-                    datasets: [{
-                        data: [32, 78, 12],
-                        backgroundColor: "rgb(240, 125, 0)"
+            // ALL CHARTS AND TABLES ON SCORES SECTION
+            var scores_data = {
+                bublleScores: {
+                    data: [
+                        {
+                            x: 0,
+                            r: 5,
+                            y: 89,
+                            label: 'Apple'
+                        },
+                        {
+                            x: 0,
+                            r: 5,
+                            y: 72,
+                            label: 'Samsung'
+                        },
+                        {
+                            x: 0,
+                            r: 5,
+                            y: 45,
+                            label: 'Windows'
+                        },
+                        {
+                            x: 0,
+                            r: 5,
+                            y: 0,
+                            label: 'Neutral',
+                            xAlign: 'right',
+                            backgroundColor: 'rgb(60, 167, 53)'
+                        },
+                        {
+                            x: 0,
+                            r: 5,
+                            y: 100,
+                            label: 'Bom',
+                            xAlign: 'right',
+                            backgroundColor: 'rgb(0, 172, 238)'
+                        },
+                        {
+                            x: 0,
+                            r: 5,
+                            y: -12,
+                            label: 'Opção 4'
+                        }
+                    ]
+                },
+                tableScores: {
+                    headers: ["Área Tecnica", "Preço do Equipamento", "Cor"],
+                    data:[
+                        {
+                            label: "Bom",
+                            good: true,
+                            values: [100, 100, 100],
+                            total: 300
+                        },
+                        {
+                            label: "Apple",
+                            values: [100, 100, 100],
+                            total: 300
+                        },
+                        {
+                            label: "Windows",
+                            values: [100, 100, 100],
+                            total: 300
+                        },
+                        {
+                            label: "Samsung",
+                            values: [100, 100, 100],
+                            total: 300
+                        },
+                        {
+                            label: "Neutro",
+                            neutral: true,
+                            values: [100, 100, 100],
+                            total: 300
+                        },
+                        {
+                            label: "Opção 4",
+                            values: [100, 100, 100],
+                            total: 300
+                        }
+                    ],
+                    weights: [100, 100, 100]
+                },
+                treeScores: [
+                    {
+                        label: 'Área Tecnica',
+                        level: 1,
+                        childs: [
+                            {
+                                label: 'Processamento',
+                                level: 2,
+                                childs: [
+                                    {label: 'Resolução', level: 3},
+                                    {label: 'Sistema Operativo', level: 3},
+                                    {label: 'Autonomia', level: 3}
+                                ]
+                            },
+                            {
+                                label: 'Extras',
+                                level: 2,
+                                childs: [
+                                    {label: 'Camera', level: 3},
+                                    {label: 'GPS', level: 3},
+                                ]
+                            }
+                        ]
                     },
                     {
-                        data: [140, -24, 100],
-                        backgroundColor: "rgb(60, 167, 53)"
-                    }]
+                        label: 'Preço de Equipamento',
+                        level: 1
+                    },
+                    {
+                        label: 'Cor',
+                        level: 1
+                    }
+                ],
+                rangeScores: [
+                    {
+                        label: 'Area Tecnica',
+                        min: 0,
+                        max: 100,
+                        value: 40
+                    },
+                    {
+                        label: 'Preço do Equipamento',
+                        min: 0,
+                        max: 100,
+                        value: 30
+                    },
+                    {
+                        label: 'Cor',
+                        min: 0,
+                        max: 100,
+                        value: 60
+                    }
+                ]
+            };
+            
+            // ALL CHARTS ON PROFILE ANALYSIS SECTION
+            var profile_analysis_data = {
+                profileOptions: {
+                    labels: ["Resolução", "Sistema Operativo", "Autonomia"],
+                    
+                    datasets: [
+                        {
+                            data: [32, 78, 12],
+                            backgroundColor: "rgb(240, 125, 0)"
+                        },
+                        {
+                            data: [140, -24, 100],
+                            backgroundColor: "rgb(60, 167, 53)"
+                        }
+                    ]
                 },
-            
-                options: barOptions_stacked,
-            });
-            
-            var myHorizontalChart2 = new Chart($('#horizontalChart2'), {
-                type: 'horizontalBar',
-                data: {
+                profileDiffrences: {
                     labels: [""],
                     
-                    datasets: [{
-                        data: [140],
-                        backgroundColor: "rgb(60, 167, 53)"
-                    },{
-                        data: [-24],
-                        backgroundColor: "rgb(240, 125, 0)"
-                    },{
-                        data: [100],
-                        backgroundColor: "rgb(60, 167, 53)"
-                    }]
+                    datasets: [
+                        {
+                            data: [140],
+                            backgroundColor: "rgb(60, 167, 53)"
+                        },
+                        {
+                            data: [-24],
+                            backgroundColor: "rgb(240, 125, 0)"
+                        },
+                        {
+                            data: [100],
+                            backgroundColor: "rgb(60, 167, 53)"
+                        }
+                    ]
                 },
+                comparison_options: [
+                    {
+                        label: 'Samsung',
+                        color: 'rgba(0, 90, 148, 1)',
+                        active: false
+                    },
+                    {
+                        label: 'Apple',
+                        color: 'rgba(240, 125, 0, 1)',
+                        active: true
+                    },
+                    {
+                        label: 'windows',
+                        color: 'rgba(255, 214, 0, 1)',
+                        active: false
+                    },
+                    {
+                        label: 'Opção 4',
+                        color: 'rgba(67, 160, 71, 1)',
+                        active: true
+                    }
+                ],
+                treeProfileAnalysis: [
+                    {
+                        label: 'Área Tecnica',
+                        level: 1,
+                        childs: [
+                            {
+                                label: 'Processamento',
+                                level: 2,
+                                childs: [
+                                    {label: 'Resolução', level: 3},
+                                    {label: 'Sistema Operativo', level: 3},
+                                    {label: 'Autonomia', level: 3}
+                                ]
+                            },
+                            {
+                                label: 'Extras',
+                                level: 2,
+                                childs: [
+                                    {label: 'Camera', level: 3},
+                                    {label: 'GPS', level: 3},
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        label: 'Preço de Equipamento',
+                        level: 1
+                    },
+                    {
+                        label: 'Cor',
+                        level: 1
+                    }
+                ],
+                rangeProfileAnalysis: [
+                    {
+                        label: 'Area Tecnica',
+                        min: 0,
+                        max: 100,
+                        value: 40
+                    },
+                    {
+                        label: 'Preço do Equipamento',
+                        min: 0,
+                        max: 100,
+                        value: 30
+                    },
+                    {
+                        label: 'Cor',
+                        min: 0,
+                        max: 100,
+                        value: 60
+                    }
+                ]
+            };
             
-                options: barOptions_stacked,
+            /* END OF SAMPLE DATA  */
+            /* ========================================================== */
+            
+            
+            
+            
+            
+            
+            /* FUNCTIONS TO UPDATE CHARTS AND TABLES BY THE DATA  */
+            /* ========================================================== */
+            
+            /* ========================================================== */
+            /* CREATE AJAX REQUESTS ON THIS FUNCTIONS!!!!  */
+            /* ========================================================== */
+            
+            var load_general_data = function(){
+                barChart_Scores.config.data = general_data.barScores;
+                barChart_Scores.update();
+            };
+            var load_scores_data = function(){
+                bublleChart_Scores.config.data.datasets[0].data= scores_data.bublleScores.data;
+                bublleChart_Scores.update();
+                
+                var update_specifications_table = function(data){
+                    $('.specifications-table thead tr').html('');
+                    $('.specifications-table tbody').html('');
+                    $('.specifications-table tfoot tr').html('');
+                    
+                    $('.specifications-table thead tr').append($('<th></th>'));
+                    $.each(data.headers, function(){
+                        $('.specifications-table thead tr').append($('<th>'+ this +'</th>'));
+                    });
+                    $('.specifications-table thead tr').append($('<th>TOTAL</th>'));
+                    
+                    $.each(data.data, function(){
+                        var tr = '<tr>';
+                        _class = '';
+                        if (this.good === true) _class = 'good';
+                        if (this.neutral === true) _class = 'neutral';
+                        tr += '<td class="' + _class + '">' + this.label + '</td>';
+                        $.each(this.values, function() { tr += '<td>' + this + '</td>'; });
+                        tr += '<td>' + this.total + '</td>';
+                        tr += '</tr>';
+                        $('.specifications-table tbody').append($(tr));
+                    });
+                    
+                    $('.specifications-table tfoot tr').append($('<td>Pesos</td>'));
+                    $.each(data.weights, function(){
+                        $('.specifications-table tfoot tr').append($('<td><div class="weight">'+ this +'</div></td>'));
+                    });
+                    $('.specifications-table tfoot tr').append($('<td></td>'));
+                };
+
+                var update_scores_tree = function(data){
+                    $('#scores .options-table tbody').html('');
+                    $.each(data, function() {
+                        var draw_row = function(row_data){
+                            var tr = '<tr ';
+                            if (row_data.level < 3){
+                                tr += 'class="collapsible level-'+ row_data.level +'"><td><span class="mdi mdi-menu-down"></span><span class="title">' + row_data.label + '</span></td></tr>';
+                            } else {
+                                tr += 'class="option level-'+ row_data.level +'"><td>' + row_data.label + '</td></tr>';
+                            }
+                            $('#scores .options-table tbody').append(tr);
+                            $.each((row_data.childs !== undefined) ? row_data.childs : [], function() {
+                                draw_row(this);
+                            });
+                        };
+                        draw_row(this);
+                    });
+                    $('#scores .options-table tbody tr').on('click', 'td', function(e) {
+                        console.log('UPDATE TREE VALUES'); 
+                    });
+                };   
+                
+                var update_scores_ranges = function(data){
+                    $('#scores .scores-range').html('');
+                    $.each(data, function() {
+                        var range = '<label>'+ this.label +'</label><div class="range-slider">';
+                        range += '<input class="range-slider__range" type="range" value="'+ this.value +'" min="'+ this.min +'" max="'+ this.max +'">';
+                        range += '<span class="range-slider__value">'+ this.value +'</span></div>';
+                        $('#scores .scores-range').append(range);
+                    });
+                    rangeSlider();
+                    $('#scores .scores-range .range-slider__range').on('change', function(e) {
+                       console.log('UPDATE RANGE VALUES ON SERVER'); 
+                    });
+                };
+                update_specifications_table(scores_data.tableScores);
+                update_scores_tree(scores_data.treeScores);
+                update_scores_ranges(scores_data.rangeScores);
+            };
+            var load_profile_analysis_data = function(){
+                profileOptionsChart.config.data = profile_analysis_data.profileOptions;
+                profileOptionsChart.update();
+                
+                profileDiffrencesChart.config.data = profile_analysis_data.profileDiffrences;
+                profileDiffrencesChart.update();
+                
+                var update_comparision_options = function(options){
+                    $('.comparison-labels ul').html('');
+                    $.each(options, function() {
+                        var is_active = (this.active === true) ? 'active' : '';
+                        var option = '<li><a href="" class="'+ is_active +'"><span style="background: '+ this.color +';"></span>'+ this.label +'</a></li>';
+                        $('.comparison-labels ul').append(option);
+                    });
+                };
+                var update_profile_analysis_tree = function(data){
+                    $('#profile_analysis .options-table tbody').html('');
+                    $.each(data, function() {
+                        var draw_row = function(row_data){
+                            var tr = '<tr ';
+                            if (row_data.level < 3){
+                                tr += 'class="collapsible level-'+ row_data.level +'"><td><span class="mdi mdi-menu-down"></span><span class="title">' + row_data.label + '</span></td></tr>';
+                            } else {
+                                tr += 'class="option level-'+ row_data.level +'"><td>' + row_data.label + '</td></tr>';
+                            }
+                            $('#profile_analysis .options-table tbody').append(tr);
+                            $.each((row_data.childs !== undefined) ? row_data.childs : [], function() {
+                                draw_row(this);
+                            });
+                        };
+                        draw_row(this);
+                    });
+                    $('#profile_analysis .options-table tbody tr').on('click', 'td', function(e) {
+                        console.log('UPDATE TREE VALUES'); 
+                    });
+                };   
+                var update_profile_analysis_ranges = function(data){
+                    $('#profile_analysis .profile-analysis-range').html('');
+                    $.each(data, function() {
+                        var range = '<label>'+ this.label +'</label><div class="range-slider">';
+                        range += '<input class="range-slider__range" type="range" value="'+ this.value +'" min="'+ this.min +'" max="'+ this.max +'">';
+                        range += '<span class="range-slider__value">'+ this.value +'</span></div>';
+                        $('#profile_analysis .profile-analysis-range').append(range);
+                    });
+                    rangeSlider();
+                    $('#profile_analysis .profile-analysis-range .range-slider__range').on('change', function(e) {
+                       console.log('UPDATE RANGE VALUES ON SERVER'); 
+                    });
+                };
+                
+                update_comparision_options(profile_analysis_data.comparison_options);
+                update_profile_analysis_tree(profile_analysis_data.treeProfileAnalysis);
+                update_profile_analysis_ranges(profile_analysis_data.rangeProfileAnalysis);
+            };
+            
+            
+            
+            
+            /* EVENTS ATTACHED  */
+            /* ========================================================== */
+            
+            var initialized = false;
+            var current_general_index = null;
+            var current_scores_index = null;
+            
+            $("#barChart_Global").click(function(evt){
+                var activePoints = barChart_Global.getElementsAtEvent(evt);
+                if (activePoints.length > 0){
+                    current_general_index = activePoints[0]._index;
+                    $.each(barChart_Global.config.data.datasets[0].backgroundColor, function(i){
+                        var lastComma = this.lastIndexOf(',');
+                        if (i !== activePoints[0]._index){
+                            var newColor = this.slice(0, lastComma + 1) + " 0.3)";
+                        } else {
+                            var newColor = this.slice(0, lastComma + 1) + " 1)";
+                        }
+                        barChart_Global.config.data.datasets[0].backgroundColor[i] = newColor;  
+                    });
+                    barChart_Global.update();
+                    initialized = true;
+                    
+                    
+                    load_general_data();
+                    $.each(barChart_Scores.config.data.datasets[0].backgroundColor, function(i){
+                        var lastComma = this.lastIndexOf(',');
+                        if (i !== 0){
+                            var newColor = this.slice(0, lastComma + 1) + " 0.3)";
+                        } else {
+                            var newColor = this.slice(0, lastComma + 1) + " 1)";
+                        }
+                        barChart_Scores.config.data.datasets[0].backgroundColor[i] = newColor;  
+                    });
+                    barChart_Scores.update();
+                    load_scores_data();
+                    load_profile_analysis_data();
+                    $('.results-panel.collapssible').removeClass('disabled');
+                }
             });
-            
-            
-            $("#barChart1").click(function(evt){
-                var activePoints = myBarChart1.getElementsAtEvent(evt);
-                console.log(activePoints);
-            });  
+            $("#barChart_Scores").click(function(evt){
+                var activePoints = barChart_Scores.getElementsAtEvent(evt);
+                if (activePoints.length > 0){
+                    current_scores_index = activePoints[0]._index;
+                    $.each(barChart_Scores.config.data.datasets[0].backgroundColor, function(i){
+                        var lastComma = this.lastIndexOf(',');
+                        if (i !== activePoints[0]._index){
+                            var newColor = this.slice(0, lastComma + 1) + " 0.3)";
+                        } else {
+                            var newColor = this.slice(0, lastComma + 1) + " 1)";
+                        }
+                        barChart_Scores.config.data.datasets[0].backgroundColor[i] = newColor;  
+                    });
+                    barChart_Scores.update();
+                    
+                    load_scores_data();
+                }
+            });
+            $('.comparison-labels').on('click', 'a', function(e) {
+                
+                load_profile_analysis_data();
+                return false;
+            });
 
             $('.results-panel.collapssible').on('click', function(e){
+                if(initialized === false){ return; }
+                
                 $(this).siblings('.collapssible.open').find('.title span').removeClass('mdi-window-minimize').addClass('mdi-plus');
                 $(this).siblings('.collapssible.open').find('.content').slideToggle("faster");
                 $(this).siblings('.collapssible.open').removeClass('open');
@@ -979,26 +1207,25 @@
             });
             
             
+            // RANGE INPUT INITIALIZATION
             var rangeSlider = function(){
-              var slider = $('.range-slider'),
-                  range = $('.range-slider__range'),
-                  value = $('.range-slider__value');
+                var slider = $('.range-slider'),
+                    range = $('.range-slider__range'),
+                    value = $('.range-slider__value');
                 
-              slider.each(function(){
-            
-                value.each(function(){
-                  var value = $(this).prev().attr('value');
-                  $(this).html(value);
+                slider.each(function(){
+                    value.each(function(){
+                        var value = $(this).prev().attr('value');
+                        $(this).html(value);
+                    });
+                
+                    range.on('input', function(){
+                        $(this).next(value).html(this.value);
+                    });
+                    
                 });
-            
-                range.on('input', function(){
-                  $(this).next(value).html(this.value);
-                });
-              });
             };
-            
-            rangeSlider();
-            
+
         });
         
     </script>

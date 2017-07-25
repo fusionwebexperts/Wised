@@ -21787,6 +21787,8 @@ a.show-matrix-table {
   border: 1px solid #ccc;
   padding: 15px;
   margin-bottom: 20px; }
+  .results-panel.collapssible.disabled {
+    opacity: .5; }
   .results-panel.collapssible:hover:not(.open) {
     cursor: pointer; }
   .results-panel.collapssible .content {
@@ -22034,6 +22036,31 @@ input::-moz-focus-outer {
 .horizontal-charts {
   margin-top: 40px;
   margin-bottom: 40px; }
+
+.comparison-labels ul {
+  list-style: none;
+  display: table;
+  margin: 0 auto;
+  margin-top: 20px;
+  background: #f9f9f9;
+  border: 1px solid #f1eded;
+  padding: 0; }
+  .comparison-labels ul li {
+    float: left; }
+    .comparison-labels ul li a {
+      padding: 3px 15px;
+      color: #333;
+      font-size: 13px;
+      display: block;
+      opacity: .5; }
+      .comparison-labels ul li a.active {
+        opacity: 1; }
+      .comparison-labels ul li a span {
+        width: 13px;
+        height: 13px;
+        display: block;
+        float: left;
+        margin: 3px; }
 
 .navbar {
   min-height: 111px !important; }
