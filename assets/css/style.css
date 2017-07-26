@@ -21736,7 +21736,8 @@ a.show-matrix-table {
         width: 100%;
         padding: 3px; }
       .options-evaluation table td.add-col, .options-evaluation table th.add-col {
-        display: none; }
+        display: none;
+        min-width: 100px; }
       .options-evaluation table td.no-padding, .options-evaluation table th.no-padding {
         padding: 0; }
 
