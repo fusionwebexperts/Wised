@@ -425,6 +425,19 @@
                             
                             <div class="row">
                                 <div class="col-md-6">
+                                    <div class="specifications-table-labels">
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <th></th>
+                                                </tr>
+                                            </thead>
+                                            <tbody></tbody>
+                                            <tfoot>
+                                                <tr></tr>
+                                            </tfoot>
+                                        </table>
+                                    </div>
                                     <div class="specifications-table">
                                         <table>
                                             <thead>
@@ -521,21 +534,23 @@
                             <p class="basictext">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce augue orci, imperdiet ut tincidunt quis, molestie quis odio.<br> Sed convallis, nibh ut fermentum aliquet, felis odio finibus nulla, sed accumsan lacus magna id turpis.</p>
                             
                             <br><br>
-                            <div class="row">
-                                <div class="col-md-6 col-md-offset-4">
+                            <div class="row comparison-sensibility">
+                                <div class="col-md-9 col-md-offset-3">
                                     <b>Intersect</b> 
-                                    <select>
-                                        <option>Apple</option>
-                                        <option>Samsung</option>
+                                    <select class="selectpicker">
+                                        <option value="apple">Apple</option>
+                                        <option value="samsung">Samsung</option>
+                                        <option value="windows">windows</option>
                                     </select>
                                     <b>with</b> 
-                                    <select>
-                                        <option>Samsung</option>
-                                        <option>Apple</option>
+                                    <select class="selectpicker">
+                                        <option value="apple">Apple</option>
+                                        <option value="samsung">Samsung</option>
+                                        <option value="windows">windows</option>
                                     </select>
                                 </div>
                                 <div class="col-md-12">
-                                    <canvas id="lineChart" width="400" height="250"></canvas>
+                                    <canvas id="sensibilityChart" width="400" height="250"></canvas>
                                 </div>
                             </div>
                         </div>
@@ -590,6 +605,12 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
     <script src="assets/js/charts.js"></script>
     
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/css/bootstrap-select.min.css">
+    
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/js/bootstrap-select.min.js"></script>
+    
     <script>
         $().ready(function() {
             
@@ -634,51 +655,8 @@
                 type: 'horizontalBar',
                 options: barChartStackedConfig,
             });
-            
-            var data = {
-                labels: [],
-                datasets: [
-                    {
-                        fill: false,
-                        lineTension: 0.1,
-                        backgroundColor: "rgba(75,192,192,0.4)",
-                        borderColor: "rgba(75,192,192,1)",
-                        borderCapStyle: 'butt',
-                        borderDash: [],
-                        borderDashOffset: 0.0,
-                        borderJoinStyle: 'miter',
-                        pointBorderColor: "rgba(75,192,192,1)",
-                        pointBackgroundColor: "#fff",
-                        pointBorderWidth: 0,
-                        pointHoverRadius: 0,
-                        pointHoverBackgroundColor: "rgba(75,192,192,1)",
-                        pointHoverBorderColor: "rgba(220,220,220,1)",
-                        pointHoverBorderWidth: 0,
-                        pointRadius: 0,
-                        pointHitRadius: 0,
-                        data: [59, 50],
-                    },
-                    {
-                        fill: false,
-                        pointBorderWidth: 0,
-                        pointHoverBorderWidth: 0,
-                        pointRadius: 0,
-                        pointHitRadius: 0,
-                        data: [50, 52],
-                    },
-                    {
-                        fill: false,
-                        pointBorderWidth: 0,
-                        pointHoverBorderWidth: 0,
-                        pointRadius: 0,
-                        pointHitRadius: 0,
-                        data: [80, 42],
-                    }
-                ]
-            };
-            
-            var myLineChart = Chart.Line($('#lineChart'),{
-            	data: data,
+
+            var sensibilityChart = Chart.Line($('#sensibilityChart'),{
                 options: {
                 	showLines: true,
                 	title:{
@@ -706,12 +684,21 @@
             /* ========================================================== */
             
             // BAR CHART ON SCORES 
-            var general_data = {
+            var general_data = [{
                 barScores: {
-                    labels: ["Área Técnica", "Preço de Equipamento", "Cor"],
+                    labels: ["Área Técnica", "Preço de Equipamento", "Cor", "Área Técnica", "Preço de Equipamento", "Cor", "Área Técnica", "Preço de Equipamento", "Cor", "Área Técnica", "Preço de Equipamento", "Cor"],
                     datasets: [{
-                        data: [25, 78, 35],
+                        data: [25, 78, 35, 25, 78, 35, 25, 78, 35, 25, 78, 35],
                         backgroundColor: [
+                            'rgba(67, 160, 71, 1)',
+                            'rgba(67, 160, 71, 1)',
+                            'rgba(67, 160, 71, 1)',
+                            'rgba(67, 160, 71, 1)',
+                            'rgba(67, 160, 71, 1)',
+                            'rgba(67, 160, 71, 1)',
+                            'rgba(67, 160, 71, 1)',
+                            'rgba(67, 160, 71, 1)',
+                            'rgba(67, 160, 71, 1)',
                             'rgba(67, 160, 71, 1)',
                             'rgba(67, 160, 71, 1)',
                             'rgba(67, 160, 71, 1)',
@@ -719,7 +706,51 @@
                     }]
                 },
                 
-            };
+            },{
+                barScores: {
+                    labels: ["Área Técnica", "Preço de Equipamento", "Cor"],
+                    datasets: [{
+                        data: [25, 78, 35],
+                        backgroundColor: [
+                            'rgba(67, 160, 71, 1)',
+                            'rgba(67, 160, 71, 1)',
+                            'rgba(67, 160, 71, 1)'
+                        ]
+                    }]
+                },
+                
+            },{
+                barScores: {
+                    labels: ["Área Técnica", "Preço de Equipamento", "Cor", "Área Técnica", "Preço de Equipamento", "Cor"],
+                    datasets: [{
+                        data: [25, 78, 35, 78, 35, 20],
+                        backgroundColor: [
+                            'rgba(67, 160, 71, 1)',
+                            'rgba(67, 160, 71, 1)',
+                            'rgba(67, 160, 71, 1)',
+                            'rgba(67, 160, 71, 1)',
+                            'rgba(67, 160, 71, 1)',
+                            'rgba(67, 160, 71, 1)',
+                        ]
+                    }]
+                },
+                
+            },{
+                barScores: {
+                    labels: ["Área Técnica", "Preço de Equipamento", "Cor", "Preço de Equipamento", "Cor"],
+                    datasets: [{
+                        data: [25, 78, 35, 25, 35],
+                        backgroundColor: [
+                            'rgba(67, 160, 71, 1)',
+                            'rgba(67, 160, 71, 1)',
+                            'rgba(67, 160, 71, 1)',
+                            'rgba(67, 160, 71, 1)',
+                            'rgba(67, 160, 71, 1)'
+                        ]
+                    }]
+                },
+                
+            }];
             
             // ALL CHARTS AND TABLES ON SCORES SECTION
             var scores_data = {
@@ -768,42 +799,42 @@
                     ]
                 },
                 tableScores: {
-                    headers: ["Área Tecnica", "Preço do Equipamento", "Cor"],
+                    headers: ["Área Tecnica", "Preço do Equipamento", "Cor", "Área Tecnica", "Preço do Equipamento", "Cor", "Área Tecnica", "Preço do Equipamento", "Cor", "Área Tecnica", "Preço do Equipamento", "Cor"],
                     data:[
                         {
                             label: "Bom",
                             good: true,
-                            values: [100, 100, 100],
+                            values: [100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100],
                             total: 300
                         },
                         {
                             label: "Apple",
-                            values: [100, 100, 100],
+                            values: [100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100],
                             total: 300
                         },
                         {
                             label: "Windows",
-                            values: [100, 100, 100],
+                            values: [100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100],
                             total: 300
                         },
                         {
                             label: "Samsung",
-                            values: [100, 100, 100],
+                            values: [100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100],
                             total: 300
                         },
                         {
                             label: "Neutro",
                             neutral: true,
-                            values: [100, 100, 100],
+                            values: [100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100],
                             total: 300
                         },
                         {
                             label: "Opção 4",
-                            values: [100, 100, 100],
+                            values: [100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100],
                             total: 300
                         }
                     ],
-                    weights: [100, 100, 100]
+                    weights: [100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100]
                 },
                 treeScores: [
                     {
@@ -971,6 +1002,65 @@
                 ]
             };
             
+            var sensibility_analysis_data = {
+                'apple-samsung': {
+                    datasets: [
+                        {
+                            borderColor: "rgba(240, 125, 0, 1)",
+                            fill: false,
+                            pointRadius: 0,
+                            data: [0, 80],
+                        },
+                        {
+                            borderColor: "rgba(255, 214, 0, 1)",
+                            fill: false,
+                            pointRadius: 0,
+                            data: [20, 40],
+                        },
+                        {
+                            borderColor: "rgb(0, 172, 238)",
+                            pointRadius: 0,
+                            fill: false,
+                            data: [61, 61],
+                        },
+                        {
+                            borderColor: "rgb(60, 167, 53)",
+                            fill: false,
+                            pointRadius: 0,
+                            data: [30, 24],
+                        }
+                    ]
+                },
+                'windows-samsung': {
+                    datasets: [
+                        {
+                            borderColor: "rgba(240, 125, 0, 1)",
+                            fill: false,
+                            pointRadius: 0,
+                            data: [0, 50],
+                        },
+                        {
+                            borderColor: "rgba(255, 214, 0, 1)",
+                            fill: false,
+                            pointRadius: 0,
+                            data: [30, 40],
+                        },
+                        {
+                            borderColor: "rgb(0, 172, 238)",
+                            pointRadius: 0,
+                            fill: false,
+                            data: [51, 51],
+                        },
+                        {
+                            borderColor: "rgb(60, 167, 53)",
+                            fill: false,
+                            pointRadius: 0,
+                            data: [20, 34],
+                        }
+                    ]
+                }
+            }
+            
             /* END OF SAMPLE DATA  */
             /* ========================================================== */
             
@@ -987,7 +1077,7 @@
             /* ========================================================== */
             
             var load_general_data = function(){
-                barChart_Scores.config.data = general_data.barScores;
+                barChart_Scores.config.data = general_data[current_general_index].barScores;
                 barChart_Scores.update();
             };
             var load_scores_data = function(){
@@ -995,29 +1085,35 @@
                 bublleChart_Scores.update();
                 
                 var update_specifications_table = function(data){
+                    $('.specifications-table-labels tbody').html('');
+                    $('.specifications-table-labels tfoot tr').html('');
+                    
                     $('.specifications-table thead tr').html('');
                     $('.specifications-table tbody').html('');
                     $('.specifications-table tfoot tr').html('');
                     
-                    $('.specifications-table thead tr').append($('<th></th>'));
+                    //$('.specifications-table thead tr').append($('<th></th>'));
                     $.each(data.headers, function(){
                         $('.specifications-table thead tr').append($('<th>'+ this +'</th>'));
                     });
                     $('.specifications-table thead tr').append($('<th>TOTAL</th>'));
                     
                     $.each(data.data, function(){
-                        var tr = '<tr>';
+                        var tr_labels = '<tr>';
+                        var tr_values = '<tr>';
                         _class = '';
                         if (this.good === true) _class = 'good';
                         if (this.neutral === true) _class = 'neutral';
-                        tr += '<td class="' + _class + '">' + this.label + '</td>';
-                        $.each(this.values, function() { tr += '<td>' + this + '</td>'; });
-                        tr += '<td>' + this.total + '</td>';
-                        tr += '</tr>';
-                        $('.specifications-table tbody').append($(tr));
+                        tr_labels += '<td class="' + _class + '">' + this.label + '</td>';
+                        $.each(this.values, function() { tr_values += '<td>' + this + '</td>'; });
+                        tr_values += '<td>' + this.total + '</td>';
+                        tr_labels += '</tr>';
+                        tr_values += '</tr>';
+                        $('.specifications-table tbody').append($(tr_values));
+                        $('.specifications-table-labels tbody').append($(tr_labels));
                     });
                     
-                    $('.specifications-table tfoot tr').append($('<td>Pesos</td>'));
+                    $('.specifications-table-labels tfoot tr').append($('<td>Pesos</td>'));
                     $.each(data.weights, function(){
                         $('.specifications-table tfoot tr').append($('<td><div class="weight">'+ this +'</div></td>'));
                     });
@@ -1117,6 +1213,12 @@
                 update_profile_analysis_tree(profile_analysis_data.treeProfileAnalysis);
                 update_profile_analysis_ranges(profile_analysis_data.rangeProfileAnalysis);
             };
+            var load_sensibility_analysis_data = function(comparison_one, comparison_two){
+                if (comparison_one !== undefined && comparison_two !== undefined){
+                    sensibilityChart.config.data.datasets = sensibility_analysis_data[comparison_one + '-' + comparison_two].datasets;
+                    sensibilityChart.update();
+                }
+            };
             
             
             
@@ -1158,6 +1260,7 @@
                     barChart_Scores.update();
                     load_scores_data();
                     load_profile_analysis_data();
+                    load_sensibility_analysis_data();
                     $('.results-panel.collapssible').removeClass('disabled');
                 }
             });
@@ -1183,6 +1286,12 @@
                 
                 load_profile_analysis_data();
                 return false;
+            });
+            $('.comparison-sensibility').on('change', 'select', function(e) {
+               var comparison_one = $($('.comparison-sensibility select').get(0)).val();
+               var comparison_two = $($('.comparison-sensibility select').get(1)).val();
+               
+               load_sensibility_analysis_data(comparison_one, comparison_two);
             });
 
             $('.results-panel.collapssible').on('click', function(e){
@@ -1225,6 +1334,8 @@
                     
                 });
             };
+            
+            $('.selectpicker').selectpicker({});
 
         });
         

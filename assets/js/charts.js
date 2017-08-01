@@ -93,7 +93,7 @@ Chart.pluginService.register({
                 "left": tooltip._view.caretX + 10,
                 "top": tooltip._view.caretY - 20
             });
-    
+            
             elem.html(tooltip_value);
             $(chart.chart.canvas).parent().append(elem);
         }
@@ -264,6 +264,7 @@ var barChartConfig = {
         ]
     },
     options: {
+        animation : false,
         showAllTooltips: true,
         tooltips: {
             enabled: false

@@ -175,11 +175,11 @@
     }
 }
 
-.btn-group{
+.options .btn-group{
     box-shadow: none;
     width: 100% !important;
 }
-.bootstrap-select>.dropdown-toggle{
+.options .bootstrap-select>.dropdown-toggle{
     box-shadow: none;
     background-color: transparent;
     border: none;
@@ -193,10 +193,11 @@
         }
     }
 }
-.open>.dropdown-toggle.btn-default, .open>.dropdown-toggle.btn-default:hover, .open>.dropdown-toggle.btn-default:focus{
+
+.options .open>.dropdown-toggle.btn-default, .options .open>.dropdown-toggle.btn-default:hover, .options .open>.dropdown-toggle.btn-default:focus{
     background: #FFF;
 }
-.dropdown-menu{
+.options .dropdown-menu{
     margin-top: 0px;
     
     li a{
