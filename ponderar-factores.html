@@ -470,6 +470,7 @@
                     
                     
                     
+                        <div class="panel-dialog-container-overlay"></div>
                         <div class="panel-dialog-container">
                             <div class="panel-content">
                                 <div class="headertitle">
@@ -677,10 +678,11 @@
                                         </div>
                                         <buton id="get-scale" class="btn-action yellow right">Get Weight</buton>
                                     </div>
+                                    <!--
                                     <div class="buttons">
                                         <a class="btn-previous disabled">Previous</a>
                                         <a class="btn-next">Next</a>
-                                    </div>
+                                    </div>-->
                                 </div>
                             </div>
                         </div>
@@ -856,14 +858,14 @@
                 };
                 
                 FactorDialogPage.prototype.showDialog = function() {
-                    $('.list-criteria-container').addClass('show-dialog');
+                    $('.panel-dialog-container-overlay').addClass('show');
                     $('.panel-dialog-container').addClass('show'); 
                     
                     this.refreshPage();
                 };
                 
                 FactorDialogPage.prototype.hideDialog = function() {
-                    $('.list-criteria-container').removeClass('show-dialog');
+                    $('.panel-dialog-container-overlay').removeClass('show');
                     $('.panel-dialog-container').removeClass('show'); 
                     
                     $('.panel-dialog-container .dialog-page').hide();

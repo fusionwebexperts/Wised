@@ -20857,7 +20857,7 @@ ul.jqtree-tree li.jqtree-selected > .jqtree-element:hover {
   margin-bottom: 22px; }
 
 .submenu td.headsub {
-  padding-top: 5%;
+  padding-top: 2%;
   font-weight: 400;
   padding-bottom: 5%;
   color: #666;
@@ -20866,9 +20866,10 @@ ul.jqtree-tree li.jqtree-selected > .jqtree-element:hover {
 
 .submenu {
   background-color: #2c2c2c;
-  height: 100px;
+  height: 61px;
   width: calc(100% + 60px);
-  margin-left: -30px; }
+  margin-left: -30px;
+  margin-top: 15px; }
 
 td.headsub.first {
   margin-left: 0px !important; }
@@ -21012,6 +21013,12 @@ td.headsub.first {
   font-weight: bold; }
 
 /* DEFINIR ESCALAS */
+#evaluation-quiz {
+  background: #009ee2 !important;
+  position: absolute;
+  bottom: 20px;
+  right: 0; }
+
 .list-criteria-container.show-dialog {
   opacity: .4; }
 
@@ -21023,18 +21030,42 @@ td.headsub.first {
   top: 0;
   left: 0; }
 
+.panel-dialog-container-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #333;
+  opacity: .6;
+  z-index: 1000;
+  display: none; }
+
+.panel-dialog-container-overlay.show {
+  display: block; }
+
 .panel-dialog-container {
   display: none;
-  position: absolute;
-  top: 40px;
-  margin: 15px;
+  position: fixed;
+  z-index: 19999999;
+  top: 0;
+  left: 0;
+  margin: 4% 5%;
+  width: 90%;
   background: #fff;
-  width: calc(100% - 60px);
-  min-height: 376px;
-  border: 1px solid #008ec9; }
+  border: 1px solid #008ec9;
+  height: 80%; }
+  @media screen and (min-width: 1368px) {
+    .panel-dialog-container {
+      margin: 4% 20%;
+      width: 60%;
+      height: auto; } }
 
 .panel-dialog-container.show {
   display: block; }
+
+.panel-dialog-container .panel-content {
+  height: 100%; }
 
 .panel-dialog-container .headertitle {
   margin-top: -15px;
@@ -21048,8 +21079,8 @@ td.headsub.first {
 
 .panel-dialog-container .headertitle span.done {
   display: block;
-  background: #005A94;
-  padding: 13px 20px;
+  background: #005a94;
+  padding: 14px 20px;
   position: absolute;
   right: 0;
   top: 0;
@@ -21058,8 +21089,8 @@ td.headsub.first {
 .panel-dialog-container .dialog-breadcrumbs ul {
   list-style: none;
   padding: 0;
-  background: #00395B;
-  color: #006692;
+  background: #005a94;
+  color: #003a5c;
   display: inline-block;
   width: 100%; }
 
@@ -21073,14 +21104,15 @@ td.headsub.first {
   position: relative;
   display: block;
   float: left;
-  width: 100%; }
+  width: 100%;
+  font-weight: bold; }
 
 .panel-dialog-container .dialog-breadcrumbs ul li.active {
-  background: #005A94;
+  background: #003a5c;
   color: #FFF; }
 
 .panel-dialog-container .dialog-breadcrumbs ul li.active span:after {
-  border-left-color: #005A94; }
+  border-left-color: #003a5c; }
 
 .panel-dialog-container .dialog-breadcrumbs ul li:last-child span:before,
 .panel-dialog-container .dialog-breadcrumbs ul li:last-child span:after {
@@ -21091,11 +21123,11 @@ td.headsub.first {
   display: block;
   width: 0;
   height: 0;
-  border-top: 21px solid transparent;
+  border-top: 20px solid transparent;
   border-bottom: 22px solid transparent;
-  border-left: 21px solid #008ec9;
+  border-left: 21px solid #003a5c;
   position: absolute;
-  top: 50%;
+  top: 54%;
   margin-top: -22px;
   margin-left: 1px;
   left: 100%;
@@ -21108,7 +21140,7 @@ td.headsub.first {
   height: 0;
   border-top: 20px solid transparent;
   border-bottom: 22px solid transparent;
-  border-left: 21px solid #003a5c;
+  border-left: 21px solid #005a94;
   position: absolute;
   top: 50%;
   margin-top: -21px;
@@ -21148,7 +21180,8 @@ td.headsub.first {
   display: none; }
 
 .panel-dialog-container .panel-body {
-  min-height: 280px; }
+  height: 80%;
+  overflow-y: scroll; }
 
 .references-table {
   margin-top: 15px;
@@ -21178,7 +21211,8 @@ td.headsub.first {
 .references-table ol li {
   display: block;
   float: left;
-  width: 100%; }
+  width: 100%;
+  height: 56px; }
 
 .references-table ol li.selected:not(.new-ref):not(.edit-ref) .row:not(.add-new-ref) > div:not(.ref-actions) {
   background: #ccc;
@@ -21201,7 +21235,7 @@ td.headsub.first {
   position: absolute;
   content: '';
   margin-left: 5px;
-  margin-top: 30px;
+  margin-top: 25px;
   width: 8px;
   height: 8px;
   background-image: url(../images/dragListicon.png); }
@@ -21211,39 +21245,46 @@ td.headsub.first {
   float: left; }
 
 .references-table .ref-description {
-  padding: 10px;
-  border-top: 1px solid #ccc;
-  border-left: 1px solid #ccc;
-  border-right: 1px solid #ccc;
-  border-bottom: 1px solid #ccc; }
+  padding: 6px 10px 0;
+  border-top: 1px solid #fff;
+  border-left: 1px solid #fff;
+  border-right: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+  background: #FFE0C3;
+  width: 70%; }
 
 .references-table .ref-name {
   text-align: center;
-  border-top: 1px solid #ccc;
-  border-right: 1px solid #ccc;
-  border-bottom: 1px solid #ccc;
+  border-top: 1px solid #fff;
+  border-right: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+  background: #FFE0C3;
   font-weight: bold;
-  padding: 25px 0; }
+  padding: 16px 0;
+  width: 17%; }
 
 .references-table .ref-actions {
-  padding: 20px 0;
-  font-size: 21px; }
+  padding: 10px 0;
+  font-size: 21px;
+  width: 13%; }
 
 .references-table .row.add-new-ref {
   margin-left: 25px;
   width: calc(100% - 25px);
-  float: left; }
+  float: left;
+  margin-top: 15px; }
 
 .references-table .row.add-new-ref > div {
   padding: 0;
-  margin: 0; }
+  margin: 0;
+  width: 87%; }
 
 .references-table .row.add-new-ref a {
   border: 1px solid #f07d00;
   color: #f07d00;
   display: block;
   width: 100%;
-  padding: 20px;
+  padding: 16px;
   text-align: center;
   font-weight: bold;
   cursor: pointer; }
@@ -21257,10 +21298,26 @@ td.headsub.first {
 .references-table ol li.new-ref textarea,
 .references-table ol li.edit-ref textarea {
   width: 100%;
-  height: 80px;
+  height: 33px;
   border: none;
   text-align: center;
   display: block; }
+  .references-table ol li.new-ref textarea::-webkit-input-placeholder,
+  .references-table ol li.edit-ref textarea::-webkit-input-placeholder {
+    /* Chrome/Opera/Safari */
+    color: #ccc; }
+  .references-table ol li.new-ref textarea::-moz-placeholder,
+  .references-table ol li.edit-ref textarea::-moz-placeholder {
+    /* Firefox 19+ */
+    color: #ccc; }
+  .references-table ol li.new-ref textarea:-ms-input-placeholder,
+  .references-table ol li.edit-ref textarea:-ms-input-placeholder {
+    /* IE 10+ */
+    color: #ccc; }
+  .references-table ol li.new-ref textarea:-moz-placeholder,
+  .references-table ol li.edit-ref textarea:-moz-placeholder {
+    /* Firefox 18- */
+    color: #ccc; }
 
 .references-table ol li.new-ref .ref-name,
 .references-table ol li.edit-ref .ref-name {
@@ -21310,6 +21367,27 @@ td.headsub.first {
     background-image: url(../images/good.png); }
   .ref-definition-buttons button.define-neutral {
     background-image: url(../images/neutral.png); }
+
+.define-neutral, .define-good {
+  float: right;
+  cursor: pointer;
+  padding: 4px 4px;
+  background: #e0e0e0;
+  margin: 3px 2px; }
+  .define-neutral.disabled, .define-good.disabled {
+    opacity: .4; }
+
+.define-good-icon {
+  background-image: url(../images/good.png);
+  width: 14px;
+  height: 16px;
+  display: block; }
+
+.define-neutral-icon {
+  background-image: url(../images/neutral.png);
+  width: 14px;
+  height: 16px;
+  display: block; }
 
 .ref-definition-buttons button.disabled {
   opacity: .4; }
@@ -21700,11 +21778,17 @@ a.show-matrix-table {
       background: #f07d00; }
       .options-evaluation table tbody tr.level-1 td:nth-child(1) {
         padding-left: 25px;
-        text-transform: uppercase; }
+        text-transform: uppercase;
+        text-align: left; }
+      .options-evaluation table tbody tr.level-1 td {
+        text-align: center; }
     .options-evaluation table tbody tr.level-2 {
       background: #008ec9; }
       .options-evaluation table tbody tr.level-2 td:nth-child(1) {
-        padding-left: 50px; }
+        padding-left: 50px;
+        text-align: left; }
+      .options-evaluation table tbody tr.level-2 td {
+        text-align: center; }
     .options-evaluation table tbody tr.level-3 td:nth-child(1) {
       color: #333;
       padding-left: 75px; }
@@ -22083,7 +22167,7 @@ input::-moz-focus-outer {
         margin: 3px; }
 
 .comparison-sensibility b {
-  margin: 0 10px; }
+  margin: 0 15px; }
 
 .navbar {
   min-height: 111px !important; }

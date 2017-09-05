@@ -1,6 +1,12 @@
 
 /* DEFINIR ESCALAS */
 
+#evaluation-quiz{
+    background: #009ee2!important;
+    position: absolute;
+    bottom: 20px;
+    right: 0;
+}
 .list-criteria-container.show-dialog{
     opacity: .4;
 }
@@ -12,18 +18,43 @@
     top: 0;
     left: 0;
 }
+.panel-dialog-container-overlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #333;
+    opacity: .6;
+    z-index: 1000;
+    display: none;
+}
+.panel-dialog-container-overlay.show{
+    display: block;
+}
 .panel-dialog-container{
     display: none;
-    position: absolute;
-    top: 40px;
-    margin: 15px;
+    position: fixed;
+    z-index: 19999999;
+    top: 0;
+    left: 0;
+    margin: 4% 5%;
+    width: 90%;
     background: #fff;
-    width: calc(100% - 60px);
-    min-height: 376px;
     border: 1px solid #008ec9;
+    height: 80%;
+    
+    @media screen and (min-width: 1368px) {
+      margin: 4% 20%;
+      width: 60%;
+      height: auto;
+    }
 }
 .panel-dialog-container.show{
     display: block;
+}
+.panel-dialog-container .panel-content{
+    height: 100%;
 }
 .panel-dialog-container .headertitle{
     margin-top: -15px;
@@ -37,8 +68,8 @@
 }
 .panel-dialog-container .headertitle span.done{
     display: block;
-    background: #005A94;
-    padding: 13px 20px;
+    background: #005a94;
+    padding: 14px 20px;
     position: absolute;
     right: 0;
     top: 0;
@@ -47,8 +78,8 @@
 .panel-dialog-container .dialog-breadcrumbs ul{
     list-style: none;
     padding: 0;
-    background: #00395B;
-    color: #006692;
+    background: #005a94;
+    color: #003a5c;
     display: inline-block;
     width: 100%;
 }
@@ -63,13 +94,14 @@
     display: block;
     float: left;
     width: 100%;
+    font-weight: bold;
 }
 .panel-dialog-container .dialog-breadcrumbs ul li.active{
-    background: #005A94;
+    background: #003a5c;
     color: #FFF;
 }
 .panel-dialog-container .dialog-breadcrumbs ul li.active span:after{
-    border-left-color: #005A94;
+    border-left-color: #003a5c;
 }
 .panel-dialog-container .dialog-breadcrumbs ul li:last-child span:before,
 .panel-dialog-container .dialog-breadcrumbs ul li:last-child span:after{
@@ -80,11 +112,11 @@
     display: block;
     width: 0;
     height: 0;
-    border-top: 21px solid transparent;
+    border-top: 20px solid transparent;
     border-bottom: 22px solid transparent;
-    border-left: 21px solid #008ec9;
+    border-left: 21px solid #003a5c;
     position: absolute;
-    top: 50%;
+    top: 54%;
     margin-top: -22px;
     margin-left: 1px;
     left: 100%;
@@ -97,7 +129,7 @@
     height: 0;
     border-top: 20px solid transparent;
     border-bottom: 22px solid transparent;
-    border-left: 21px solid hsl(202, 100%, 18%);
+    border-left: 21px solid #005a94;
     position: absolute;
     top: 50%;
     margin-top: -21px;
@@ -137,7 +169,8 @@
     display: none;
 }
 .panel-dialog-container .panel-body{
-    min-height: 280px;
+    height: 80%;
+    overflow-y: scroll;
 }
 
 .references-table{
@@ -176,6 +209,7 @@
     display: block;
     float: left;
     width: 100%;
+    height: 56px;
 }
 .references-table ol li.selected:not(.new-ref):not(.edit-ref) .row:not(.add-new-ref) > div:not(.ref-actions){
     background: #ccc;
@@ -198,7 +232,7 @@
   position: absolute;
   content: '';
   margin-left: 5px;
-  margin-top: 30px;
+  margin-top: 25px;
   width: 8px;
   height: 8px;
   background-image: url(../images/dragListicon.png);
@@ -208,39 +242,46 @@
     float: left;
 }
 .references-table .ref-description{
-    padding: 10px;
-    border-top: 1px solid #ccc;
-    border-left: 1px solid #ccc;
-    border-right: 1px solid #ccc;
-    border-bottom: 1px solid #ccc;
+    padding: 6px 10px 0;
+    border-top: 1px solid #fff;
+    border-left: 1px solid #fff;
+    border-right: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+    background: #FFE0C3;
+    width: 70%;
 }
 .references-table .ref-name{
     text-align: center;
-    border-top: 1px solid #ccc;
-    border-right: 1px solid #ccc;
-    border-bottom: 1px solid #ccc;
+    border-top: 1px solid #fff;
+    border-right: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+    background: #FFE0C3;
     font-weight: bold;
-    padding: 25px 0;
+    padding: 16px 0;
+    width: 17%;
 }
 .references-table .ref-actions{
-    padding: 20px 0;
+    padding: 10px 0;
     font-size: 21px;
+    width: 13%;
 }
 .references-table .row.add-new-ref{
     margin-left: 25px;
     width: calc(100% - 25px);
     float: left;
+    margin-top: 15px;
 }
 .references-table .row.add-new-ref > div{
     padding: 0;
     margin: 0;
+    width: 87%;
 }
 .references-table .row.add-new-ref a{
     border: 1px solid #f07d00;
     color: #f07d00;
     display: block;
     width: 100%;
-    padding: 20px;
+    padding: 16px;
     text-align: center;
     font-weight: bold;
     cursor: pointer;
@@ -254,10 +295,23 @@
 .references-table ol li.new-ref textarea,
 .references-table ol li.edit-ref textarea{
     width: 100%;
-    height: 80px;
+    height: 33px;
     border: none;
     text-align: center;
     display: block;
+    
+    &::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+      color: #ccc;
+    }
+    &::-moz-placeholder { /* Firefox 19+ */
+      color: #ccc;
+    }
+    &:-ms-input-placeholder { /* IE 10+ */
+      color: #ccc;
+    }
+    &:-moz-placeholder { /* Firefox 18- */
+      color: #ccc;
+    }
 }
 .references-table ol li.new-ref .ref-name,
 .references-table ol li.edit-ref .ref-name {
@@ -311,6 +365,29 @@
     &.define-neutral{
       background-image: url(../images/neutral.png);
     }
+}
+.define-neutral, .define-good{
+  float: right;
+  cursor: pointer;
+  padding: 4px 4px;
+  background: #e0e0e0;
+  margin: 3px 2px;
+  
+  &.disabled{
+    opacity: .4;
+  }
+}
+.define-good-icon{
+  background-image: url(../images/good.png);
+  width: 14px;
+  height: 16px;
+  display: block;
+}
+.define-neutral-icon{
+  background-image: url(../images/neutral.png);
+  width: 14px;
+  height: 16px;
+  display: block;
 }
 .ref-definition-buttons button.disabled{
     opacity: .4;

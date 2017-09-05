@@ -36,7 +36,7 @@ ul.jqtree-tree li.jqtree-selected > .jqtree-element:hover {
     margin-bottom: 22px;
 }
 .submenu td.headsub {
-    padding-top: 5%;
+    padding-top: 2%;
     font-weight: 400;
     padding-bottom: 5%;
     color: #666;
@@ -45,9 +45,10 @@ ul.jqtree-tree li.jqtree-selected > .jqtree-element:hover {
 }
 .submenu {
     background-color: #2c2c2c;
-    height: 100px;
+    height: 61px;
     width: calc(100% + 60px);
     margin-left: -30px;
+    margin-top: 15px;
 }
 td.headsub.first {
     margin-left: 0px !important;

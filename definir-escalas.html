@@ -391,6 +391,9 @@
                                 </h3>
     
                                 <p class="basictext">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce augue orci, imperdiet ut tincidunt quis, molestie quis odio.<br> Sed convallis, nibh ut fermentum aliquet, felis odio finibus nulla, sed accumsan lacus magna id turpis.</p>
+                                <a class="factornext">
+                                    <button class="btn excel btn-primary waves-effect waves-light buttonprimary waves-effect waves-light" id="evaluation-quiz" type="button">Evaluation quiz</button>
+                                </a>
                                 <br>
                             </div>
                         </div>
@@ -431,6 +434,7 @@
                             </ol>
                         </div>
                         
+                        <div class="panel-dialog-container-overlay"></div>
                         <div class="panel-dialog-container">
                             <div class="panel-content">
                                 <div class="headertitle">
@@ -452,10 +456,11 @@
                                             <div class="col-md-12">
                                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce augue orci, imperdiet ut tincidunt quis, molestie quis odio. Sed convallis, nibh ut fermentum aliquet, felis odio finibus nulla, sed accumsan lacus magna id turpis.</p>
                                             </div>
+                                            <!--
                                             <div class="col-md-11 ref-definition-buttons">
                                                 <button class="define-neutral disabled">Definir Neutro</button>
                                                 <button class="define-good disabled">Definir Bom</button>
-                                            </div>
+                                            </div>-->
                                         </div>
                                         <div class="references-table">
                                             <ol class="is-sortable">
@@ -464,13 +469,15 @@
                                                         <span></span>
                                                     </div>
                                                     <div class="row ref-content">
-                                                        <div class="col-md-9 ref-description">
-                                                            <textarea placeholder="Adicionar descrição"></textarea>
+                                                        <div class="ref-description">
+                                                            <textarea placeholder="Descrição"></textarea>
                                                         </div>
-                                                        <div class="col-md-2 ref-name">
-                                                            <textarea placeholder="Adicionar referência"></textarea>
+                                                        <div class="ref-name">
+                                                            <textarea placeholder="Referência"></textarea>
                                                         </div>
-                                                        <div class="col-md-1 ref-actions">
+                                                        <div class="ref-actions">
+                                                            <span class="action-btn define-neutral"><i class="mdi define-neutral-icon"></i></span>
+                                                            <span class="action-btn define-good"><i class="mdi define-good-icon"></i></span>
                                                             <span class="action-btn delete"><i class="mdi mdi-delete"></i></span>
                                                             <span class="action-btn edit"><i class="mdi mdi-pencil"></i></span>
                                                             <span class="action-btn save"><i class="mdi mdi-content-save"></i></span>
@@ -482,15 +489,17 @@
                                                         <span></span>
                                                     </div>
                                                     <div class="row ref-content">
-                                                        <div class="col-md-9 ref-description">
-                                                            <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce augue orci, imperdiet ut tincidunt quis, molestie quis odio. Sed convallis, nibh ut fermentum aliquet, felis odio finibus nulla, sed accumsan lacus magna id turpis.</span>
-                                                            <textarea>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce augue orci, imperdiet ut tincidunt quis, molestie quis odio. Sed convallis, nibh ut fermentum aliquet, felis odio finibus nulla, sed accumsan lacus magna id turpis.</textarea>
+                                                        <div class="ref-description">
+                                                            <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce augue orci, imperdiet ut tincidunt quis, molestie quis odio. Sed convallis.</span>
+                                                            <textarea>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce augue orci, imperdiet ut tincidunt quis, molestie quis odio. Sed convallis.</textarea>
                                                         </div>
-                                                        <div class="col-md-2 ref-name">
+                                                        <div class="ref-name">
                                                             <span>IOS</span>
                                                             <textarea>IOS</textarea>
                                                         </div>
-                                                        <div class="col-md-1 ref-actions">
+                                                        <div class="ref-actions">
+                                                            <span class="action-btn define-neutral"><i class="mdi define-neutral-icon"></i></span>
+                                                            <span class="action-btn define-good"><i class="mdi define-good-icon"></i></span>
                                                             <span class="action-btn delete"><i class="mdi mdi-delete"></i></span>
                                                             <span class="action-btn edit"><i class="mdi mdi-pencil"></i></span>
                                                             <span class="action-btn save"><i class="mdi mdi-content-save"></i></span>
@@ -502,15 +511,17 @@
                                                         <span></span>
                                                     </div>
                                                     <div class="row ref-content">
-                                                        <div class="col-md-9 ref-description">
-                                                            <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce augue orci, imperdiet ut tincidunt quis, molestie quis odio. Sed convallis, nibh ut fermentum aliquet, felis odio finibus nulla, sed accumsan lacus magna id turpis.</span>
-                                                            <textarea>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce augue orci, imperdiet ut tincidunt quis, molestie quis odio. Sed convallis, nibh ut fermentum aliquet, felis odio finibus nulla, sed accumsan lacus magna id turpis.</textarea>
+                                                        <div class="ref-description">
+                                                            <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce augue orci, imperdiet ut tincidunt quis, molestie quis odio. Sed convallis.</span>
+                                                            <textarea>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce augue orci, imperdiet ut tincidunt quis, molestie quis odio. Sed convallis.</textarea>
                                                         </div>
-                                                        <div class="col-md-2 ref-name">
+                                                        <div class="ref-name">
                                                             <span>ANDROID</span>
                                                             <textarea>ANDROID</textarea>
                                                         </div>
-                                                        <div class="col-md-1 ref-actions">
+                                                        <div class="ref-actions">
+                                                            <span class="action-btn define-neutral"><i class="mdi define-neutral-icon"></i></span>
+                                                            <span class="action-btn define-good"><i class="mdi define-good-icon"></i></span>
                                                             <span class="action-btn delete"><i class="mdi mdi-delete"></i></span>
                                                             <span class="action-btn edit"><i class="mdi mdi-pencil"></i></span>
                                                             <span class="action-btn save"><i class="mdi mdi-content-save"></i></span>
@@ -522,15 +533,17 @@
                                                         <span></span>
                                                     </div>
                                                     <div class="row ref-content">
-                                                        <div class="col-md-9 ref-description">
-                                                            <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce augue orci, imperdiet ut tincidunt quis, molestie quis odio. Sed convallis, nibh ut fermentum aliquet, felis odio finibus nulla, sed accumsan lacus magna id turpis.</span>
-                                                            <textarea>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce augue orci, imperdiet ut tincidunt quis, molestie quis odio. Sed convallis, nibh ut fermentum aliquet, felis odio finibus nulla, sed accumsan lacus magna id turpis.</textarea>
+                                                        <div class="ref-description">
+                                                            <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce augue orci, imperdiet ut tincidunt quis, molestie quis odio. Sed convallis.</span>
+                                                            <textarea>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce augue orci, imperdiet ut tincidunt quis, molestie quis odio. Sed convallis.</textarea>
                                                         </div>
-                                                        <div class="col-md-2 ref-name">
+                                                        <div class="ref-name">
                                                             <span>ANDROID</span>
                                                             <textarea>ANDROID</textarea>
                                                         </div>
-                                                        <div class="col-md-1 ref-actions">
+                                                        <div class="ref-actions">
+                                                            <span class="action-btn define-neutral"><i class="mdi define-neutral-icon"></i></span>
+                                                            <span class="action-btn define-good"><i class="mdi define-good-icon"></i></span>
                                                             <span class="action-btn delete"><i class="mdi mdi-delete"></i></span>
                                                             <span class="action-btn edit"><i class="mdi mdi-pencil"></i></span>
                                                             <span class="action-btn save"><i class="mdi mdi-content-save"></i></span>
@@ -542,22 +555,24 @@
                                                         <span></span>
                                                     </div>
                                                     <div class="row ref-content">
-                                                        <div class="col-md-9 ref-description">
-                                                            <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce augue orci, imperdiet ut tincidunt quis, molestie quis odio. Sed convallis, nibh ut fermentum aliquet, felis odio finibus nulla, sed accumsan lacus magna id turpis.</span>
-                                                            <textarea>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce augue orci, imperdiet ut tincidunt quis, molestie quis odio. Sed convallis, nibh ut fermentum aliquet, felis odio finibus nulla, sed accumsan lacus magna id turpis.</textarea>
+                                                        <div class="ref-description">
+                                                            <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce augue orci, imperdiet ut tincidunt quis, molestie quis odio. Sed convallis.</span>
+                                                            <textarea>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce augue orci, imperdiet ut tincidunt quis, molestie quis odio. Sed convallis.</textarea>
                                                         </div>
-                                                        <div class="col-md-2 ref-name">
+                                                        <div class="ref-name">
                                                             <span>ANDROID</span>
                                                             <textarea>ANDROID</textarea>
                                                         </div>
-                                                        <div class="col-md-1 ref-actions">
+                                                        <div class="ref-actions">
+                                                            <span class="action-btn define-neutral"><i class="mdi define-neutral-icon"></i></span>
+                                                            <span class="action-btn define-good"><i class="mdi define-good-icon"></i></span>
                                                             <span class="action-btn delete"><i class="mdi mdi-delete"></i></span>
                                                             <span class="action-btn edit"><i class="mdi mdi-pencil"></i></span>
                                                             <span class="action-btn save"><i class="mdi mdi-content-save"></i></span>
                                                         </div>
                                                     </div>
                                                 </li>
-                                                <li>
+                                                <li class="li-add-new-ref">
                                                     <div class="row add-new-ref">
                                                         <div class="col-md-11">
                                                             <a id="btn-add-new-ref">+ Adicionar Nova Referência</a>
@@ -686,17 +701,19 @@
                                 </div>
                                 <div class="panel-footer">
                                     <div class="painel-controls">
-                                        <buton class="border-button white left" id="view-table-mode">View table mode</buton>
+                                        <buton class="border-button white left" id="view-table-mode">Show summary judgment</buton>
+                                        <!--
                                         <div class="use-by-default">
                                             <input type="checkbox"/>
                                             <label>Use by default</label>
-                                        </div>
-                                        <buton id="get-scale" class="btn-action yellow right">Get Scale</buton>
+                                        </div>-->
+                                        <buton id="get-scale" class="btn-action yellow right">Start Scoring</buton>
                                     </div>
+                                    <!--
                                     <div class="buttons">
                                         <a class="btn-previous disabled">Previous</a>
                                         <a class="btn-next">Next</a>
-                                    </div>
+                                    </div>-->
                                 </div>
                             </div>
                         </div>
@@ -902,15 +919,17 @@
                 };
                 
                 FactorDialogPage.prototype.showDialog = function() {
-                    $('.list-criteria-container').addClass('show-dialog');
+                    //$('.list-criteria-container').addClass('show-dialog');
                     $('.panel-dialog-container').addClass('show');
+                    $('.panel-dialog-container-overlay').addClass('show');
                     
                     this.refreshPage();
                 };
                 
                 FactorDialogPage.prototype.hideDialog = function() {
-                    $('.list-criteria-container').removeClass('show-dialog');
+                    //$('.list-criteria-container').removeClass('show-dialog');
                     $('.panel-dialog-container').removeClass('show'); 
+                    $('.panel-dialog-container-overlay').removeClass('show');
                     
                     $('.panel-dialog-container .dialog-page').hide();
                     $('.list-criteria-container').css('height', 'auto');
@@ -942,10 +961,6 @@
                             $('.painel-controls').show();
                             
                         }
-                        
-                        $('html, body').animate({
-                            scrollTop: $(".panel-dialog-container").offset().top - 150
-                        }, 1000);
                         
                         
                         $('.btn-previous').removeClass('disabled');
@@ -1002,12 +1017,14 @@
                     $('.dialog-breadcrumbs ul li').removeClass('active');
                     $('.dialog-breadcrumbs ul li[page=compare-refs]').addClass('active');
                     
-                    setTimeout(function() {   
+                    setTimeout(function() { 
+                        $(".references-table li.li-add-new-ref").hide();  
                         $(".references-table li:visible").css('margin-bottom', '0');
-                        $.when($(".references-table li:not(.placeholder):not(.new-ref-template)").fadeTo('slow', 1)).then(function(){
+                        $.when($(".references-table li:not(.placeholder):not(.new-ref-template):not(.li-add-new-ref)").fadeTo('slow', 1)).then(function(){
                             $('#define-scales').removeClass('start-scoring');
                             $('#define-scales').addClass('matrix-table-mode');
                             $('.painel-controls').show();
+                            $button.html('Hide summary judgment');
                             
                             self._define_scales_handler.destroySortable();
                         });
@@ -1106,17 +1123,17 @@
                     });
                     
                     // reference click
-                    $('body').on('click', '.references-table ol li .row > div:not(.ref-actions)', function(){
-                        self._selectRow($(this));
-                    });
+                    //$('body').on('click', '.references-table ol li .row > div:not(.ref-actions)', function(){
+                    //    self._selectRow($(this));
+                    //});
                     
                     // Define Neutral Button click
-                    $('body').on('click', 'button.define-neutral', function(){
+                    $('body').on('click', '.define-neutral', function(){
                         self._selectNeutralRow($(this));
                     });
                     
                     // Define Good Button click
-                    $('body').on('click', 'button.define-good', function(){
+                    $('body').on('click', '.define-good', function(){
                         self._selectGoodRow($(this));
                     });
                     
@@ -1165,40 +1182,35 @@
                     $row.removeClass('edit-ref').removeClass('new-ref');
                 };
                 
-                DefineScalesPage.prototype._selectRow = function($selected) {
+                DefineScalesPage.prototype._selectRow = function($selected_row) {
                     var self = this;
-                    var $selected_row = $($selected).parents('li');
+                    //var $selected_row = $($selected).parents('li');
                     var good_ref_index = this._getCurrentRefGoodIndex();
                     var neutral_ref_index = this._getCurrentRefNeutralIndex();
                     
-                    if($selected_row.hasClass('neutral') || $selected_row.hasClass('good')){
-                        return false;
+                    var has_good_ref = $('.references-table ol li.good').length > 0;
+                    var has_neutral_ref = $('.references-table ol li.neutral').length > 0;
+                    
+                    if(has_good_ref === false){
+                        $.each($('.references-table ol li'), function(){
+                            if ($(this).index() > neutral_ref_index){
+                                $(this).find('.define-good').addClass('disabled');
+                            }
+                            // $selected_row.index() > neutral_ref_index
+                        });
+                        //$('.define-good').addClass('disabled');
+                    }
+                    if(has_neutral_ref === false){
+                        $.each($('.references-table ol li'), function(){
+                            if ($(this).index() < good_ref_index){
+                                $(this).find('.define-neutral').addClass('disabled');
+                            }
+                            // $selected_row.index() > neutral_ref_index
+                        });
+                        //$('.define-neutral').addClass('disabled');
                     }
                     
-                    $selected_row.toggleClass('selected');
-                    $('.references-table ol li').not($selected_row).removeClass('selected');
-                    
-                    if ($('.references-table ol li.neutral').length === 0){
-                        $('button.define-neutral').addClass('disabled');
-                    }
-                    
-                    if ($('.references-table ol li.good').length === 0){
-                        $('button.define-good').addClass('disabled');
-                    }
-                    
-                    if($('.references-table ol li.selected').length > 0){
-                        var has_good_ref = $('.references-table ol li.good').length > 0;
-                        var has_neutral_ref = $('.references-table ol li.neutral').length > 0;
-                        
-                        if(has_good_ref === false && $selected_row.index() < neutral_ref_index){
-                            $('button.define-good').removeClass('disabled');
-                        }
-                        if(has_neutral_ref === false && $selected_row.index() > good_ref_index){
-                            $('button.define-neutral').removeClass('disabled');
-                        }
-                    }
-                    
-                    this._updateStartScoringButton();
+                    //this._updateStartScoringButton();
                 };
                 
                 DefineScalesPage.prototype._getCurrentRefGoodIndex = function() {
@@ -1219,21 +1231,25 @@
                     if ($button.hasClass('disabled'))
                         return false;
                         
-                    var $selected_row = $('.references-table ol li.selected');
+                    var $selected_row = $button.parents('li');
+                    
+                    if ($selected_row.hasClass('good'))
+                        return false;
+                        
                     var $neutral_ref_row = $('.references-table ol li.neutral');
                     if($neutral_ref_row.length === 0){
                         $selected_row.removeClass('selected').addClass('neutral');
-                        $button.html('Remover Neutro');
+                        $('.define-neutral').not($button).addClass('disabled');
                     } else {
                         $neutral_ref_row.removeClass('neutral');
-                        $button.html('Definir Neutro');
-                        $button.addClass('disabled');
+                        $('.define-neutral').removeClass('disabled');
+                        if ($('.references-table ol li.good').length == 0){
+                            $('.define-good').removeClass('disabled');
+                        }
+                        //$button.addClass('disabled');
                     }
-                    
-                    if ($('.references-table ol li.good').length === 0){
-                        $('button.define-good').addClass('disabled');
-                    }
-                    
+                        
+                    this._selectRow($selected_row);
                     this._updateStartScoringButton();
                 };
                 
@@ -1241,21 +1257,25 @@
                     if ($button.hasClass('disabled'))
                         return false;
                         
-                    var $selected_row = $('.references-table ol li.selected');
+                    var $selected_row = $button.parents('li');
+                    
+                    if ($selected_row.hasClass('neutral'))
+                        return false;
+                        
                     var $good_ref_row = $('.references-table ol li.good');
                     if($good_ref_row.length === 0){
                         $selected_row.removeClass('selected').addClass('good');
-                        $button.html('Remover Bom');
+                        $('.define-good').not($button).addClass('disabled');
                     } else {
                         $good_ref_row.removeClass('good');
-                        $button.html('Definir Bom');
-                        $button.addClass('disabled');
+                        $('.define-good').removeClass('disabled');
+                        if ($('.references-table ol li.neutral').length == 0){
+                            $('.define-neutral').removeClass('disabled');
+                        }
+                        //$button.addClass('disabled');
                     }
-                    
-                    if ($('.references-table ol li.neutral').length === 0){
-                        $('button.define-neutral').addClass('disabled');
-                    }
-                    
+                        
+                    this._selectRow($selected_row);
                     this._updateStartScoringButton();
                 };
                 
@@ -1306,11 +1326,11 @@
                 DefineScalesPage.prototype._updateStartScoringButton = function() {
                     var has_good_ref = $('.references-table ol li.good').length > 0;
                     var has_neutral_ref = $('.references-table ol li.neutral').length > 0;
-                    
+
                     if(has_good_ref === true && has_neutral_ref === true){
-                        $('.start-scoring button').removeClass('disabled');
+                        $('.start-scoring-container .btn-start-scoring').removeClass('disabled');
                     } else {
-                        $('.start-scoring button').addClass('disabled');
+                        $('.start-scoring-container .btn-start-scoring').addClass('disabled');
                     }
                     
                 };

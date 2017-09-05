@@ -73,12 +73,20 @@
                     td:nth-child(1){
                         padding-left: 25px;
                         text-transform: uppercase;
+                        text-align: left;
+                    }
+                    td{
+                        text-align: center;
                     }
                 }
                 &.level-2{
                     background: #008ec9;
                     td:nth-child(1){
                         padding-left: 50px;
+                        text-align: left;
+                    }
+                    td{
+                        text-align: center;
                     }
                 }
                 &.level-3{
