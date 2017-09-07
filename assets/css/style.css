@@ -21821,9 +21821,24 @@ a.show-matrix-table {
         padding: 3px; }
       .options-evaluation table td.add-col, .options-evaluation table th.add-col {
         display: none;
-        min-width: 100px; }
+        min-width: 150px; }
       .options-evaluation table td.no-padding, .options-evaluation table th.no-padding {
         padding: 0; }
+      .options-evaluation table td .impact-mode, .options-evaluation table th .impact-mode {
+        position: relative; }
+        .options-evaluation table td .impact-mode .input-text input, .options-evaluation table th .impact-mode .input-text input {
+          display: none;
+          text-align: center;
+          padding: 0;
+          width: calc(100% - 8px);
+          margin: 4px 4px 2px; }
+        .options-evaluation table td .impact-mode .input-text .save, .options-evaluation table th .impact-mode .input-text .save {
+          display: none;
+          position: absolute;
+          right: 2%;
+          top: 3px;
+          font-size: 18px;
+          color: #6e6e6e; }
 
 .footer-buttons {
   width: 100%;
