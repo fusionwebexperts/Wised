@@ -392,7 +392,7 @@
                             </h3>
                             <p class="basictext">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce augue orci, imperdiet ut tincidunt quis, molestie quis odio.<br> Sed convallis, nibh ut fermentum aliquet, felis odio finibus nulla, sed accumsan lacus magna id turpis.</p>
                             <a class="factornext">
-                                <button class="btn excel btn-primary waves-effect waves-light buttonprimary" id="add-alternative" type="button">+ Add Alternative</button>
+                                <button class="btn excel btn-primary waves-effect waves-light buttonprimary add-alternative" type="button">+ Add Alternative</button>
                             </a>
                             <a class="factornext">
                                 <button class="btn newdata" type="button">Import Excel Data</button>
@@ -406,19 +406,28 @@
                         <h3>
                             <span>New Blue Line mobile</span>
                             <span class="lowercasenobold">create 12hours ago</span>
-                            <button class="border-button blue active right-button" id="btn-score-mode">Pontuações</button>
-                            <button class="border-button blue right-button" id="btn-impact-mode">Impacto</button>
+                            <button class="border-button blue active right-button btn-score-mode">Pontuações</button>
+                            <button class="border-button blue right-button btn-impact-mode">Impacto</button>
                         </h3>
                         <div class="options-evaluation">
                             <table>
                                 <thead>
                                     <tr>
-                                        <th style="width:25%"></th>
-                                        <th style="width:75%">Alternatives</th>
+                                        <th style="max-width:25%"></th>
+                                        <th>Alternatives</th>
                                     </tr>
                                     <tr>
                                         <th>Criteria</th>
-                                        <th>Apple</th>
+                                        <th>
+                                            <div class="score-mode">Option 1</div>
+                                            <div class="impact-mode">
+                                                <div class="input-text">
+                                                    <span>Option 1</span>
+                                                    <input type="text" name="" value="Option 1"/>
+                                                    <a class="action-btn save"><i class="mdi mdi-content-save"></i></a>
+                                                </div>
+                                            </div>
+                                        </th>
                                         <th class="add-col"><input type="text" name="" placeholder="add name"/></th>
                                     </tr>
                                 </thead>
@@ -694,7 +703,7 @@
                     
                     $('.selectpicker').selectpicker({});
                     
-                    $('#add-alternative').on('click', function() {
+                    $('.add-alternative').on('click', function() {
                        self.addNewCol(); 
                     });
                     
@@ -702,11 +711,11 @@
                        self.saveNewCol(); 
                     });
                     
-                    $('#btn-impact-mode').on('click', function() {
+                    $('.btn-impact-mode').on('click', function() {
                        self.switchToImpactMode(); 
                     });
                     
-                    $('#btn-score-mode').on('click', function() {
+                    $('.btn-score-mode').on('click', function() {
                        self.switchToScoreMode(); 
                     });
                     
@@ -776,8 +785,8 @@
                     $('.score-mode').hide();
                     $('.impact-mode').show();
                     $('.impact-mode').parent().addClass('no-padding');
-                    $('#btn-score-mode').removeClass('active');
-                    $('#btn-impact-mode').addClass('active');
+                    $('.btn-score-mode').removeClass('active');
+                    $('.btn-impact-mode').addClass('active');
                     
                 };
                 
@@ -787,8 +796,8 @@
                     $('.score-mode').show();
                     $('.impact-mode').hide();
                     $('.impact-mode').parent().removeClass('no-padding');
-                    $('#btn-impact-mode').removeClass('active');
-                    $('#btn-score-mode').addClass('active');
+                    $('.btn-impact-mode').removeClass('active');
+                    $('.btn-score-mode').addClass('active');
                         
                     if ($('.add-col').is(':visible')){
                         $('.add-col').hide();

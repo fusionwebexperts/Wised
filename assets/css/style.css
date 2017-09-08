@@ -21813,7 +21813,7 @@ a.show-matrix-table {
       border: 1px solid #ECECEC;
       padding: 5px 10px;
       text-align: center;
-      width: 15%; }
+      max-width: 15%; }
       .options-evaluation table td:nth-child(1), .options-evaluation table th:nth-child(1) {
         width: 25%; }
       .options-evaluation table td input[type=text], .options-evaluation table th input[type=text] {
