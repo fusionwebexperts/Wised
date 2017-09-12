@@ -169,7 +169,7 @@
     display: none;
 }
 .panel-dialog-container .panel-body{
-    height: 80%;
+    height: calc(100% - 100px);
     overflow-y: scroll;
 }
 
@@ -209,7 +209,7 @@
     display: block;
     float: left;
     width: 100%;
-    height: 56px;
+    min-height: 56px;
 }
 .references-table ol li.selected:not(.new-ref):not(.edit-ref) .row:not(.add-new-ref) > div:not(.ref-actions){
     background: #ccc;
@@ -218,10 +218,18 @@
 .references-table ol li.neutral .row > div:not(.ref-actions){
     background: #00ACEE;
     color: #fff;
+    
+    textarea{
+      color: #333;
+    }
 }
 .references-table ol li.good .row > div:not(.ref-actions){
     background: #3CA735;
     color: #fff;
+    
+    textarea{
+      color: #333;
+    }
 }
 .references-table .ref-sort{
     width: 25px;
@@ -299,6 +307,9 @@
     border: none;
     text-align: center;
     display: block;
+    margin-bottom: 4px !important;
+    max-width: 100% !important;
+    min-height: 33px;
     
     &::-webkit-input-placeholder { /* Chrome/Opera/Safari */
       color: #ccc;
@@ -322,11 +333,14 @@
 .references-table ol li.edit-ref .ref-sort:before{
     display: none;
 }
-.references-table ol li .action-btn.save{
+.references-table ol li .action-btn.save,
+.references-table ol li .action-btn.cancel-edit{
     display: none;
 }
 .references-table ol li.new-ref .action-btn.save,
-.references-table ol li.edit-ref .action-btn.save{
+.references-table ol li.edit-ref .action-btn.save,
+.references-table ol li.new-ref .action-btn.cancel-edit,
+.references-table ol li.edit-ref .action-btn.cancel-edit{
     display: block;
 }
 .references-table ol li.new-ref .action-btn.edit,
@@ -821,6 +835,13 @@ a.show-matrix-table{
         background: #fff;
         z-index: 1001;
       }
+      &.first:before{
+        
+      }
+      &.first:after{
+        width: 10px;
+        left: 5px;
+      }
       &.last:before{
         left: 3px;
       }
@@ -837,8 +858,18 @@ a.show-matrix-table{
         left: 5px;
       }
       &.isolated{
+        
+        &:nth-child(1){
+          
+          &:after{
+            display: none;
+          }
+          
+          .interval{
+            left: 50px;
+          }
+        }
         span{
-          position: absolute;
           top: 40px;
           left: 55px;
           width: 63px;

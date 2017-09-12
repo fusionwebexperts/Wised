@@ -21180,7 +21180,7 @@ td.headsub.first {
   display: none; }
 
 .panel-dialog-container .panel-body {
-  height: 80%;
+  height: calc(100% - 100px);
   overflow-y: scroll; }
 
 .references-table {
@@ -21212,7 +21212,7 @@ td.headsub.first {
   display: block;
   float: left;
   width: 100%;
-  height: 56px; }
+  min-height: 56px; }
 
 .references-table ol li.selected:not(.new-ref):not(.edit-ref) .row:not(.add-new-ref) > div:not(.ref-actions) {
   background: #ccc;
@@ -21221,10 +21221,14 @@ td.headsub.first {
 .references-table ol li.neutral .row > div:not(.ref-actions) {
   background: #00ACEE;
   color: #fff; }
+  .references-table ol li.neutral .row > div:not(.ref-actions) textarea {
+    color: #333; }
 
 .references-table ol li.good .row > div:not(.ref-actions) {
   background: #3CA735;
   color: #fff; }
+  .references-table ol li.good .row > div:not(.ref-actions) textarea {
+    color: #333; }
 
 .references-table .ref-sort {
   width: 25px;
@@ -21301,7 +21305,10 @@ td.headsub.first {
   height: 33px;
   border: none;
   text-align: center;
-  display: block; }
+  display: block;
+  margin-bottom: 4px !important;
+  max-width: 100% !important;
+  min-height: 33px; }
   .references-table ol li.new-ref textarea::-webkit-input-placeholder,
   .references-table ol li.edit-ref textarea::-webkit-input-placeholder {
     /* Chrome/Opera/Safari */
@@ -21328,11 +21335,14 @@ td.headsub.first {
 .references-table ol li.edit-ref .ref-sort:before {
   display: none; }
 
-.references-table ol li .action-btn.save {
+.references-table ol li .action-btn.save,
+.references-table ol li .action-btn.cancel-edit {
   display: none; }
 
 .references-table ol li.new-ref .action-btn.save,
-.references-table ol li.edit-ref .action-btn.save {
+.references-table ol li.edit-ref .action-btn.save,
+.references-table ol li.new-ref .action-btn.cancel-edit,
+.references-table ol li.edit-ref .action-btn.cancel-edit {
   display: block; }
 
 .references-table ol li.new-ref .action-btn.edit,
@@ -21693,6 +21703,9 @@ a.show-matrix-table {
         height: 8px;
         background: #fff;
         z-index: 1001; }
+      .multisteprange .range-labels li.first:after {
+        width: 10px;
+        left: 5px; }
       .multisteprange .range-labels li.last:before {
         left: 3px; }
       .multisteprange .range-labels li.last:after {
@@ -21704,8 +21717,11 @@ a.show-matrix-table {
       .multisteprange .range-labels li:first-child::after {
         width: 10px;
         left: 5px; }
+      .multisteprange .range-labels li.isolated:nth-child(1):after {
+        display: none; }
+      .multisteprange .range-labels li.isolated:nth-child(1) .interval {
+        left: 50px; }
       .multisteprange .range-labels li.isolated span {
-        position: absolute;
         top: 40px;
         left: 55px;
         width: 63px; }
@@ -21813,7 +21829,8 @@ a.show-matrix-table {
       border: 1px solid #ECECEC;
       padding: 5px 10px;
       text-align: center;
-      max-width: 15%; }
+      max-width: 15%;
+      height: 34px; }
       .options-evaluation table td:nth-child(1), .options-evaluation table th:nth-child(1) {
         width: 25%; }
       .options-evaluation table td input[type=text], .options-evaluation table th input[type=text] {
@@ -21821,24 +21838,26 @@ a.show-matrix-table {
         padding: 3px; }
       .options-evaluation table td.add-col, .options-evaluation table th.add-col {
         display: none;
-        min-width: 150px; }
+        min-width: 150px;
+        position: relative;
+        padding: 0; }
       .options-evaluation table td.no-padding, .options-evaluation table th.no-padding {
         padding: 0; }
       .options-evaluation table td .impact-mode, .options-evaluation table th .impact-mode {
         position: relative; }
-        .options-evaluation table td .impact-mode .input-text input, .options-evaluation table th .impact-mode .input-text input {
-          display: none;
-          text-align: center;
-          padding: 0;
-          width: calc(100% - 8px);
-          margin: 4px 4px 2px; }
-        .options-evaluation table td .impact-mode .input-text .save, .options-evaluation table th .impact-mode .input-text .save {
-          display: none;
-          position: absolute;
-          right: 2%;
-          top: 3px;
-          font-size: 18px;
-          color: #6e6e6e; }
+      .options-evaluation table td .input-text input, .options-evaluation table th .input-text input {
+        display: none;
+        text-align: center;
+        padding: 0;
+        width: calc(100% - 8px);
+        margin: 4px 4px 2px; }
+      .options-evaluation table td .input-text .save, .options-evaluation table th .input-text .save {
+        display: none;
+        position: absolute;
+        right: 2%;
+        top: 3px;
+        font-size: 18px;
+        color: #6e6e6e; }
 
 .footer-buttons {
   width: 100%;

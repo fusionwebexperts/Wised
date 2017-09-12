@@ -4,6 +4,7 @@ var RangeInput;
 RangeInput = (function(){
     function RangeInput(){
         this._multiple = false;
+        this._last_index = 1;
         this._init();
     };
     
@@ -21,7 +22,12 @@ RangeInput = (function(){
     
             var cur_label = $('.range-labels').find('li:nth-child(' + index + ')');
             
-            if (self._multiple === true && index > 1 && index < 8){
+            var multiple = self._multiple === true && index > 1 && index < 8;
+            if (multiple === true && (self._last_index == 1 || self._last_index == 8)){
+                multiple = false;
+            }
+            
+            if (multiple === true){
                 var old_first_index = $('.range-labels li.active').first().index() + 1;
                 var old_last_index = $('.range-labels li.active').last().index() + 1;
                 var new_first_index = 1;
@@ -61,8 +67,6 @@ RangeInput = (function(){
                     }
                 }
                 
-                console.log()
-                
                 $('.range-labels li').removeClass('active selected');
                 for (var i = new_first_index; i < new_last_index; i++) {
                     var elem = $('.range-labels').find('li:nth-child(' + i + ')');
@@ -89,7 +93,8 @@ RangeInput = (function(){
                 }
                 $rangeInput.val(index);
             }
-        
+            
+            self._last_index = index;
             return style;
         }
         

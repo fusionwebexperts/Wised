@@ -7,3 +7,4 @@ $(".close-details").on('click', function() {
    $(this).hide();
    $(this).parent().find(".open-details").show();
 });
+

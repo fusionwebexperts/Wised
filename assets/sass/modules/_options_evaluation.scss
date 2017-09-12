@@ -135,6 +135,7 @@
             padding: 5px 10px;
             text-align: center;
             max-width: 15%;
+            height: 34px;
             
             &:nth-child(1){
                 width: 25%;
@@ -148,6 +149,15 @@
             &.add-col{
                 display: none;
                 min-width: 150px;
+                position: relative;
+                padding: 0;
+                
+                .input-text{
+                    .save{
+                        //right: 5%;
+                        //top: 8px;
+                    }
+                }
             }
             &.no-padding{
                 padding: 0;
@@ -155,23 +165,23 @@
             
             .impact-mode{
                 position: relative;
-                
-                .input-text{
-                    input{
-                        display: none;
-                        text-align: center;
-                        padding: 0;
-                        width: calc(100% - 8px);
-                        margin: 4px 4px 2px;
-                    }
-                    .save{
-                        display: none;
-                        position: absolute;
-                        right: 2%;
-                        top: 3px;
-                        font-size: 18px;
-                        color: #6e6e6e;
-                    }
+            }
+            
+            .input-text{
+                input{
+                    display: none;
+                    text-align: center;
+                    padding: 0;
+                    width: calc(100% - 8px);
+                    margin: 4px 4px 2px;
+                }
+                .save{
+                    display: none;
+                    position: absolute;
+                    right: 2%;
+                    top: 3px;
+                    font-size: 18px;
+                    color: #6e6e6e;
                 }
             }
         }

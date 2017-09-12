@@ -54,7 +54,7 @@
     <!-- Scripts -->
 </head>
 
-<body class="dashboard" style="background-color:#fff;">
+<body class="dashboard site-menubar-fold" style="background-color:#fff;">
     <!--[if lt IE 8]>
         <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -414,7 +414,7 @@
                                 <thead>
                                     <tr>
                                         <th style="max-width:25%"></th>
-                                        <th>Alternatives</th>
+                                        <th colspan="2">Alternatives</th>
                                     </tr>
                                     <tr>
                                         <th>Criteria</th>
@@ -428,7 +428,13 @@
                                                 </div>
                                             </div>
                                         </th>
-                                        <th class="add-col"><input type="text" name="" placeholder="add name"/></th>
+                                        <th class="add-col">
+                                            <div class="input-text">
+                                                <span>-</span>
+                                                <input type="text" name="" value="-"/>
+                                                <a class="action-btn save"><i class="mdi mdi-content-save"></i></a>
+                                            </div>
+                                        </th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -471,7 +477,13 @@
                                                 </select>
                                             </div>
                                         </td>
-                                        <td class="add-col"><input type="text" name="" placeholder="add option"/></td>
+                                        <td class="add-col">
+                                            <select class="selectpicker">
+                                              <option>Mustard</option>
+                                              <option>Ketchup</option>
+                                              <option>Relish</option>
+                                            </select>
+                                        </td>
                                     </tr>
                                     <tr class="option level-3">
                                         <td>Sistema Operativo</td>
@@ -485,7 +497,13 @@
                                                 </div>
                                             </div>
                                         </td>
-                                        <td class="add-col"><input type="text" name="" placeholder="add option"/></td>
+                                        <td class="add-col">
+                                            <div class="input-text">
+                                                <span>-</span>
+                                                <input type="text" name="" value="-"/>
+                                                <a class="action-btn save"><i class="mdi mdi-content-save"></i></a>
+                                            </div>
+                                        </td>
                                     </tr>
                                     <tr class="option level-3">
                                         <td>Autonomia</td>
@@ -493,7 +511,9 @@
                                             <div class="score-mode">56</div>
                                             <div class="impact-mode"></div>
                                         </td>
-                                        <td class="add-col"><input type="text" name="" placeholder="add option"/></td>
+                                        <td class="add-col">
+                                           
+                                        </td>
                                     </tr>
                                     <tr class="collapsible level-2">
                                         <td colspan="5">
@@ -513,7 +533,9 @@
                                             <div class="score-mode">12</div>
                                             <div class="impact-mode"></div>
                                         </td>
-                                        <td class="add-col"><input type="text" name="" placeholder="add option"/></td>
+                                        <td class="add-col">
+                                            
+                                        </td>
                                     </tr>
                                     <tr class="collapsible level-3">
                                         <td colspan="2">
@@ -527,7 +549,9 @@
                                             <div class="score-mode">12</div>
                                             <div class="impact-mode"></div>
                                         </td>
-                                        <td class="add-col"><input type="text" name="" placeholder="add option"/></td>
+                                        <td class="add-col">
+                                            
+                                        </td>
                                     </tr>
                                     <tr class="collapsible level-4">
                                         <td colspan="2">
@@ -541,7 +565,9 @@
                                             <div class="score-mode">0</div>
                                             <div class="impact-mode"></div>
                                         </td>
-                                        <td class="add-col"><input type="text" name="" placeholder="add option"/></td>
+                                        <td class="add-col">
+                                            
+                                        </td>
                                     </tr>
                                     <tr class="collapsible level-5">
                                         <td colspan="2">
@@ -555,7 +581,9 @@
                                             <div class="score-mode">0</div>
                                             <div class="impact-mode"></div>
                                         </td>
-                                        <td class="add-col"><input type="text" name="" placeholder="add option"/></td>
+                                        <td class="add-col">
+                                           
+                                        </td>
                                     </tr>
                                     <tr class="option level-3">
                                         <td>GPS</td>
@@ -563,7 +591,9 @@
                                             <div class="score-mode">0</div>
                                             <div class="impact-mode"></div>
                                         </td>
-                                        <td class="add-col"><input type="text" name="" placeholder="add option"/></td>
+                                        <td class="add-col">
+                                            
+                                        </td>
                                     </tr>
                                     <tr class="collapsible level-1">
                                         <td colspan="2">Preço do Equipamento</td>
@@ -641,7 +671,7 @@
     
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/js/bootstrap-select.min.js"></script>
-
+    
     <script>
         $().ready(function() {
 
@@ -655,6 +685,7 @@
                 function OptionsEvaluationTable(){
                     this._initEventHandlers();
                     this._state = 'show';
+                    this._current_input = null;
                     
                     this.switchToScoreMode();
                 };
@@ -732,6 +763,8 @@
                            
                            $(this).addClass('on-edit');
                        }
+                       
+                       self._current_input = $input;
                     });
                         
                     var save_input = function(e) {
@@ -746,11 +779,40 @@
                            $save.hide();
                            
                            $parent.removeClass('on-edit');
+                        
+                           self._current_input = null;
                         }
                     };
                     $('.input-text input').on('keypress', save_input);
                     $('.input-text .save').on('click', save_input);
                     
+                    $('body').click(function(evt){    
+                        
+                        if (self._current_input != null){
+                            if(evt.target != self._current_input.get(0)){
+                                var $parent = $(self._current_input).parent();
+                                var $input = $(self._current_input);
+                                var $span =  $parent.find('span'); 
+                                var $save = $parent.find('.save');
+                                
+                                $input.val($span.html()).hide();
+                                $span.show();
+                                $save.hide();
+                               
+                                $parent.removeClass('on-edit');
+                                
+                                self._current_input = null;
+                            }
+                        }
+                    });
+                    
+                    this.updateColsWidth();
+                };
+                
+                OptionsEvaluationTable.prototype.updateColsWidth = function() {
+                    var num_cols = $('.options-evaluation table:nth-child(1) tbody tr:nth-child(1) td:visible').length;
+                    
+                    $('.options-evaluation table td').css('width', 'calc(100% / '+num_cols+')');
                 };
                 
                 OptionsEvaluationTable.prototype.addNewCol = function() {
@@ -765,6 +827,8 @@
                     $('[colspan]').attr('colspan', parseInt($('[colspan]').attr('colspan')) + 1);
                     
                     self._state = 'new-col';
+                    
+                    this.updateColsWidth();
                 };
                 
                 OptionsEvaluationTable.prototype.saveNewCol = function() {
@@ -777,6 +841,8 @@
                     $('[colspan]').attr('colspan', parseInt($('[colspan]').attr('colspan')) - 1);
                     
                     self._state = 'show';
+                    
+                    this.updateColsWidth();
                 };
                 
                 OptionsEvaluationTable.prototype.switchToImpactMode = function() {

@@ -54,7 +54,7 @@
     <!-- Scripts -->
 </head>
 
-<body class="dashboard" style="background-color:#fff;">
+<body class="dashboard site-menubar-fold" style="background-color:#fff;">
     <!--[if lt IE 8]>
         <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -481,6 +481,7 @@
                                                             <span class="action-btn delete"><i class="mdi mdi-delete"></i></span>
                                                             <span class="action-btn edit"><i class="mdi mdi-pencil"></i></span>
                                                             <span class="action-btn save"><i class="mdi mdi-content-save"></i></span>
+                                                            <span class="action-btn cancel-edit"><i class="mdi mdi-close-box"></i></span>
                                                         </div>
                                                     </div>
                                                 </li>
@@ -503,6 +504,7 @@
                                                             <span class="action-btn delete"><i class="mdi mdi-delete"></i></span>
                                                             <span class="action-btn edit"><i class="mdi mdi-pencil"></i></span>
                                                             <span class="action-btn save"><i class="mdi mdi-content-save"></i></span>
+                                                            <span class="action-btn cancel-edit"><i class="mdi mdi-close-box"></i></span>
                                                         </div>
                                                     </div>
                                                 </li>
@@ -525,6 +527,7 @@
                                                             <span class="action-btn delete"><i class="mdi mdi-delete"></i></span>
                                                             <span class="action-btn edit"><i class="mdi mdi-pencil"></i></span>
                                                             <span class="action-btn save"><i class="mdi mdi-content-save"></i></span>
+                                                            <span class="action-btn cancel-edit"><i class="mdi mdi-close-box"></i></span>
                                                         </div>
                                                     </div>
                                                 </li>
@@ -547,6 +550,7 @@
                                                             <span class="action-btn delete"><i class="mdi mdi-delete"></i></span>
                                                             <span class="action-btn edit"><i class="mdi mdi-pencil"></i></span>
                                                             <span class="action-btn save"><i class="mdi mdi-content-save"></i></span>
+                                                            <span class="action-btn cancel-edit"><i class="mdi mdi-close-box"></i></span>
                                                         </div>
                                                     </div>
                                                 </li>
@@ -569,6 +573,7 @@
                                                             <span class="action-btn delete"><i class="mdi mdi-delete"></i></span>
                                                             <span class="action-btn edit"><i class="mdi mdi-pencil"></i></span>
                                                             <span class="action-btn save"><i class="mdi mdi-content-save"></i></span>
+                                                            <span class="action-btn cancel-edit"><i class="mdi mdi-close-box"></i></span>
                                                         </div>
                                                     </div>
                                                 </li>
@@ -651,8 +656,11 @@
                                                     
                                                     <div class="multisteprange">
                                                         <ul class="range-labels">
-                                                          <li class="active selected">Indiferente</li>
-                                                          <li>Muito Fraco</li>
+                                                         <li class="isolated active selected">
+                                                              <span>Indiferente</span>
+                                                              <div class="interval"></div>
+                                                          </li>
+                                                          <li class="first">Muito Fraco</li>
                                                           <li>Fraco</li>
                                                           <li>Moderado</li>
                                                           <li>Forte</li>
@@ -1122,6 +1130,11 @@
                         self._saveReference($(this));
                     });
                     
+                    // save handler
+                    $('body').on('click', '.references-table .action-btn.cancel-edit', function(){
+                        self._cancelEditReference($(this));
+                    });
+                    
                     // reference click
                     //$('body').on('click', '.references-table ol li .row > div:not(.ref-actions)', function(){
                     //    self._selectRow($(this));
@@ -1164,6 +1177,23 @@
                         
                     this.status = 'edit';
                     $button.closest('li').addClass('edit-ref');
+                };
+                
+                DefineScalesPage.prototype._cancelEditReference = function($button) {
+                    var self = this;
+                    var $row = $button.closest('li');
+                    
+                    if (this.status == 'create'){
+                        $button.closest('li').fadeOut(300, function() { $(this).remove(); });
+                    } else {
+                        $.each($row.find('span'), function(){
+                            var $parent = $(this).parent();
+                            $parent.find(':input').val($(this).html());
+                        });
+                    }
+                    
+                    this.status = 'list';
+                    $row.removeClass('edit-ref').removeClass('new-ref');
                 };
                 
                 DefineScalesPage.prototype._saveReference = function($button) {

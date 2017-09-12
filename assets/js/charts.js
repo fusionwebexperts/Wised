@@ -227,12 +227,13 @@ var bubbleChartConfig = {
         scales: {
             yAxes: [{
                 gridLines: {
-                    display:false
+                    display: false,
+                    color: "#FFFFFF"
                 },
                 ticks: {
                     display: false,
-                    beginAtZero:true,
-                    mirror:false,
+                    beginAtZero: true,
+                    mirror: false,
                 }
             }],
             xAxes: [{

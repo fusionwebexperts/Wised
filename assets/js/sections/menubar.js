@@ -5,6 +5,29 @@
  */
 (function(window, document, $) {
   'use strict';
+  
+  function setCookie(cname, cvalue, exdays) {
+      var d = new Date();
+      d.setTime(d.getTime() + (exdays*24*60*60*1000));
+      var expires = "expires="+ d.toUTCString();
+      document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+  }
+  
+  function getCookie(cname) {
+      var name = cname + "=";
+      var decodedCookie = decodeURIComponent(document.cookie);
+      var ca = decodedCookie.split(';');
+      for(var i = 0; i <ca.length; i++) {
+          var c = ca[i];
+          while (c.charAt(0) == ' ') {
+              c = c.substring(1);
+          }
+          if (c.indexOf(name) == 0) {
+              return c.substring(name.length, c.length);
+          }
+      }
+      return "";
+  }
 
   var $body = $('body'),
     $html = $('html');
@@ -35,7 +58,7 @@
       if ($body.is('.site-menubar-fold-alt')) {
         this.foldAlt = true;
       }
-
+      
       if ($body.data('autoMenubar') === false || $body.is('.site-menubar-keep')) {
         if ($body.hasClass('site-menubar-fold')) {
           this.auto = 'fold';
@@ -49,6 +72,13 @@
       });
 
       this.change();
+      
+      var menubar_opened = getCookie('menubar_opened');
+      if (menubar_opened == 'false'){
+        this.fold();
+      } else {
+        this.unfold();
+      }
     },
 
     change: function() {
@@ -116,6 +146,7 @@
 
     open: function() {
       if (this.opened !== true) {
+        
         this.animate(function() {
           $body.removeClass('site-menubar-hide').addClass('site-menubar-open site-menubar-unfold');
           this.opened = true;
@@ -130,8 +161,8 @@
 
     hide: function() {
       this.hoverscroll.disable();
-
       if (this.opened !== false) {
+        
         this.animate(function() {
 
           $html.removeClass('disable-scrolling');
@@ -185,7 +216,9 @@
       var breakpoint = Breakpoints.current();
       var folded = this.folded;
       var opened = this.opened;
-
+      
+      setCookie('menubar_opened', this.folded, 10);
+      
       switch (breakpoint.name) {
         case 'lg':
           if (folded === null || folded === false) {
