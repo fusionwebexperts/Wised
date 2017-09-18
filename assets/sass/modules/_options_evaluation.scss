@@ -57,7 +57,7 @@
                 }
                 
                 &.collapsible{
-                    &:hover{
+                    td:nth-child(1):hover{
                         cursor: pointer;
                     }
                     td{
@@ -66,6 +66,10 @@
                     }
                     span{
                         font-size: 20px;
+                    }
+                    .score-mode{
+                        color: #333;
+                        text-align: center;
                     }
                 }
                 &.level-1{

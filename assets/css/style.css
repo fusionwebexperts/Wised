@@ -21783,13 +21783,16 @@ a.show-matrix-table {
         background: transparent; }
     .options-evaluation table tbody tr:nth-child(even) {
       background: #F4F4F4; }
-    .options-evaluation table tbody tr.collapsible:hover {
+    .options-evaluation table tbody tr.collapsible td:nth-child(1):hover {
       cursor: pointer; }
     .options-evaluation table tbody tr.collapsible td {
       text-align: left;
       color: #FFF; }
     .options-evaluation table tbody tr.collapsible span {
       font-size: 20px; }
+    .options-evaluation table tbody tr.collapsible .score-mode {
+      color: #333;
+      text-align: center; }
     .options-evaluation table tbody tr.level-1 {
       background: #f07d00; }
       .options-evaluation table tbody tr.level-1 td:nth-child(1) {
