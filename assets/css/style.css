@@ -21038,7 +21038,7 @@ td.headsub.first {
   height: 100%;
   background: #333;
   opacity: .6;
-  z-index: 1000;
+  z-index: 1500;
   display: none; }
 
 .panel-dialog-container-overlay.show {
@@ -21891,7 +21891,9 @@ a.show-matrix-table {
   box-shadow: none;
   background-color: transparent;
   border: none;
-  border-color: transparent; }
+  border-color: transparent;
+  padding-right: 0 !important;
+  padding-left: 0 !important; }
   .options .bootstrap-select > .dropdown-toggle span {
     text-align: center !important; }
     .options .bootstrap-select > .dropdown-toggle span .caret {
