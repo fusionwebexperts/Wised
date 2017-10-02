@@ -21181,7 +21181,7 @@ td.headsub.first {
 
 .panel-dialog-container .panel-body {
   height: calc(100% - 100px);
-  overflow-y: scroll; }
+  overflow-y: auto; }
 
 .references-table {
   margin-top: 15px;
@@ -21749,6 +21749,9 @@ a.show-matrix-table {
       cursor: pointer;
       border: 5px solid #37adbf; }
 
+.btn-group .dropdown-menu > li > a {
+  padding: 6px 13px !important; }
+
 .list-criteria-container.options {
   position: relative; }
 
@@ -21758,13 +21761,13 @@ a.show-matrix-table {
     color: #393939;
     width: 100%;
     font-size: 13px; }
-    .options-evaluation table.total-score {
-      margin: 20px 0; }
-      .options-evaluation table.total-score td:nth-child(1) {
-        color: #f07d00;
-        text-transform: uppercase;
-        text-align: left;
-        padding-left: 15px; }
+    .options-evaluation table .separator td {
+      border: none; }
+    .options-evaluation table .total-score td:nth-child(1) {
+      color: #f07d00;
+      text-transform: uppercase;
+      text-align: left;
+      padding-left: 15px; }
     .options-evaluation table thead tr:nth-child(1) th:nth-child(2) {
       background: #6E6E6E;
       color: #FFF;
@@ -21789,7 +21792,8 @@ a.show-matrix-table {
       text-align: left;
       color: #FFF; }
     .options-evaluation table tbody tr.collapsible span {
-      font-size: 20px; }
+      font-size: 20px;
+      margin-left: -23px; }
     .options-evaluation table tbody tr.collapsible .score-mode {
       color: #333;
       text-align: center; }

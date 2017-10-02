@@ -170,7 +170,7 @@
 }
 .panel-dialog-container .panel-body{
     height: calc(100% - 100px);
-    overflow-y: scroll;
+    overflow-y: auto;
 }
 
 .references-table{
@@ -909,4 +909,8 @@ a.show-matrix-table{
       border: 5px solid #37adbf;
     }
   }
+}
+
+.btn-group .dropdown-menu>li>a{
+  padding: 6px 13px !important; 
 }
