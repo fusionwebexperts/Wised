@@ -851,7 +851,7 @@
                     });
                     
                     $('.disclose').attr('title', 'Click to show/hide children');
-                    $('.disclose, .itemTitle').on('click', function() {
+                    $('.disclose').on('click', function() {
                         $(this).closest('li').toggleClass('mjs-nestedSortable-collapsed').toggleClass('mjs-nestedSortable-expanded');
                         $(this).parent().find('.disclose').toggleClass('ui-icon-plusthick').toggleClass('ui-icon-minusthick');
                     });
