@@ -20697,6 +20697,9 @@ li.mjs-nestedSortable-collapsed.mjs-nestedSortable-hovering div {
 .criterion-list > li > div > .itemTitle,
 .criterion-list > li > ol > li > div .itemTitle {
   padding-left: 20px; }
+  .criterion-list > li > div > .itemTitle.no-collapssible,
+  .criterion-list > li > ol > li > div .itemTitle.no-collapssible {
+    padding-left: 36px; }
 
 .criterion-list > li > div > .itemTitle:before,
 .criterion-list > li > ol > li > div > .itemTitle:before {
