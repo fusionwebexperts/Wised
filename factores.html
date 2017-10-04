@@ -391,7 +391,7 @@
                                              <li id="sort_item3">
                                                 <div>
                                                     <span class="disclose ui-icon ui-icon-triangle-1-n" style="display:none;"></span>
-                                                    <span class="itemTitle">resolução</span>
+                                                    <span class="itemTitle no-collapssible">resolução</span>
                                                     <span class="delete"><i class="mdi mdi-delete"></i></span>
                                                     <span class="duplicate"><i class="mdi mdi-content-duplicate"></i></span>
                                                     <span class="edit"><i class="mdi mdi-pencil"></i></span>
@@ -400,7 +400,7 @@
                                              <li id="sort_item4">
                                                 <div>
                                                     <span class="disclose ui-icon ui-icon-triangle-1-n" style="display:none;"></span>
-                                                    <span class="itemTitle">sistema operativo</span>
+                                                    <span class="itemTitle no-collapssible">sistema operativo</span>
                                                     <span class="users"><i class="mdi mdi-account"></i></span>
                                                     <span class="delete"><i class="mdi mdi-delete"></i></span>
                                                     <span class="duplicate"><i class="mdi mdi-content-duplicate"></i></span>
@@ -410,7 +410,7 @@
                                              <li id="sort_item5">
                                                 <div>
                                                     <span class="disclose ui-icon ui-icon-triangle-1-n" style="display:none;"></span>
-                                                    <span class="itemTitle">autonomia</span>
+                                                    <span class="itemTitle no-collapssible">autonomia</span>
                                                     <span class="delete"><i class="mdi mdi-delete"></i></span>
                                                     <span class="duplicate"><i class="mdi mdi-content-duplicate"></i></span>
                                                     <span class="edit"><i class="mdi mdi-pencil"></i></span>
@@ -430,7 +430,7 @@
                                              <li id="sort_item7">
                                                 <div>
                                                     <span class="disclose ui-icon ui-icon-triangle-1-n" style="display:none;"></span>
-                                                    <span class="itemTitle">camera</span>
+                                                    <span class="itemTitle no-collapssible">camera</span>
                                                     <span class="users"><i class="mdi mdi-account"></i></span>
                                                     <span class="delete"><i class="mdi mdi-delete"></i></span>
                                                     <span class="duplicate"><i class="mdi mdi-content-duplicate"></i></span>
@@ -440,7 +440,7 @@
                                              <li id="sort_item8">
                                                 <div>
                                                     <span class="disclose ui-icon ui-icon-triangle-1-n" style="display:none;"></span>
-                                                    <span class="itemTitle">gps</span>
+                                                    <span class="itemTitle no-collapssible">gps</span>
                                                     <span class="users"><i class="mdi mdi-account"></i></span>
                                                     <span class="delete"><i class="mdi mdi-delete"></i></span>
                                                     <span class="duplicate"><i class="mdi mdi-content-duplicate"></i></span>
@@ -454,7 +454,7 @@
                                <li id="sort_item9">
                                     <div>
                                         <span class="disclose ui-icon ui-icon-triangle-1-n" style="display:none;"></span>
-                                        <span class="itemTitle">Preço de Equipamento</span>
+                                        <span class="itemTitle no-collapssible">Preço de Equipamento</span>
                                         <span class="users"><i class="mdi mdi-account"></i></span>
                                         <span class="delete"><i class="mdi mdi-delete"></i></span>
                                         <span class="duplicate"><i class="mdi mdi-content-duplicate"></i></span>
@@ -464,7 +464,7 @@
                                <li id="sort_item10">
                                     <div>
                                         <span class="disclose ui-icon ui-icon-triangle-1-n" style="display:none;"></span>
-                                        <span class="itemTitle">Cor</span>
+                                        <span class="itemTitle no-collapssible">Cor</span>
                                         <span class="delete"><i class="mdi mdi-delete"></i></span>
                                         <span class="duplicate"><i class="mdi mdi-content-duplicate"></i></span>
                                         <span class="edit"><i class="mdi mdi-pencil"></i></span>
@@ -542,8 +542,10 @@
                         $.each($('.is-sortable').find('li'), function(){
                             if ($(this).find('li').length > 0){
                                 $(this).find('.disclose').show();
+                                $(this).find('> div > .itemTitle').removeClass('no-collapssible');
                             } else {
                                 $(this).find('.disclose').hide();
+                                $(this).find('> div > .itemTitle').addClass('no-collapssible');
                             }
                         });
                     }, 800);

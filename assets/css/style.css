@@ -20640,6 +20640,8 @@ li.mjs-nestedSortable-collapsed.mjs-nestedSortable-hovering div {
 .itemTitle {
   vertical-align: middle;
   cursor: pointer; }
+  .itemTitle.no-collapssible {
+    padding-left: 20px; }
 
 .delete, .duplicate, .edit {
   float: right;
@@ -20699,7 +20701,7 @@ li.mjs-nestedSortable-collapsed.mjs-nestedSortable-hovering div {
   padding-left: 20px; }
   .criterion-list > li > div > .itemTitle.no-collapssible,
   .criterion-list > li > ol > li > div .itemTitle.no-collapssible {
-    padding-left: 36px; }
+    padding-left: 40px; }
 
 .criterion-list > li > div > .itemTitle:before,
 .criterion-list > li > ol > li > div > .itemTitle:before {
