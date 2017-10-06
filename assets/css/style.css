@@ -20682,10 +20682,19 @@ li.mjs-nestedSortable-collapsed.mjs-nestedSortable-hovering div {
 .criterion-list li div span {
   float: left; }
 
+.criterion-list.is-sortable li div:before {
+  position: absolute;
+  content: '';
+  margin-left: -20px;
+  margin-top: 7px;
+  width: 8px;
+  height: 8px;
+  background-image: url(../images/dragListicon.png); }
+
 /* SORTABLE LEVELS  */
 /* LEVEL 1 */
 .criterion-list.is-sortable > li > div {
-  padding-left: 10px; }
+  padding-left: 40px; }
 
 .criterion-list > li > div > .itemTitle,
 .criterion-list > li > ol > li > div .itemTitle {
@@ -20719,7 +20728,7 @@ li.mjs-nestedSortable-collapsed.mjs-nestedSortable-hovering div {
 
 .criterion-list > li > ol > li > ol > li div {
   border-left: 1px solid #eee;
-  padding-left: 10px; }
+  padding-left: 30px; }
 
 .criterion-list > li, .criterion-list > li > ol > li {
   background: #f9f9f9; }
