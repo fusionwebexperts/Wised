@@ -20682,19 +20682,10 @@ li.mjs-nestedSortable-collapsed.mjs-nestedSortable-hovering div {
 .criterion-list li div span {
   float: left; }
 
-.criterion-list.is-sortable li div:before {
-  position: absolute;
-  content: '';
-  margin-left: -20px;
-  margin-top: 7px;
-  width: 8px;
-  height: 8px;
-  background-image: url(../images/dragListicon.png); }
-
 /* SORTABLE LEVELS  */
 /* LEVEL 1 */
 .criterion-list.is-sortable > li > div {
-  padding-left: 40px; }
+  padding-left: 10px; }
 
 .criterion-list > li > div > .itemTitle,
 .criterion-list > li > ol > li > div .itemTitle {
@@ -20728,7 +20719,7 @@ li.mjs-nestedSortable-collapsed.mjs-nestedSortable-hovering div {
 
 .criterion-list > li > ol > li > ol > li div {
   border-left: 1px solid #eee;
-  padding-left: 30px; }
+  padding-left: 10px; }
 
 .criterion-list > li, .criterion-list > li > ol > li {
   background: #f9f9f9; }
@@ -20811,15 +20802,17 @@ li.mjs-nestedSortable-collapsed.mjs-nestedSortable-hovering div {
   color: #ef7c00;
   font-weight: 400; }
 
-.define-scales li ol li ol li:hover {
+.define-scales li ol li ol li.hover {
   background: #009ee2;
   box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.1);
   transition: border .2s linear,color .2s linear,width .2s linear,background-color .2s linear;
   -webkit-font-smoothing: subpixel-antialiased; }
-
-.define-scales li ol li ol li:hover div span,
-.define-scales li ol li ol li:hover div span a {
-  color: #fff; }
+  .define-scales li ol li ol li.hover > div > span, .define-scales li ol li ol li.hover > div > a {
+    color: #fff; }
+.define-scales li ol li ol li .itemTitle {
+  margin-left: 10px; }
+  .define-scales li ol li ol li .itemTitle.no-collapssible {
+    padding-left: 16px; }
 
 .define-scales li ol li ol li a {
   color: black; }

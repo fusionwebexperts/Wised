@@ -441,12 +441,25 @@
                                     <ol>
                                          <li>
                                             <div>
+                                                <span class="disclose ui-icon ui-icon-triangle-1-n"></span>
                                                 <span class="itemTitle">camera</span>
                                             </div>
+                                            <ol>
+                                                 <li>
+                                                    <div>
+                                                        <span class="itemTitle">camera</span>
+                                                    </div>
+                                                 </li>
+                                                 <li>
+                                                    <div>
+                                                        <span class="itemTitle">gps</span>
+                                                    </div>
+                                                 </li>
+                                            </ol>
                                          </li>
                                          <li>
                                             <div>
-                                                <span class="itemTitle">gps</span>
+                                                <span class="itemTitle no-collapssible">gps</span>
                                             </div>
                                          </li>
                                     </ol>
@@ -1090,6 +1103,11 @@
             
             var factor_dialog_page = new FactorDialogPage({
                 define_swings: define_swings_handler
+            });
+            
+           
+            $(".define-scales li ol li ol li div").hover(function () {
+                $(this).parent().toggleClass("hover");
             });
         });
     </script>

@@ -1377,6 +1377,10 @@
             var factor_dialog_page = new FactorDialogPage({
                 define_scales: define_scales_dialoghandler
             });
+            
+            $(".define-scales li ol li ol li div").hover(function () {
+                $(this).parent().toggleClass("hover");
+            });
 
         });
     </script>
