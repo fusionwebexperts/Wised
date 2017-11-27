@@ -21940,7 +21940,11 @@ a.show-matrix-table {
       text-align: center;
       font-size: 26px; }
 
+.specifications-table-parent {
+  display: flex; }
+
 .specifications-table {
+  display: table-cell;
   padding-top: 25px;
   float: left;
   overflow-x: scroll;
@@ -21970,6 +21974,7 @@ a.show-matrix-table {
       padding: 5px 0; }
 
 .specifications-table-labels {
+  display: table-cell;
   float: left;
   min-width: 20%;
   padding-top: 25px; }

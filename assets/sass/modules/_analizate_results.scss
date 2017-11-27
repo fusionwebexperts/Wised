@@ -43,7 +43,12 @@
     }
 }
 
+.specifications-table-parent{
+    display: flex;
+}
+
 .specifications-table{
+    display: table-cell;
     padding-top: 25px;
     float: left;
     overflow-x: scroll;
@@ -96,6 +101,7 @@
     }
 }
 .specifications-table-labels{
+    display: table-cell;
     float: left;
     min-width: 20%;
     padding-top: 25px;
